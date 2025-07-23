@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/tourism"
+    },
+    {
+      "path": "./apps/bus"
+    },
+    {
+      "path": "./libs/ui"
+    },
+    {
+      "path": "./libs/tourism-verticals"
+    }
+  ]
+}
