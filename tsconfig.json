@@ -10,13 +10,13 @@
       "path": "./apps/tourism/platform"
     },
     {
-      "path": "./apps/tourism/bus"
+      "path": "./apps/tourism/shared"
     },
     {
       "path": "./apps/tourism/train"
     },
     {
-      "path": "./apps/tourism/shared"
+      "path": "./apps/tourism/bus"
     }
   ]
 }
