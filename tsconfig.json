@@ -4,19 +4,19 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/tourism"
-    },
-    {
-      "path": "./apps/bus"
-    },
-    {
       "path": "./libs/ui"
     },
     {
-      "path": "./libs/tourism-verticals"
+      "path": "./apps/tourism/platform"
     },
     {
-      "path": "./apps/train"
+      "path": "./apps/tourism/bus"
+    },
+    {
+      "path": "./apps/tourism/train"
+    },
+    {
+      "path": "./apps/tourism/shared"
     }
   ]
 }
