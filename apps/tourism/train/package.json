@@ -1,5 +1,5 @@
 {
-  "name": "@780/tourism/train",
+  "name": "@780/tourism-train",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
