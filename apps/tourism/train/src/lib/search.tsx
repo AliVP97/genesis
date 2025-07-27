@@ -1,4 +1,4 @@
-import { Button } from '@780/ui';
+import { Button } from '@780/shared-ui';
 
 export function Search() {
   return (

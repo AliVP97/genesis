@@ -1,7 +1,7 @@
 'use client';
 
-import { Search } from '@780/bus';
-import { Shared } from '@780/shared';
+import { Search } from '@780/tourism-bus';
+import { Shared } from '@780/tourism-shared';
 
 export default function Page() {
   return (

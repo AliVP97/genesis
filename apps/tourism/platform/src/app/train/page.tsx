@@ -1,6 +1,6 @@
 'use client';
 
-import { Search } from '@780/train';
+import { Search } from '@780/tourism-train';
 
 export default function Page() {
   return (
