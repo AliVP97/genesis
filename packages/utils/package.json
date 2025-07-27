@@ -1,6 +1,7 @@
 {
-  "name": "@780/ui",
+  "name": "@780/utils",
   "version": "0.0.1",
+  "private": true,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -13,5 +14,6 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     }
-  }
+  },
+  "dependencies": {}
 }

@@ -4,9 +4,6 @@
   "files": [],
   "references": [
     {
-      "path": "./libs/ui"
-    },
-    {
       "path": "./apps/tourism/platform"
     },
     {
@@ -17,6 +14,12 @@
     },
     {
       "path": "./apps/tourism/bus"
+    },
+    {
+      "path": "./packages/shared-ui"
+    },
+    {
+      "path": "./packages/utils"
     }
   ]
 }
