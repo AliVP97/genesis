@@ -1,0 +1,13 @@
+@include media-breakpoint-down(md) {
+  .is-superapp {
+    .searchTicket {
+      &__btn {
+        position: fixed;
+        width: 100%;
+        right: 0;
+        bottom: 75px;
+        padding: 0 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.hotel {
+  &__pwa {
+    position: relative;
+    //height: 392px;
+    direction: rtl;
+    background-color: map-get($colors, white);
+    margin-bottom: 1rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    &__images {
+      overflow-x: auto;
+      white-space: nowrap;
+      &__item {
+        display: inline-block;
+        width: 182px;
+        height: 120px;
+      }
+    }
+    &__stars {
+      text-align: left;
+    }
+    &__facility {
+      background-color: map-get($colors, grey-20);
+      border-radius: 8px;
+      font-size: 10px;
+      padding: 0.3rem;
+      margin-top: 0.3rem;
+      margin-right: 0.2rem;
+    }
+    &__footer {
+      margin: auto;
+      width: 100%;
+      margin-inline: 0;
+      &__price {
+        text-align: left;
+        &__container {
+          float: left;
+        }
+        &__discount {
+          background-color: map-get($colors, red-2);
+          color: map-get($colors, white);
+          border-radius: 8px;
+          font-size: map-get($font-sizes, 2);
+          width: 87px;
+          text-align: center;
+        }
+        &__withDiscount {
+          display: flex;
+          text-decoration: line-through;
+          font-weight: normal;
+          color: map-get($colors, grey-1);
+          font-size: map-get($font-sizes, 3);
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+  &__dashed {
+    border-right: 1px dashed map-get($colors, grey-17);
+    width: 220px;
+    padding-right: 10px;
+  }
+  &__desktop {
+    &__card {
+      height: 176px;
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background-color: map-get($colors, white);
+      border-radius: 12px 0 0 12px;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}

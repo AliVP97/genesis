@@ -1,0 +1,19 @@
+<svg id="ic-back-arrow-left" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #9e9e9e;
+      }
+    </style>
+  </defs>
+  <g id="ic_back_arrow">
+    <g id="Group_283" data-name="Group 283">
+      <rect id="Rectangle_155" data-name="Rectangle 155" class="cls-1" width="20" height="20"/>
+      <path id="Path_77" data-name="Path 77" class="cls-2" d="M12.694,6.578H3.015L7.457,10.67,6.347,11.694,0,5.847,6.347,0,7.457,1.023,3.015,5.116h9.679Z" transform="translate(3.862 4.557)"/>
+    </g>
+  </g>
+</svg>

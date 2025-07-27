@@ -1,0 +1,14 @@
+.value__container {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  .value {
+    unicode-bidi: plaintext;
+    font-size: 14px;
+  }
+
+  &.isBold {
+    font-weight: 700;
+  }
+}

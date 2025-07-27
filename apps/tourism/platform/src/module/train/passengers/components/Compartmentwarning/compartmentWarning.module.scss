@@ -1,0 +1,9 @@
+.warning {
+  border-radius: 5px;
+  &__icon {
+    fill: map-get($colors, grey-2);
+  }
+  &__content {
+    font-size: 14px;
+  }
+}

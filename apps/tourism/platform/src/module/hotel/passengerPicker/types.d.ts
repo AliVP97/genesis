@@ -1,0 +1,1 @@
+type THotelPassengerType = 'adult' | 'child';

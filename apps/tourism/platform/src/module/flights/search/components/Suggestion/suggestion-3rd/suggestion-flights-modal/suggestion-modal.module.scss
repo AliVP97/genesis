@@ -1,0 +1,102 @@
+.main-modal-style {
+  z-index: 4;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border-radius: 0;
+  background-color: map-get($colors, white);
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    height: auto;
+    width: 70%;
+    max-width: 1128px;
+    max-height: 80%;
+    padding: 16px 24px 24px;
+    display: block;
+    border-radius: 8px;
+    border-right: 2px solid map-get($colors, white);
+  }
+  .mobile-head-line {
+    position: sticky;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px;
+    background-color: map-get($colors, white-1);
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.16);
+    color: map-get($colors, black-2);
+    font-size: map-get($font-sizes, 3);
+    font-weight: map-get($font-weights, '500');
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+    .back-icon {
+      position: absolute;
+      right: 16px;
+      cursor: pointer;
+      fill: map-get($colors, red-1);
+    }
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #bcbebe;
+    .title {
+      color: map-get($colors, black-2);
+      font-size: map-get($font-sizes, 3);
+      font-weight: map-get($font-weights, '500');
+      margin-top: 16px;
+      margin-right: 16px;
+      @media screen and (min-width: 768px) {
+        font-size: map-get($font-sizes, 5);
+        margin-top: 0;
+        margin-right: 0;
+      }
+    }
+    .close-icon {
+      display: none;
+      cursor: pointer;
+      @media screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+  .mobile-modal-close-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($colors, blue-light-6);
+    color: map-get($colors, white);
+    font-size: map-get($font-sizes, 4);
+    margin: auto 16px 16px;
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    background-color: map-get($colors, transparent);
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    //border-radius: 13px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    //background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: map-get($colors, grey-24);
+    //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  }
+}

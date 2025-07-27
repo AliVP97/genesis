@@ -1,0 +1,348 @@
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+.invoice {
+  border-radius: 24px 24px 0 0;
+
+  &--roundTrip {
+    border-radius: 24px 24px 0 0;
+    position: relative;
+    overflow-y: auto;
+  }
+
+  &__topLine {
+    border-top: 4px solid map-get($colors, grey-2);
+    width: 30px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    top: 7px;
+    border-radius: 2px;
+  }
+
+  &__offCode {
+    &__btn {
+      height: auto;
+      min-height: unset;
+      border-radius: 12px;
+      background-color: transparent !important;
+      color: map-get($colors, primary);
+      font-weight: 500;
+      font-size: 12px;
+      border: 1px solid;
+      margin-right: auto;
+      box-shadow: unset;
+      transition: 0.2s linear;
+
+      &:disabled {
+        color: map-get($colors, grey-2);
+      }
+    }
+  }
+
+  &__table {
+    margin: 0 auto;
+    label {
+      margin: 0;
+    }
+
+    &__header {
+      background-color: map-get($colors, blue-grey);
+      height: 40px;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+      color: map-get($colors, grey-1);
+      font-weight: 500;
+      padding-right: 1.25rem;
+    }
+
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    background-color: map-get($colors, white);
+    width: 96%;
+
+    &__input {
+      width: 100%;
+      margin: 0 !important;
+
+      input {
+        width: 65%;
+        text-align: center;
+        letter-spacing: 2px;
+        padding: 6px 12px 0 !important;
+      }
+    }
+  }
+
+  &__divider {
+    border-top: 2px solid map-get($colors, grey-2);
+    opacity: 0.2;
+
+    &:last-child {
+      display: none;
+    }
+  }
+  [aria-expanded='true'] {
+    .invoice__expandIcon {
+      transform: rotate(180deg);
+    }
+  }
+  &__accordion {
+    [aria-expanded='true'] {
+      .invoice__expandIcon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__totalPrice {
+      background-color: map-get($colors, green);
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  &__expandIcon {
+    color: map-get($colors, grey-1);
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    background-color: map-get($colors, white-2);
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__phoneNumber {
+    &__suffix {
+      left: 3rem !important;
+    }
+  }
+
+  &__offCode {
+    &__suffix {
+      top: 54% !important;
+      left: 33% !important;
+      right: unset !important;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+
+  &__refund {
+    &__header {
+      background-color: map-get($colors, blue-grey);
+      height: 40px;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+      color: map-get($colors, grey-1);
+      font-weight: 500;
+      padding-right: 1.25rem;
+    }
+    &__box {
+      width: auto;
+      @media (min-width: 768px) {
+        width: 360px;
+      }
+      &__text {
+        color: map-get($colors, on-surface);
+      }
+      &__subtitle {
+        color: map-get($colors, on-surface-var);
+      }
+      &__priceBox {
+        background-color: map-get($colors, surface-container-low);
+        color: map-get($colors, on-surface);
+        border-radius: 12px;
+      }
+    }
+    &__modal {
+      &__header{
+        box-shadow: 0 3px 6px 0 rgba($color: map-get($colors, black), $alpha: 0.16);
+      }
+    }
+  }
+}
+
+.input_input__suffix__L8wCp {
+  top: 50% !important;
+}
+
+@include media-breakpoint-up(md) {
+  .invoice {
+    &--roundTrip {
+      padding-bottom: 20rem;
+    }
+    &__table {
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+      width: 100%;
+
+      &__input {
+        width: 30%;
+        max-width: 343px;
+        input {
+          width: 100%;
+          padding: 0 12px !important;
+        }
+      }
+
+      &__footer-btn {
+        font-size: map-get($font-sizes, 2);
+        border: 1px solid map-get($colors, black);
+        height: 40px;
+        cursor: pointer;
+        min-width: 140px;
+      }
+
+      &__header {
+        background-color: map-get($colors, white);
+        border-bottom: 1px solid map-get($colors, blue-grey);
+      }
+    }
+
+    &__inside-table {
+      border-radius: 8px;
+      background-color: map-get($colors, white-1);
+      font-size: map-get($font-sizes, 2);
+      border-collapse: collapse;
+      overflow: hidden;
+      table-layout: fixed;
+
+      &__header {
+        background-color: map-get($colors, blue-grey);
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        height: 3rem;
+      }
+
+      &__content {
+        border-top: 1px solid map-get($colors, blue-grey);
+        height: 3rem;
+      }
+    }
+
+    &__offCode__btn {
+      height: 38px;
+      width: 15%;
+      max-width: 132px;
+      border-radius: 25px;
+    }
+
+    &__collapse {
+      overflow: hidden;
+      transition: height 0.5s ease;
+
+      &__expand {
+        overflow: hidden;
+        visibility: visible;
+        opacity: 1;
+        transition: height 0.5s ease;
+
+        &--hide-scroll {
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+    &__font {
+      font-size: map-get($font-sizes, 3);
+    }
+    &__large-font {
+      font-size: map-get($font-sizes, 4);
+    }
+
+    &__offCode {
+      &__suffix {
+        left: 5% !important;
+      }
+    }
+    &__refund {
+      &__title {
+        font-size: map-get($font-sizes, 6);
+      }
+      &__checkContainer {
+        &:nth-child(even) {
+          margin-right: 24px;
+        }
+        &:nth-child(odd) {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__refund {
+      &__title {
+        background-color: map-get($colors, white);
+        border-bottom: 1px solid map-get($colors, blue-grey);
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .invoice {
+    padding-bottom: 1rem;
+
+    &--roundTrip {
+      padding-bottom: 20rem;
+    }
+    &__table {
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+      width: 100%;
+
+      &__footer-btn {
+        font-size: map-get($font-sizes, 3);
+        border: 1px solid map-get($colors, black);
+        height: 1.5rem;
+        cursor: pointer;
+        min-width: 140px;
+      }
+
+      &__header {
+        background-color: map-get($colors, white);
+        border-bottom: 1px solid map-get($colors, blue-grey);
+      }
+    }
+
+    &__inside-table {
+      border-radius: 8px;
+      background-color: map-get($colors, white-1);
+      font-size: map-get($font-sizes, 3);
+      border-collapse: collapse;
+      overflow: hidden;
+
+      &__header {
+        background-color: map-get($colors, blue-grey);
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        height: 3rem;
+      }
+
+      &__content {
+        border-top: 1px solid map-get($colors, blue-grey);
+        height: 3rem;
+      }
+    }
+
+    &__offCode__btn {
+    }
+    &__collapse {
+      &__expand {
+        overflow: hidden;
+        opacity: 1;
+        transition: height 0.5s ease;
+
+        &--hide-scroll {
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+    &__font {
+      font-size: map-get($font-sizes, 4);
+    }
+    &__large-font {
+      font-size: map-get($font-sizes, 5);
+    }
+  }
+}

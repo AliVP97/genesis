@@ -1,0 +1,30 @@
+.filterButton {
+  min-width: 100px;
+  height: 46px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 8px 3px;
+  cursor: pointer;
+
+  span {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: -0.42px;
+  }
+  border: 1px solid #e0e0e0;
+  background-color: #f8f8f8;
+
+  span {
+    color: #666666;
+  }
+
+  &--checked {
+    border: 2px solid map-get($colors, primary);
+    background-color: #f2f4f7;
+    span {
+      color: map-get($colors, primary);
+    }
+  }
+}

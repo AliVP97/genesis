@@ -1,0 +1,152 @@
+.receipt {
+  &__header {
+    font-size: map-get($font-sizes, 3);
+    padding: 0.5rem 0.5rem;
+    border-top-right-radius: map-get($font-sizes, 2);
+    border-top-left-radius: map-get($font-sizes, 2);
+  }
+
+  &__wrapper {
+    box-shadow: 0 0 6px 0 rgba(map-get($colors, black), 0.15);
+    padding: 0.5rem;
+    border-bottom-left-radius: map-get($font-sizes, 2);
+    border-bottom-right-radius: map-get($font-sizes, 2);
+
+    &:before {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: map-get($colors, white-1);
+      box-shadow: inset 2px 0px 0px 0px rgb(0 0 0 / 15%);
+      content: '';
+      position: absolute;
+      bottom: 70px;
+      right: -13px;
+    }
+
+    &:after {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: map-get($colors, white-1);
+      box-shadow: inset -2px 0px 0px 0px rgb(0 0 0 / 15%);
+      content: '';
+      position: absolute;
+      bottom: 70px;
+      left: -13px;
+    }
+
+    &__collapse {
+      height: 0;
+      opacity: 0;
+      transition:
+        height 1.5s ease,
+        opacity 0.5s;
+
+      &__expand {
+        border-top: 4px solid map-get($colors, blue-grey);
+        height: 440px;
+        overflow: hidden;
+        opacity: 1;
+        transition:
+          height 1.5s ease,
+          opacity 2s;
+      }
+    }
+
+    &__ticketInfo {
+      border-radius: map-get($font-sizes, 2);
+      background-color: rgba(map-get($colors, grey-9), 0.08);
+      padding: 0 0.75rem 2rem;
+      position: relative;
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.25rem;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+
+          &__title {
+            bottom: 10px;
+            right: 34%;
+            left: 34%;
+          }
+        }
+      }
+    }
+
+    &__airport {
+      padding: 0 0.75rem;
+
+      &__container {
+        flex-flow: row nowrap;
+        padding: 0.75rem 0;
+
+        &__endpoint {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+        }
+      }
+    }
+
+    &__ticketDetail {
+      padding: 0 0.75rem;
+      border-bottom: 2px solid map-get($colors, blue-grey);
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.75rem 0;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+          color: map-get($colors, grey-1);
+        }
+      }
+    }
+
+    &__price {
+      padding: 0 0.75rem;
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.75rem 0;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+        }
+      }
+    }
+
+    &__footer {
+      padding: 0 0.75rem;
+      border-top: 1.75px dashed map-get($colors, primary);
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.75rem 0;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+        }
+      }
+    }
+  }
+}
+
+.extra-space {
+  width: 100%;
+  height: 72px;
+}

@@ -1,0 +1,46 @@
+.headerProfile {
+  all: unset;
+  position: relative;
+  &__dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    background-color: map-get($colors, surface);
+    min-width: 235px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+    &--open {
+      top: 1.9rem;
+      opacity: 1;
+      transition:
+        top 0.5s ease,
+        opacity 0.5s ease;
+    }
+    &--close {
+      top: 1.5rem;
+      opacity: 0;
+      transition:
+        top 0.5s ease,
+        opacity 0.5s ease;
+    }
+
+    &__user {
+      padding: 1rem 1.5rem 1rem 0.5rem;
+    }
+    &__action {
+      cursor: pointer;
+      padding: 1rem 1.5rem 1rem;
+      text-align: start;
+      font-size: map-get($font-sizes, 3);
+      letter-spacing: -0.42px;
+      color: map-get($colors, black-1);
+    }
+    &--divider {
+      border-top: 2px solid map-get($colors, outline-var);
+      opacity: 0.18;
+      margin: 0;
+    }
+  }
+}

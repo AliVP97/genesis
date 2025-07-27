@@ -1,0 +1,8 @@
+.card {
+  @media screen and (min-width: 768px) {
+    &__dashed {
+      border-right: 1px dashed map-get($colors, grey-17);
+      width: 250px !important;
+    }
+  }
+}

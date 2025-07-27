@@ -1,0 +1,70 @@
+.download-modal {
+  height: 850px;
+  max-height: 90vh;
+  width: 459px;
+  padding: 50px;
+  border-radius: 40px 0 0 40px !important;
+  overflow: auto;
+  transition: 0.2s;
+  background-color: white;
+  animation-name: fade-in;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
+  a {
+    text-decoration: none;
+  }
+  &__hedear {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      svg {
+        width: 25px;
+        fill: map-get($colors, 'primary');
+      }
+      span {
+        color: map-get($colors, 'primary');
+        flex-grow: 1;
+        font-weight: map-get($font-weights, '700');
+        font-size: map-get($font-sizes, 4);
+      }
+    }
+    &__description {
+      text-align: center;
+      padding: 10px 0px;
+      p {
+        font-size: 1rem;
+        font-weight: map-get($font-weights, '500');
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .download-modal {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    border-radius: 0 !important;
+    overflow: auto;
+    background-color: white;
+    max-height: 100vh;
+    padding: 50px 30px;
+  }
+}

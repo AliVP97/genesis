@@ -1,0 +1,37 @@
+.modal {
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px map-get($map: $colors, $key: grey-26);
+  overflow: hidden;
+  min-height: 60%;
+  height: 100%;
+  max-height: 60%;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  background: map-get($map: $colors, $key: white-3);
+}
+
+.modal-content {
+  height: calc(100% - 40px);
+}
+
+.close-container {
+  margin-bottom: 12px;
+}
+
+.close-button {
+  background-color: unset;
+  border: none;
+}
+
+.left-card {
+  min-width: 256px;
+  justify-content: space-between;
+}
+
+.card-container {
+  border-radius: 12px;
+  background: map-get($colors, grey-25);
+  border: 1px solid map-get($map: $colors, $key: grey-21);
+}

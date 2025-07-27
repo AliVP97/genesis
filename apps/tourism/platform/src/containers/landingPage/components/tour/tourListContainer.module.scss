@@ -1,0 +1,171 @@
+.slider {
+  display: flex;
+  justify-content: space-between;
+  background-color: map-get($colors, primary);
+  border-radius: 0 0 48px 48px;
+  padding-bottom: 12%;
+  &__image {
+    margin-top: 2%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+.register-container {
+  padding: 2.5rem 2rem;
+  border: 1px solid map-get($colors, blue-light-2);
+  border-radius: 24px;
+  margin: 3rem 0;
+  &__button {
+    padding: 0 5rem;
+    border-radius: 40px;
+    background-color: map-get($colors, primary);
+    height: 48px;
+    margin-top: 1rem;
+  }
+}
+
+.main-container {
+  border-radius: 16px 0 16px 16px;
+  width: 90%;
+  margin: -50px auto 20px;
+  padding: 0 4rem 2rem;
+  z-index: 1;
+  background-color: map-get($colors, surface);
+  position: relative;
+  direction: rtl;
+
+  &__title {
+    text-align: center;
+    color: map-get($colors, primary);
+    font-weight: map-get($font-weights, '700');
+    margin: 1.5rem 0 5rem;
+  }
+}
+
+@include media-breakpoint-down(1450px) {
+  .slider {
+    &__image {
+      margin-top: 2vh;
+    }
+    &__heading {
+      font-size: 18px;
+      color: white;
+      text-wrap: nowrap;
+      margin-top: 12px;
+    }
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .slider {
+    padding-bottom: 11%;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .slider {
+    border-radius: 0;
+    padding-bottom: 55vw;
+    &__image {
+      padding: 32px 16px 0;
+    }
+    &__heading {
+      font-size: 16px;
+    }
+  }
+
+  .main-container {
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0;
+    background: transparent;
+    &__top-title {
+      display: none;
+    }
+  }
+
+  .register-container {
+    padding: 2rem 1rem;
+    &__button {
+      margin-top: 2rem;
+      width: 100%;
+    }
+  }
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 0.5rem;
+  text-decoration: inherit;
+  direction: rtl;
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    border: 1px solid map-get($colors, primary-2);
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 0.5rem;
+    height: 450px;
+    &__badge {
+      background-color: map-get($colors, primary);
+      color: white;
+      margin-top: 24px;
+      padding: 4px 16px;
+      line-height: 30px;
+      font-weight: 500;
+      border-radius: 0 16px 16px 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    &__image {
+      border-radius: 12px;
+    }
+
+    &__title {
+      font-weight: map-get($font-weights, '500');
+      font-size: map-get($font-sizes, 5);
+      margin-block: 8px;
+      padding-block: 10px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__description {
+      color: map-get($colors, grey-19);
+      font-size: map-get($font-sizes, 4);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 75px;
+      //margin-bottom: 3rem;
+    }
+
+    &__svg {
+      stroke: map-get($colors, primary);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      &__card {
+        max-height: 520px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
+}

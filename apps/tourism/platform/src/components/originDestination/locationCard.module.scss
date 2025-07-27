@@ -1,0 +1,32 @@
+.card {
+  background-color: map-get($colors, surface-container);
+  border-radius: 1rem;
+  padding: 15px 16px 12px;
+  margin-bottom: 8px;
+  justify-content: space-between;
+  min-height: 60px;
+
+  .main-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  .side-content {
+    display: flex;
+    font-size: map-get($font-sizes, 3);
+    color: map-get($colors, on-surface-var);
+  }
+
+  .description {
+    color: map-get($colors, on-surface-var);
+    font-size: map-get($font-sizes, 3);
+    margin-top: 3px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .card {
+    border-radius: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

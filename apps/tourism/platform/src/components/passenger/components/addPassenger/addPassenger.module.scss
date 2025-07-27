@@ -1,0 +1,18 @@
+.container {
+  background-color: map-get($colors, white) !important;
+  width: 100%;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.254902);
+  overflow-y: auto;
+  height: 100%;
+  &__form {
+    padding: 20px 30px;
+  }
+}
+
+.btn {
+  border-radius: 12px;
+  color: #194b9b;
+  border: 1px solid #194b9b;
+  width: 50%;
+  background-color: white;
+}

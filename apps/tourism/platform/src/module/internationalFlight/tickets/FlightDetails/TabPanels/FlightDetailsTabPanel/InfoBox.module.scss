@@ -1,0 +1,12 @@
+.icon {
+  margin-left: 4px;
+  fill: map-get($map: $colors, $key: primary-6);
+}
+
+.text {
+  font-size: map-get($map: $font-sizes, $key: 2);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 1);
+  }
+}

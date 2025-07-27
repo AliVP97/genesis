@@ -1,0 +1,33 @@
+.selected-ticket {
+  &__header {
+    position: relative;
+    background-color: map-get($map: $colors, $key: primary);
+    width: 100%;
+    height: 40px;
+    border-radius: 12px 12px 0px 0px;
+    &::before {
+      content: ' ';
+      width: 16px;
+      height: 16px;
+      background-color: map-get($map: $colors, $key: white-1);
+      position: absolute;
+      top: 33px;
+      border-radius: 100px;
+      left: -5px;
+      z-index: 10;
+      box-shadow: inset -2px 0 1px 0px rgb(0 0 0 / 10%);
+    }
+    &::after {
+      content: ' ';
+      width: 16px;
+      height: 16px;
+      background-color: map-get($map: $colors, $key: white-1);
+      position: absolute;
+      top: 31px;
+      border-radius: 100px;
+      right: -6px;
+      z-index: 10;
+      box-shadow: inset 2px 0 1px 0px rgb(0 0 0 / 10%);
+    }
+  }
+}

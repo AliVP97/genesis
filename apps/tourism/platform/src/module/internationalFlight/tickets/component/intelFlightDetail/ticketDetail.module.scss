@@ -1,0 +1,180 @@
+.ticket-detail {
+  height: 100%;
+  overflow-y: auto;
+  padding &__header {
+    background-color: map-get($colors, white-1);
+    box-shadow: 0 3px 6px 0 rgba($color: map-get($colors, black), $alpha: 0.16);
+    font-size: 14px;
+  }
+  &__tabs {
+    height: 60px;
+    width: 100%;
+
+    &__tab {
+      min-width: 34%;
+      height: 100%;
+      color: map-get($colors, grey-1);
+
+      &--title {
+        font-size: 14px;
+        display: block;
+        color: map-get($colors, grey);
+      }
+
+      &--active {
+        border-bottom: 3px solid map-get($colors, primary);
+        border-radius: 2px;
+        color: map-get($colors, black);
+        font-weight: 500;
+        font-size: 14px;
+      }
+    }
+  }
+  &__content {
+    direction: rtl;
+    height: 100%;
+
+    &__head {
+      background-color: map-get($colors, primary-2);
+      border-radius: 8px 8px 0 0;
+      height: 32px;
+    }
+    &__stop {
+      height: 60px;
+      border-radius: 8px;
+      background-color: map-get($colors, green-2);
+      color: map-get($colors, green-1);
+      display: flex;
+      align-items: center;
+      padding-right: 1rem;
+    }
+    &__logo {
+      border-radius: 50%;
+      display: inline-flex;
+      padding: 3px;
+      border: solid 1px map-get($colors, grey-3);
+    }
+    &__luggage {
+      g {
+        path {
+          fill: map-get($colors, red);
+        }
+      }
+    }
+
+    // circle info for code share
+    &__code-share {
+      background-color: rgba(243, 243, 243, 1);
+      padding: 8px;
+      color: #000;
+      display: none;
+      font-size: 12px;
+      border-radius: 8px;
+
+      svg {
+        display: block;
+        scale: 0.8;
+      }
+    }
+
+    &__child {
+      svg {
+        scale: 1.4;
+      }
+    }
+    &-timeInfo {
+      position: absolute;
+      right: 1.6rem;
+      top: 20px;
+      bottom: 30px;
+      &--trail {
+        border-right: 2px dashed map-get($colors, grey-2);
+        height: 82%;
+      }
+      &--circle {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid map-get($colors, grey-2);
+        right: -4.5px;
+        z-index: 5;
+        background-color: map-get($colors, white-1);
+      }
+    }
+  }
+  &__options {
+    background-color: white;
+    width: 72px;
+    height: 72px;
+    padding: 0.6rem;
+  }
+
+  &__footer {
+    &--mobile {
+      background-color: map-get($colors, grey-3);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      z-index: 5;
+    }
+
+    &--withoutPriceDetail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 1s;
+    }
+    &--withPriceDetail {
+      overflow: hidden;
+      max-height: 180px;
+      transition: max-height 1s;
+    }
+    &__btn {
+      height: 48px;
+      border-radius: 25px;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      border: none !important;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__divider {
+    border-bottom: solid 0.5px rgba(158, 158, 158, 0.4);
+    margin: 0.5rem;
+  }
+}
+.warning-icon {
+  fill: map-get($colors, brown);
+}
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  overflow: hidden;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

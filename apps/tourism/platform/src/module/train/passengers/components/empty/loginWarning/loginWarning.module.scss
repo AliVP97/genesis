@@ -1,0 +1,14 @@
+.login-warning {
+  direction: rtl;
+  padding: 15px 30px;
+  border-radius: 16px;
+  background-color: map-get($map: $colors, $key: orange-alert);
+  align-items: center;
+  button {
+    color: map-get($map: $colors, $key: black-2);
+    border: 2px solid map-get($map: $colors, $key: black-2);
+    border-radius: 25px;
+    padding: 10px 20px;
+    background-color: transparent;
+  }
+}

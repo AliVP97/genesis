@@ -1,0 +1,51 @@
+.drawer {
+  z-index: 11;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  padding: 1rem 1.5rem 0.5rem 1rem;
+  border-top-left-radius: 16px;
+  overflow-y: scroll;
+  &__close {
+    cursor: pointer;
+  }
+  &--collapse {
+    animation: indicating 3s ease-out;
+    visibility: hidden;
+    transition: visibility 2.5s ease-out;
+  }
+  &--expand {
+    animation: 1.5s sliding ease-in 1;
+  }
+  &__backdrop {
+    visibility: hidden;
+    transition: visibility 1.5s ease-out;
+  }
+  @keyframes sliding {
+    0% {
+      right: -100%;
+    }
+    100% {
+      right: 0%;
+    }
+  }
+
+  @keyframes indicating {
+    from {
+      right: 0%;
+    }
+    to {
+      right: -100%;
+    }
+  }
+}
+.hidden {
+  display: none;
+}
+@include media-breakpoint-down(lg) {
+  .hidden {
+    display: block;
+  }
+}

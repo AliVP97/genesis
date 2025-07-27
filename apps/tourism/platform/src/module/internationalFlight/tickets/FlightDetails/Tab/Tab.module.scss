@@ -1,0 +1,23 @@
+.tab {
+  padding: 0 32px;
+  cursor: pointer;
+  text-wrap: nowrap;
+  font-size: map-get($map: $font-sizes, $key: 3);
+
+  @include breakpoint-down(md) {
+    padding: 0 16px;
+  }
+}
+
+.label {
+  display: inline-block;
+  padding: 14px 0;
+  line-height: 20px;
+}
+
+.indicator {
+  height: 3px;
+  align-self: stretch;
+  border-radius: 100px 100px 0px 0px;
+  background: map-get($colors, primary-7);
+}

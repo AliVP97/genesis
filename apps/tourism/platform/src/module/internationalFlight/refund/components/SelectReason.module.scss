@@ -1,0 +1,6 @@
+.button {
+  @include media-breakpoint-up(md) {
+    min-width: 126px;
+    width: fit-content;
+  }
+}

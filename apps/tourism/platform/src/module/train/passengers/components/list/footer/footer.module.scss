@@ -1,0 +1,19 @@
+.footer {
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+
+  &__icon {
+    transform: scale(0.85);
+
+    &:nth-child(1) {
+      fill: map-get($colors, grey-1);
+    }
+  }
+
+  &__btn {
+    width: 150px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid map-get($colors, black);
+  }
+}

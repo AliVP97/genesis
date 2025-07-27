@@ -1,0 +1,13 @@
+.mobile {
+  &__filters {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 3;
+  }
+  &__cards-container {
+    padding-top: 64px;
+  }
+}

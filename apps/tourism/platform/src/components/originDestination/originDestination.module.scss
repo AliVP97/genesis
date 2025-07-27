@@ -1,0 +1,324 @@
+.origin-destination {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  background-color: map-get($colors, surface-container-low);
+  border-radius: 1rem;
+  position: relative;
+
+  &__divider {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 0 1em;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    z-index: 3;
+
+    > div {
+      width: 100%;
+      background-color: map-get($colors, outline-var);
+      margin: 0;
+      height: 1px;
+    }
+  }
+
+  &__swap {
+    background-color: map-get($colors, tertiary);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 32px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-45%);
+    z-index: 3;
+    cursor: pointer;
+
+    & svg {
+      fill: #fff;
+    }
+  }
+}
+.no-result {
+  margin-top: 50%;
+}
+.selected-location-card {
+  height: 64px;
+  background-color: map-get($colors, tertiary);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px 1rem 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3px;
+  .clear-history {
+    color: map-get($colors, primary);
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 6px 12px;
+    background: map-get($colors, surface);
+    cursor: pointer;
+  }
+}
+
+.locations-group {
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 720px) {
+  .origin-destination {
+    flex-direction: row;
+    height: 64px;
+
+    &__desktop-list {
+      position: absolute;
+      top: 64px;
+      width: 100%;
+      background-color: map-get($colors, surface);
+      border-radius: 0.5rem;
+      z-index: 3;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    &__divider {
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      transform: translateY(-50%);
+      z-index: 3;
+
+      > div {
+        width: 1px;
+        background-color: map-get($colors, outline-var);
+        margin: 0;
+        height: 100%;
+      }
+    }
+
+    &__swap {
+      background-color: map-get($colors, tertiary);
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.5rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-45%) rotate(90deg);
+      z-index: 3;
+      cursor: pointer;
+
+      & svg {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+// .location {
+//   width: 50%;
+//   display: flex;
+//   // justify-content: center;
+//   align-items: center;
+
+//   &__origin {
+//     width: calc(100% - 24px);
+//     // height: 100%;
+//     height: 4rem;
+//     border-left: 1px solid map-get($colors, grey-3);
+//     &--focus {
+//       border: 1px solid rgba(map-get($colors, primary), 0.5);
+//       border-radius: 0 1rem 1rem 0;
+//       background-color: map-get($colors, grey-5);
+//     }
+//   }
+//   &__destination {
+//     // width: 100%;
+//     height: 4rem;
+//     &--focus {
+//       border: 1px solid rgba(map-get($colors, primary), 0.5);
+//       border-radius: 1rem 0 0 1rem;
+//       background-color: map-get($colors, grey-5);
+//     }
+//   }
+
+//   input {
+//     border: none;
+//     outline: none;
+//     background-color: transparent;
+//     font-family: IRANSans;
+//     max-width: 80%;
+//   }
+// }
+
+// .dropDown {
+//   position: absolute;
+//   width: 440px;
+//   max-height: 400px;
+//   overflow-y: scroll;
+//   top: 64px;
+//   border-radius: 1rem;
+//   background-color: #fff;
+//   direction: rtl;
+
+//   &::-webkit-scrollbar {
+//     width: 0;
+//     height: 0;
+//   }
+
+//   & .airportList {
+//     // background-color: blue;
+//     border-bottom: 1px solid rgba(map-get($colors, grey-1), 0.2);
+//     padding: 1rem;
+
+//     &__header {
+//       width: 100%;
+//       display: flex;
+//       border-bottom: 1px solid transparent;
+
+//       & svg {
+//         fill: map-get($colors, grey-1);
+//         margin-left: 1rem;
+//         margin-top: 0.7rem;
+//       }
+
+//       &--toggler {
+//         border: none;
+//         outline: none;
+//         background-color: transparent;
+//         cursor: pointer;
+//         color: map-get($colors, grey-1);
+//         font-size: 14px;
+
+//         & svg {
+//           position: relative;
+//           bottom: 7px;
+//         }
+//       }
+
+//       &--border {
+//         border-bottom: 1px solid rgba(map-get($colors, grey-1), 0.2);
+//         padding-bottom: 1rem;
+//       }
+//     }
+
+//     &__airport {
+//       display: flex;
+//       cursor: pointer;
+//       padding: 1rem;
+
+//       &:not(:last-child) {
+//         border-bottom: 1px solid rgba(map-get($colors, grey-1), 0.2);
+//       }
+
+//       & svg {
+//         fill: map-get($colors, grey-1);
+//         margin-left: 1rem;
+//       }
+//     }
+//   }
+// }
+
+.categoryTitle {
+  .locations-group {
+    background: none;
+    margin-bottom: 20px;
+    box-shadow: none;
+    > div {
+      margin-bottom: 4px;
+      margin-right: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: map-get($colors, surface);
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+      padding-right: 15px;
+
+      &:first-child {
+        background: none;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-bottom: 5px;
+        pointer-events: none;
+        min-height: 20px;
+        div {
+          span {
+            color: map-get($colors, on-surface) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.buttomsheet-header {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  .back-button {
+    width: 20%;
+    text-align: right;
+  }
+  .title {
+    width: 60%;
+    text-align: center;
+  }
+}
+
+.bottomsheet-location-input input {
+  background: map-get($colors, surface-container-low);
+  border: 1px solid map-get($colors, primary);
+  padding: 20px 25px !important;
+}
+
+.origin-input {
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 24px;
+  background-color: map-get($colors, primary-container);
+
+  > label {
+    position: absolute;
+    top: 6px;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: map-get($map: $colors, $key: on-surface-var);
+  }
+
+  > div {
+    padding: 6px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.42px;
+    color: map-get($map: $colors, $key: on-surface);
+  }
+
+  > span.change-origin {
+    position: absolute;
+    inset-inline-end: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 24px;
+    font-size: 12px;
+    font-weight: 400;
+    color: map-get($map: $colors, $key: primary);
+  }
+}

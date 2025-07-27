@@ -1,0 +1,7 @@
+.expand-icon {
+  align-self: flex-start;
+
+  @include breakpoint-down(md) {
+    transform: scale(0.84);
+  }
+}

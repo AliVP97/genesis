@@ -1,0 +1,91 @@
+.location {
+  width: 100%;
+  min-height: 64px;
+  background-color: map-get($colors, surface-container-low);
+  position: relative;
+  border-radius: 16px;
+  &__icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    fill: map-get($colors, on-surface-var);
+  }
+  &__clear-button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+
+    &::placeholder {
+      color: map-get($colors, on-surface-var);
+    }
+
+    &:focus {
+      border: 1px solid map-get($colors, primary);
+    }
+  }
+  &__customInput {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-size: map-get($font-sizes, 4);
+
+    &::placeholder {
+      color: map-get($colors, on-surface-var);
+    }
+  }
+
+  &--origin {
+    input {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+  &--destination {
+    input {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: inherit;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 50px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .location {
+    width: 50%;
+    &__input {
+      border-radius: 1rem !important;
+    }
+  }
+}

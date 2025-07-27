@@ -1,0 +1,251 @@
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+.invoice {
+  border-radius: 24px 24px 0 0;
+  &__table {
+    margin: 0 auto;
+
+    &__header {
+      background-color: map-get($colors, blue-grey);
+      height: 40px;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+      color: map-get($colors, grey-1);
+      font-weight: 500;
+      padding-right: 1.25rem;
+    }
+
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    background-color: map-get($colors, white);
+    width: 96%;
+  }
+  &--content {
+    border-radius: 24px 24px 0 0;
+    position: relative;
+    overflow-y: auto;
+  }
+  &__policies {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: map-get($colors, white);
+    margin-bottom: 1rem;
+    height: 54px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.160784);
+  }
+  &__share {
+    background-color: map-get($colors, white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.160784);
+    &--header {
+      background-color: map-get($colors, blue-light-4);
+      color: map-get($colors, grey-19);
+      border-radius: 8px 8px 0 0;
+      padding: 0.5rem;
+      height: 40px;
+      display: flex;
+    }
+  }
+
+  &__offCode {
+    &__btn {
+      background-color: transparent !important;
+      color: map-get($colors, grey-2);
+      font-weight: 500;
+      font-size: 12px;
+      border: 1px solid;
+      border-radius: 12px;
+    }
+
+    &__suffix {
+      left: 7.5rem !important;
+    }
+  }
+
+  &__phoneNumber {
+    &__suffix {
+      left: 3rem !important;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .invoice {
+    &__table {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+      width: 100%;
+
+      &__footer-btn {
+        font-size: map-get($font-sizes, 2);
+        border: 1px solid map-get($colors, black);
+        height: 40px;
+        cursor: pointer;
+        min-width: 140px;
+      }
+
+      &__header {
+        background-color: map-get($colors, white);
+        border-bottom: 1px solid map-get($colors, blue-grey);
+        color: map-get($colors, black);
+      }
+    }
+
+    &__item {
+      border-bottom: 0.5px solid rgba($color: map-get($colors, grey-2), $alpha: 0.4);
+      border-radius: 2px;
+      color: map-get($colors, black);
+      font-weight: 300;
+      font-size: 16px;
+      width: 96%;
+      padding-bottom: 0.5rem;
+    }
+    &__item--options {
+      border-radius: 2px;
+      color: map-get($colors, black);
+      font-weight: 300;
+      font-size: 16px;
+      width: 20%;
+      padding-bottom: 0.5rem;
+      cursor: pointer;
+      &--active {
+        border-bottom: 3px solid map-get($colors, primary);
+        border-radius: 2px;
+        color: map-get($colors, primary);
+        font-weight: 300;
+        font-size: 16px;
+        width: 20%;
+        cursor: pointer;
+      }
+    }
+    &__offCode__btn {
+      height: 40px;
+      width: 20%;
+      border-radius: 20px;
+    }
+
+    &__collapse {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        height 1.5s ease,
+        opacity 0.5s;
+
+      &__expand {
+        height: 265px;
+        overflow-y: scroll;
+        visibility: visible;
+        opacity: 1;
+        transition:
+          height 0.5s ease,
+          opacity 1s;
+
+        &--hide-scroll {
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+    &__font {
+      font-size: map-get($font-sizes, 3);
+    }
+    &__large-font {
+      font-size: map-get($font-sizes, 4);
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .invoice {
+    padding-bottom: 1rem;
+
+    &__table {
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+      width: 100%;
+
+      &__footer-btn {
+        font-size: map-get($font-sizes, 3);
+        border: 1px solid map-get($colors, black);
+        height: 1.5rem;
+        cursor: pointer;
+        min-width: 140px;
+      }
+
+      &__header {
+        background-color: map-get($colors, white);
+        border-bottom: 1px solid map-get($colors, blue-grey);
+        color: map-get($colors, black);
+      }
+    }
+
+    &__item {
+      border-bottom: 0.5px solid rgba($color: map-get($colors, grey-2), $alpha: 0.4);
+      border-radius: 2px;
+      color: map-get($colors, black);
+      font-weight: 300;
+      font-size: 16px;
+      width: 96%;
+      padding-bottom: 0.5rem;
+    }
+    &__item--options {
+      border-radius: 2px;
+      color: map-get($colors, black);
+      font-weight: 500;
+      font-size: 16px;
+      width: 15%;
+      padding-bottom: 0.5rem;
+      cursor: pointer;
+      justify-content: center;
+
+      &--active {
+        border-bottom: 3px solid map-get($colors, primary);
+        border-radius: 2px;
+        color: map-get($colors, primary);
+        font-weight: 500;
+        font-size: 16px;
+        width: 15%;
+        cursor: pointer;
+        justify-content: center;
+      }
+    }
+
+    &__offCode__btn {
+      height: 40px;
+      width: 15%;
+      border-radius: 20px;
+    }
+    &__collapse {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        height 1.5s ease,
+        opacity 0.5s;
+
+      &__expand {
+        height: 265px;
+        overflow-y: scroll;
+        visibility: visible;
+        opacity: 1;
+        transition:
+          height 0.5s ease,
+          opacity 1s;
+
+        &--hide-scroll {
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+    &__font {
+      font-size: map-get($font-sizes, 4);
+    }
+    &__large-font {
+      font-size: map-get($font-sizes, 5);
+    }
+  }
+}

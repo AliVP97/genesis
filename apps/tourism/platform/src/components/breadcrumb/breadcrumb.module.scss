@@ -1,0 +1,103 @@
+.breadcrumb-route {
+  margin-top: 20px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.hide {
+  opacity: 0;
+  height: 0;
+}
+
+.breadcrumb-items-block {
+  display: flex;
+  margin-right: -45px;
+  justify-content: center;
+  align-items: center;
+}
+
+.rtl-direction {
+  direction: rtl;
+}
+
+.ltr-direction {
+  direction: ltr;
+}
+
+.breadcrumb-item {
+  flex: 0 1 auto; /* Allow items to grow or shrink based on content */
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumb-item > a {
+  text-decoration: none;
+  padding: 2px;
+  color: map-get($colors, black) !important;
+  font-size: 14px;
+}
+
+.breadcrumb-item > a:hover {
+  opacity: 0.7;
+}
+
+.breadcrumb-item::before {
+  content: attr(data-separator);
+  padding: 0 2px;
+  color: map-get($colors, on-surface);
+}
+
+.breadcrumb-item:first-of-type::before {
+  content: '';
+  padding: 0;
+}
+
+.breadcrumb-item:last-of-type > a,
+.breadcrumb-item .disabled {
+  color: map-get($colors, grey-2) !important;
+  cursor: default;
+}
+
+.breadcrumb-item .disabled {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.breadcrumb-item:last-of-type > a:hover {
+  opacity: 1;
+}
+
+.item-color {
+  text-wrap: nowrap;
+}
+
+@include media-breakpoint-down(md) {
+  .breadcrumb-route {
+    margin-top: 0px;
+  }
+  .breadcrumb-item {
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+@media (max-width: 450px) {
+  .breadcrumb-route {
+    margin-top: 0px;
+  }
+  .breadcrumb-item {
+    font-size: 10px;
+    font-weight: 300;
+  }
+}
+
+@media (max-width: 385px) {
+  .breadcrumb-route {
+    margin-top: 0px;
+  }
+  .breadcrumb-item {
+    font-size: 8px;
+    font-weight: 300;
+  }
+}

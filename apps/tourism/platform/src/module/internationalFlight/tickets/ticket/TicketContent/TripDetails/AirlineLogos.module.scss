@@ -1,0 +1,82 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import 'styles/custom-variables';
+
+$overlay-margin: -6px;
+$image-offset: 4px;
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    width: 92px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: row;
+    height: 32px;
+  }
+}
+
+.many {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    width: 65px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.many .image-container:hover {
+  @include media-breakpoint-up(md) {
+    z-index: 1;
+  }
+}
+
+.image-container {
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid #e8e9e8;
+  height: 44px + $image-offset;
+  width: 44px + $image-offset;
+  overflow: hidden;
+  position: relative;
+  background-color: map-get($colors, white);
+
+  @include media-breakpoint-down(md) {
+    height: 32px + $image-offset;
+    width: 32px + $image-offset;
+    min-width: 32px + $image-offset;
+  }
+}
+
+.many .image-container {
+  @include media-breakpoint-up(md) {
+    height: 40px + $image-offset;
+    width: 40px + $image-offset;
+  }
+
+  margin: $overlay-margin;
+}
+
+.title {
+  font-size: map-get($font-sizes, 3);
+
+  @include media-breakpoint-down(md) {
+    font-size: map-get($font-sizes, 2);
+  }
+}
+
+.popover {
+  padding: 8px 4px;
+  font-size: map-get($font-sizes, 2);
+}

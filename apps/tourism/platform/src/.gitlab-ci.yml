@@ -1,0 +1,355 @@
+.npm-cache-config: &npm-cache-config
+  paths:
+    - .npm/_cacache/
+  key:
+    files:
+      - package-lock.json
+    prefix: "npm-global"
+
+.next-cache-config: &next-cache-config
+  paths:
+    - .next/cache/
+  key: "next-$CI_COMMIT_REF_SLUG"
+
+stages:
+  - test
+  - build
+  - dockerize
+  - deploy
+
+sonarqube-check:
+  stage: test
+  image: p-repo.780.ir/sonar-scanner-cli:latest
+  allow_failure: true
+  only:
+    - merge_requests
+    - main
+    - stage
+  variables:
+    SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar'
+    GIT_DEPTH: '0'
+  script:
+    - sonar-scanner
+
+build-development:
+  stage: build
+  tags:
+    - node-builder
+  cache:
+    - <<: *npm-cache-config
+    - <<: *next-cache-config
+  variables:
+    NEXT_TELEMETRY_DISABLED: 1
+  before_script:
+    - echo "Cache directory contents before build:"
+    - ls -la .next/cache/ || echo "Cache directory does not exist yet"
+    - ls -la .npm/_cacache/ || echo "NPM cache directory does not exist yet"
+  script:
+    - npm ci --cache .npm
+    - npm run generate:specs
+    - CI='' npm run build:development
+    - tar czf dev-build.tar.gz .next/standalone .next/static public
+  artifacts:
+    paths:
+      - dev-build.tar.gz
+    expire_in: 20 minutes
+
+  only:
+    - dev
+
+build-staging:
+  stage: build
+  tags:
+    - node-builder
+  cache:
+    - <<: *npm-cache-config
+    - <<: *next-cache-config
+  variables:
+    SENTRY_LOG_LEVEL: debug
+    NEXT_TELEMETRY_DISABLED: 1
+  before_script:
+    - echo "Cache directory contents before build:"
+    - ls -la .next/cache/ || echo "Cache directory does not exist yet"
+    - ls -la .npm/_cacache/ || echo "NPM cache directory does not exist yet"
+  script:
+    - npm ci --cache .npm
+    - npm run generate:specs
+    - CI='' npm run build:staging
+    - tar czf stage-build.tar.gz .next/standalone .next/static public
+  artifacts:
+    paths:
+      - stage-build.tar.gz
+    expire_in: 20 minutes
+  only:
+    - stage
+
+build-production:
+  stage: build
+  tags:
+    - node-builder
+  cache:
+    - <<: *npm-cache-config
+    - <<: *next-cache-config
+  variables:
+    NEXT_TELEMETRY_DISABLED: 1
+  before_script:
+    - echo "Cache directory contents before build:"
+    - ls -la .next/cache/ || echo "Cache directory does not exist yet"
+    - ls -la .npm/_cacache/ || echo "NPM cache directory does not exist yet"
+  script:
+    - npm ci --cache .npm
+    - npm run generate:specs
+    - CI='' npm run build:production
+    - tar czf build.tar.gz .next/standalone .next/static public
+  artifacts:
+    paths:
+      - build.tar.gz
+    expire_in: 20 minutes
+
+  only:
+    - main
+    - test
+
+build-travel:
+  stage: build
+  tags:
+    - node-builder
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install --legacy-peer-deps
+    - npm run generate:specs
+    - CI='' npm run build:travel
+    - tar cvf build.tar .next public package.json package-lock.json .npmrc
+      next.config.js
+  artifacts:
+    paths:
+      - build.tar
+    expire_in: 20 minutes
+
+  only:
+    - main
+
+docker_build_dev:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-development
+  script:
+    - docker build --build-arg BUILD_FILE=dev-build.tar.gz -t
+      p-repo.780.ir/dev-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push p-repo.780.ir/dev-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - dev
+
+docker_build_stage:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-staging
+  script:
+    - docker build --build-arg BUILD_FILE=stage-build.tar.gz -t
+      p-repo.780.ir/stage-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push p-repo.780.ir/stage-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - stage
+
+docker_build_prod:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-production
+  script:
+    - docker build -t p-repo.780.ir/$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push p-repo.780.ir/$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+
+docker_build_travel:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-travel
+  script:
+    - docker build -f Dockerfile.travel --build-arg BUILD_FILE=build.tar -t
+      p-repo.780.ir/travel-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push p-repo.780.ir/travel-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+
+docker_build_test:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-production
+  script:
+    - docker build -t p-repo.780.ir/test-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+      .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push p-repo.780.ir/test-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+    - test
+
+docker_build_test_tourism:
+  stage: dockerize
+  tags:
+    - front-end
+  needs:
+    - build-staging
+  script:
+    - docker build -t
+      p-repo.780.ir/test-tourism-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA .
+    - docker login p-repo.780.ir -u runner -p $DOCKER_PASS
+    - docker push
+      p-repo.780.ir/test-tourism-$CI_PROJECT_TITLE:$CI_COMMIT_SHORT_SHA
+  only:
+    - test-tourism
+
+deploy_to_dev_kube:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: newdev
+
+  needs:
+    - docker_build_dev
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n dev-tourism $CI_PROJECT_TITLE hafhashtad/nodejs-front
+        --set image.tag=$CI_COMMIT_SHORT_SHA 
+        --set replicaCount=1 
+        --set customImage.enabled=true
+        --set customImage.name=dev-$CI_PROJECT_TITLE
+
+  only:
+    - dev
+
+deploy_to_stage_kube:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: stage
+  needs:
+    - docker_build_stage
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n stage-tourism $CI_PROJECT_TITLE hafhashtad/nodejs-front 
+        --set image.tag=$CI_COMMIT_SHORT_SHA 
+        --set replicaCount=1
+        --set customImage.enabled=true
+        --set customImage.name=stage-$CI_PROJECT_TITLE
+  only:
+    - stage
+
+deploy_to_prod_kube:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: production
+  needs:
+    - docker_build_prod
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n production $CI_PROJECT_TITLE
+      hafhashtad/nodejs-front --set image.tag=$CI_COMMIT_SHORT_SHA
+  when: manual
+  only:
+    - main
+    
+
+deploy_to_prod_kube_test:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: production
+    kubernetes:
+      namespace: production
+  needs:
+    - docker_build_test
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n production test-$CI_PROJECT_TITLE
+      hafhashtad/nodejs-front --set image.tag=$CI_COMMIT_SHORT_SHA --set
+      replicaCount=1
+  when: manual
+  only:
+    - main
+    - test
+
+deploy_to_prod_kube_test_tourism:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: stage
+  needs:
+    - docker_build_test_tourism
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n stage-tourism test-$CI_PROJECT_TITLE
+      hafhashtad/nodejs-front 
+      --set image.tag=$CI_COMMIT_SHORT_SHA
+        --set ingress.hosts[0].host=test-tourism.780.ir 
+        --set ingress.enabled=true
+        --set ingress.hosts[0].paths[0].path=/ 
+        --set ingress.hosts[0].paths[0].pathType=Prefix 
+        --set ingress.tls[0].hosts[0]=test-tourism.780.ir 
+        --set ingress.tls[0].secretName=780.ir 
+        --set replicaCount=1
+        --set customImage.enabled=true
+        --set customImage.name=test-tourism-$CI_PROJECT_TITLE
+  only:
+    - test-tourism
+
+deploy_to_prod_kube_travel:
+  tags:
+    - kube
+  stage: deploy
+  environment:
+    name: production
+    kubernetes:
+      namespace: production
+  needs:
+    - docker_build_travel
+  script:
+    - kubectl config use-context "$KUBE_CONTEXT"
+    - helm repo add hafhashtad https://nexus.780.ir/repository/local-charts
+      --username "$CHARTUSER" --password "$CHARTPASS"
+    - helm repo update
+    - helm upgrade --install -n production travel-$CI_PROJECT_TITLE
+      hafhashtad/nodejs-front --set image.tag=$CI_COMMIT_SHORT_SHA --set
+      replicaCount=1
+  when: manual
+  only:
+    - main
+

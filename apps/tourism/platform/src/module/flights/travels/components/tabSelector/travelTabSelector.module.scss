@@ -1,0 +1,19 @@
+.item--options {
+  border-radius: 2px;
+  color: map-get($colors, grey-1);
+  font-weight: 500;
+  font-size: 14px;
+  width: 172px;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  &--active {
+    border-bottom: 3px solid map-get($colors, primary);
+    border-radius: 2px;
+    width: 172px;
+    color: map-get($colors, primary);
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+}

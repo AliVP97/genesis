@@ -1,0 +1,8 @@
+.title {
+  margin-bottom: 24px;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 12px;
+    font-size: map-get($map: $font-sizes, $key: 3);
+  }
+}

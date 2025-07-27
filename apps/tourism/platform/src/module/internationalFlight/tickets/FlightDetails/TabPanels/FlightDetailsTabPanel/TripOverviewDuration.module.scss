@@ -1,0 +1,52 @@
+.duration-container {
+  width: 100%;
+  max-width: 197px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  @include breakpoint-down(xs) {
+    min-width: 120px;
+  }
+
+  @include breakpoint-down(xxs) {
+    min-width: 86px;
+  }
+}
+
+.duration {
+  display: flex;
+  padding: 0 4px;
+  white-space: nowrap;
+  font-size: map-get($map: $font-sizes, $key: 3);
+
+  @include breakpoint-down(md) {
+    font-weight: map-get($map: $font-weights, $key: '300');
+    font-size: map-get($map: $font-sizes, $key: 1);
+  }
+
+  @media screen and (max-width: 335px) {
+    flex-wrap: wrap;
+  }
+}
+
+.arrow-tail {
+  min-width: 15px;
+  flex-grow: 1;
+  width: 100%;
+  border-radius: 50px;
+  border-bottom: 2px solid map-get($colors, grey-21);
+}
+
+.arrow-head {
+  border: solid map-get($colors, grey-21);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(135deg);
+  margin-right: -9px;
+  margin-left: 3px;
+}

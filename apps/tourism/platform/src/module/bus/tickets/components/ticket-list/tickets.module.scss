@@ -1,0 +1,34 @@
+.tickets {
+  &__bottomSheet {
+    [data-rsbs-header='true'] {
+      padding: 0 !important;
+    }
+    [data-rsbs-footer='true'] {
+      padding: 0 !important;
+      box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
+    }
+    [data-rsbs-scroll] {
+      background-color: #fafafa;
+    }
+  }
+  &__accordion {
+    [role='button'] {
+      cursor: default;
+    }
+  }
+  &.is-superapp {
+    padding-bottom: 6rem;
+  }
+
+  .full-capacity {
+    direction: rtl;
+    margin-bottom: 12px;
+    color: map-get($map: $colors, $key: on-primary-container);
+    font-size: 14px;
+    font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+      font-size: 16px;
+    }
+  }
+}

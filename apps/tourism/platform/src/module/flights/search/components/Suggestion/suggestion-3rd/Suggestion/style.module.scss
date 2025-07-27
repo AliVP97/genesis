@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    row-gap: 24px;
+  }
+
+  .title {
+    padding-block: 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+
+    @media screen and (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .accordion-item {
+    background-color: transparent;
+
+    &.suggestion-type-nearest {
+      background-color: map-get($map: $colors, $key: blue-light-4);
+    }
+
+    &.suggestion-type-lowestPrice {
+      background-color: map-get($map: $colors, $key: green-2);
+    }
+
+    @media screen and (min-width: 768px) {
+      border-radius: 12px;
+      margin-inline: unset;
+    }
+
+    &__button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 16px;
+
+      font-size: 14px;
+      font-weight: 700;
+
+      @media screen and (min-width: 768px) {
+        width: 100%;
+        padding: 24px 32px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      &__context {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @media screen and (min-width: 768px) {
+          width: fit-content;
+          justify-content: unset;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+a.container {
+  text-decoration: none;
+  position: relative;
+  //   height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 50px;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: rgb(230, 22, 93);
+  color: rgb(255, 255, 255);
+  text-align: center;
+
+  > span:first-child {
+    //   position: absolute;
+    //   left: 10%;
+    //   font-size: 12px;
+    font-weight: 600;
+    //   color: white;
+    //   border-bottom: 1px solid;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: max-content;
+    padding: 15px 5px;
+    // padding-bottom: 35px;
+
+    // > span:first-child {
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 12px;
+    //   width: fit-content;
+    //   margin: auto;
+    // }
+  }
+}

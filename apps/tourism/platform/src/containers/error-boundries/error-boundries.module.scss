@@ -1,0 +1,18 @@
+.error {
+  &__content {
+    width: 80%;
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    direction: rtl;
+    border-radius: 16px;
+  }
+
+  &__btn {
+    border: none;
+    outline: none;
+  }
+}

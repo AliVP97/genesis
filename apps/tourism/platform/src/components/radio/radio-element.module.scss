@@ -1,0 +1,55 @@
+.radio {
+  display: flex;
+  padding: 1rem 0rem;
+  align-items: center;
+  cursor: pointer;
+  &--disabled{
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+  &__label{
+    &--disabled {
+      color: #ccc;
+    }
+  }
+}
+
+.circle {
+  &__outer {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 3px solid map-get($colors, on-surface-var);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+
+    &--active {
+      border-color: map-get($colors, primary);
+    }
+
+    &--disabled{
+      border-color: #ccc;
+      outline:unset;
+    }
+  }
+
+  &__inner {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+
+    &--active {
+      background-color: map-get($colors, primary);
+
+    }
+
+    &--disabled{
+      background-color: #ccc;
+    }
+  }
+}

@@ -1,0 +1,487 @@
+.datepicker {
+  background-color: map-get($colors, surface-container-low);
+  color: map-get($colors, on-surface-var);
+  direction: rtl;
+  border-radius: 1rem;
+  position: relative;
+  &__wraper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  &__container {
+    // height: calc(100% - 248px); // DO NOT REMOVE
+    height: calc(100% - 298px);
+    overflow: auto;
+  }
+  &__dismiss {
+    width: 100%;
+    height: 56px;
+    z-index: 15;
+    background-color: map-get($colors, surface);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+
+    &--icon {
+      position: absolute;
+      left: 1rem;
+      fill: map-get($colors, on-surface);
+    }
+  }
+  &__header {
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    width: 100%;
+    background-color: map-get($colors, surface);
+    opacity: 1;
+
+    .title {
+      color: map-get($colors, tertiary);
+      width: 50%;
+      text-align: right;
+    }
+
+    .calendar-type-switch {
+      display: flex;
+      width: 50%;
+    }
+  }
+
+  &__input {
+    padding: 20px 56px 20px 20px;
+    position: relative;
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    fill: map-get($colors, on-surface-var);
+  }
+
+  &__divider {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 0 1em;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    z-index: 3;
+
+    > div {
+      width: 100%;
+      background-color: map-get($colors, surface-container);
+      margin: 0;
+      height: 1px;
+    }
+  }
+
+  &__footer {
+    z-index: 99;
+    width: 100%;
+    // height: 136px; // DO NOT REMOVE
+    height: 186px;
+    background-color: map-get($colors, surface-container);
+    direction: rtl;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+
+    &--active {
+      background-color: map-get($colors, surface-container);
+    }
+
+    &--from {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--to {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--from.active,
+    &--to.active {
+      position: relative;
+    }
+
+    &--from.active::before,
+    &--to.active::before {
+      display: block;
+      content: '';
+      position: absolute;
+      z-index: 2;
+      width: 50%;
+      height: 2px;
+      background-color: map-get($colors, tertiary);
+      top: -16px;
+      right: 25%;
+      border-radius: 4px;
+    }
+
+    &--from.active::after,
+    &--to.active::after {
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid map-get($colors, tertiary);
+      display: block;
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: -16px;
+      right: calc(50% - 8px);
+    }
+
+    &--divider {
+      position: absolute;
+      height: 50px;
+      width: 1px;
+      right: 50%;
+      background-color: map-get($colors, outline-var);
+      top: calc(100% - 50px);
+    }
+
+    &--pointer {
+      height: 2px;
+      width: 20%;
+      background-color: map-get($colors, tertiary);
+      z-index: 8;
+      position: absolute;
+      top: 0;
+      right: 15%;
+      transition: all 0.2s ease;
+      display: none;
+    }
+
+    .date {
+      span {
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+
+    &--info {
+      min-height: 50px;
+      position: relative;
+      span {
+        font-size: 12px;
+        color: map-get($colors, on-surface);
+        text-align: center;
+      }
+      .title {
+        padding-bottom: 8px;
+      }
+
+      .main {
+        font-size: map-get($font-sizes, 3);
+        color: map-get($colors, on-surface) !important;
+      }
+
+      .secondary {
+        color: map-get($colors, on-surface-var) !important;
+        font-size: map-get($font-sizes, 2);
+        font-family: 'Roboto';
+      }
+    }
+  }
+  &__submit {
+    border: none;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, on-primary);
+    margin-top: 1rem;
+    padding: 0.5rem 10rem;
+    border-radius: 1rem;
+
+    &--disabled {
+      background-color: rgba(map-get($colors, on-surface), 0.12);
+      color: rgba(map-get($colors, on-surface), 0.38);
+    }
+  }
+}
+.fix-page-height {
+  display: none;
+}
+
+.desktop-layout {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .right {
+    flex: 1;
+  }
+  .left {
+    width: 250px;
+    border-right: 1px solid map-get($colors, surface-dim);
+
+    .occasions {
+      text-align: right;
+      font-size: 13px;
+
+      .header {
+        padding: 10px;
+        background: map-get($colors, surface);
+        font-weight: 500;
+        text-align: center;
+        margin: 15px 0;
+      }
+      .months {
+        height: 320px;
+        overflow-y: auto;
+        margin-right: 1px;
+
+        // scroll bar
+        &::-webkit-scrollbar {
+          width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+          background: none;
+          width: 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: map-get($colors, surface-dim);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: map-get($colors, on-surface-var);
+        }
+
+        .month {
+          padding: 0 5px;
+          margin-bottom: 12px;
+
+          .title {
+            padding-right: 8px;
+            margin-bottom: 5px;
+          }
+
+          .day {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 3px;
+
+            .number {
+              width: 30px;
+              height: 18px;
+              border-left: 1px solid map-get($colors, surface-dim);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-top: 4px;
+              font-weight: 500;
+              font-size: 14px;
+            }
+
+            .type-holiday {
+              color: map-get($colors, error);
+            }
+
+            .description {
+              flex: 1;
+              padding: 0 10px;
+              color: map-get($colors, on-surface-var);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .datepicker {
+    position: relative;
+    display: flex;
+    direction: rtl;
+    z-index: 1;
+    &__divider {
+      width: 1px;
+      position: absolute;
+      height: 100%;
+      right: 49%;
+      left: 49%;
+      z-index: 3;
+      padding: 0;
+      background-color: map-get($colors, outline-var);
+      > div {
+        width: 100%;
+        margin: 0;
+        height: 1px;
+      }
+    }
+
+    &__input {
+      padding: 20px 50px 20px 0;
+      position: relative;
+      // width: 50%;
+      flex-grow: 1;
+    }
+
+    &__wraper {
+      overflow: hidden;
+      height: auto;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+      border-radius: 16px;
+      position: absolute;
+      z-index: 3;
+      direction: ltr;
+      background: map-get($colors, surface-saj);
+      width: 654px;
+      width: 750px;
+      transform: scale(0.9, 0.9);
+      top: 45px;
+      right: -35px;
+    }
+    &__header {
+      box-shadow: unset;
+      background: none;
+
+      .title {
+        width: 33.333%;
+        text-align: center;
+      }
+
+      .calendar-type-switch {
+        width: 33.333%;
+      }
+    }
+    &__container {
+      margin: unset;
+      overflow: visible;
+    }
+    &__footer {
+      position: relative;
+      flex-direction: row;
+      box-shadow: none;
+      height: auto;
+      padding: 15px 0;
+
+      &--info {
+        height: 50px;
+        position: relative;
+
+        .datepicker__footer--from {
+          width: 50%;
+          display: flex;
+          flex-direction: unset;
+          align-items: center;
+        }
+
+        .datepicker__footer--to {
+          width: 50%;
+          display: flex;
+          flex-direction: unset;
+          align-items: center;
+        }
+
+        .datepicker__footer--from.active::before,
+        .datepicker__footer--to.active::before {
+          height: 3px;
+          top: -21px;
+          border-radius: 4px;
+        }
+
+        .datepicker__footer--from.active::after,
+        .datepicker__footer--to.active::after {
+          top: -20px;
+        }
+
+        .datepicker__footer--divider {
+          top: 0;
+          height: 100%;
+        }
+
+        .title {
+          font-size: 14px;
+          padding-bottom: 0;
+        }
+        .date {
+          display: flex;
+          flex-direction: column;
+          span {
+            font-size: 14px;
+            color: map-get($colors, on-surface);
+            &:last-child {
+              display: block;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+    }
+    &__submit {
+      border: none;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, on-primary);
+      margin-top: unset;
+      padding: 0.5rem 4rem;
+      border-radius: 10rem;
+      width: 152px;
+      height: 48px;
+      margin-left: 1.5rem;
+
+      &--disabled {
+        background-color: rgba(map-get($colors, on-surface), 0.12);
+        color: rgba(map-get($colors, on-surface), 0.38);
+      }
+    }
+  }
+  .fix-page-height {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    height: 1px;
+    width: 100%;
+    top: 700px;
+    right: 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .datepicker {
+    &__wraper {
+      width: 768px;
+      width: 900px;
+      transform: scale(0.9, 0.9);
+      transform: scale(1, 1);
+      top: 45px;
+      top: 75px;
+      right: -250px;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .datepicker {
+    &__wraper {
+      width: 768px;
+      width: 900px;
+      transform: scale(1, 1);
+      top: 75px;
+      right: 0;
+      right: -185px;
+    }
+  }
+}

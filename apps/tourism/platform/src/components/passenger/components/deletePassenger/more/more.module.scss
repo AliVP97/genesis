@@ -1,0 +1,40 @@
+.passengerList {
+  direction: rtl;
+  &__item {
+    &--btn {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+    }
+
+    &--dropdown {
+      position: relative;
+      &-content {
+        z-index: 5;
+        background-color: map-get($map: $colors, $key: white);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        width: 150px;
+        position: absolute;
+        top: 35px;
+
+        border-radius: 16px;
+        border: 1px solid map-get($map: $colors, $key: grey-2);
+        display: flex;
+        flex-direction: column;
+        div {
+          width: 100%;
+          padding: 0.6rem;
+          text-align: start;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+
+          svg {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.notification {
+  &--warn {
+    > div:nth-child(2) {
+      direction: rtl;
+      text-align: justify;
+      font-size: map-get($font-sizes, 3);
+      padding: 0 0.5rem;
+      background-color: map-get($colors, black);
+      color: map-get($colors, white);
+    }
+
+    div:first-child {
+      display: none !important;
+    }
+
+    &--wrapper {
+      margin: 0 1rem;
+      bottom: 4.5rem;
+    }
+  }
+}

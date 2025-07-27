@@ -1,0 +1,44 @@
+.main {
+  padding: 0 20px;
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 18px;
+    padding-right: 5px;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    overflow-x: auto;
+
+    // scroll bar
+    &::-webkit-scrollbar {
+      height: 0px;
+    }
+    &::-webkit-scrollbar-track {
+      background: none;
+      height: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgb(188, 188, 188);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .main {
+    margin-top: 30px;
+    padding: 0;
+
+    .title {
+      font-size: 22px;
+    }
+  }
+}

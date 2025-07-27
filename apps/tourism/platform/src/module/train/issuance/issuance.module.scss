@@ -1,0 +1,60 @@
+.issuing {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 9rem;
+  &__desktop {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  &__description {
+    text-align: center;
+    padding-top: 3rem;
+    &--done {
+      color: map-get($colors, green-1);
+      text-align: center;
+      padding-top: 3rem;
+    }
+    &--failed {
+      color: map-get($colors, red-1);
+      text-align: center;
+      padding-top: 3rem;
+    }
+  }
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__isSupperapp {
+      padding-bottom: 70px;
+    }
+    &__btn {
+      height: 48px;
+      border-radius: 25px;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      border: none !important;
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 343px;
+      font-size: 14px;
+      margin-bottom: 0.8rem;
+      &__return {
+        height: 48px;
+        border-radius: 25px;
+        background-color: transparent;
+        color: map-get($colors, grey-1);
+        border: solid 2px map-get($colors, grey-1) !important;
+        font-weight: 500;
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        width: 343px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.add-passenger-header {
+  height: 56px;
+  background-color: map-get($map: $colors, $key: gray-18);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    position: absolute;
+    right: 20px;
+  }
+  &--add {
+    position: absolute;
+    left: 20px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .add-passenger-header {
+    box-shadow: none;
+    justify-content: flex-end;
+    padding-right: 24px;
+    border-bottom: 1px solid #cac4d0;
+  }
+}

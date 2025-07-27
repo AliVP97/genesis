@@ -1,0 +1,20 @@
+.payment {
+  &__banner {
+    max-width: 410px;
+    padding-bottom: 15px;
+    margin: auto;
+    span {
+      img {
+        border-radius: 16px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 720px) {
+  .payment {
+    &__banner {
+      margin: 8px auto;
+      padding-bottom: 0px;
+    }
+  }
+}

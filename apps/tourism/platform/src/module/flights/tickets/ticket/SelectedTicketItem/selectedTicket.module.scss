@@ -1,0 +1,38 @@
+.selectedTicket {
+  margin-top: 1rem;
+  position: relative;
+  &__accordion {
+    [role='button'] {
+      cursor: default;
+    }
+  }
+  &__header {
+    background-color: map-get($colors, primary);
+    height: 50px;
+    color: map-get($colors, white);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    direction: rtl;
+  }
+}
+.selectedTicket:before,
+.selectedTicket:after {
+  content: '';
+  position: absolute;
+  top: calc(0.9em + 26px);
+  height: 1em;
+  width: 0.6em;
+  border: 5px solid map-get($colors, white-1);
+}
+.selectedTicket:before {
+  left: -5px;
+  border-radius: 0 1em 1em 0;
+  border-left-color: map-get($colors, white-1);
+  z-index: 2;
+}
+.selectedTicket:after {
+  right: -5px;
+  border-radius: 1em 0 0 1em;
+  border-left-color: map-get($colors, white-1);
+}

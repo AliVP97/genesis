@@ -1,0 +1,30 @@
+.passengerForm {
+  &__type {
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    align-items: center;
+    width: 223px;
+    height: 36px;
+    background-color: map-get($colors, grey-3);
+    border-radius: 8px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      letter-spacing: 0.23px;
+      font-size: map-get($font-sizes, 2);
+      height: 80%;
+      padding: 0 0.75rem;
+      border-radius: 8px;
+      margin: 0 0.25rem;
+    }
+
+    &--active {
+      background-color: map-get($colors, primary) !important;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+}

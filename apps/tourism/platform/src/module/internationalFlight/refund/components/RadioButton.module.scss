@@ -1,0 +1,19 @@
+.box {
+  @include media-breakpoint-up(md) {
+    div {
+      padding: 0;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 2px 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px map-get($map: $colors, $key: grey-8);
+  }
+
+  span {
+    @include media-breakpoint-down(md) {
+      font-size: map-get($map: $font-sizes, $key: 3);
+    }
+  }
+}

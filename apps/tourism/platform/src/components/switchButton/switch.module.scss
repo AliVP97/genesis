@@ -1,0 +1,62 @@
+.switch {
+  margin: 0;
+  padding: 0;
+  color: map-get($colors, on-surface);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 33px;
+  height: 11px;
+  line-height: 22px;
+  vertical-align: middle;
+  background-color: map-get($colors, surface-container-highest);
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:focus:hover {
+    box-shadow: none;
+  }
+  &--checked {
+    background-color: map-get($colors, primary);
+    .switch--handle {
+      left: calc(100% - 15px);
+      &::before {
+        background-color: map-get($colors, on-primary);
+      }
+    }
+  }
+  &--handle {
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    width: 17px;
+    height: 17px;
+    transition: all 0.2s ease-in-out;
+    &::before {
+      position: absolute;
+      inset: 0;
+      background-color: #fff;
+      border-radius: 9px;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+      transition: all 0.2s ease-in-out;
+      content: '';
+    }
+  }
+  &--inner {
+    display: block;
+    margin: 0 7px 0 25px;
+    color: map-get($colors, surface);
+    font-size: 12px;
+    transition: margin 0.2s;
+  }
+}

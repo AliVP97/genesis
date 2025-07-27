@@ -1,0 +1,100 @@
+.passenger-list {
+  direction: rtl;
+  width: 100%;
+  background: map-get($map: $colors, $key: white);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.152941);
+  border-radius: 8px;
+  &__header {
+    background-color: map-get($colors, blue-grey);
+    color: map-get($colors, grey-1);
+    font-size: map-get($font-sizes, 2);
+    border: 0;
+    height: 48px;
+    text-align: center;
+    th {
+      &:nth-child(1) {
+        border-radius: 0px 8px 0 0 !important;
+      }
+      &:last-of-type {
+        border-radius: 8px 0px 0 0 !important;
+      }
+    }
+  }
+  &__body {
+    tr {
+      text-align: center;
+      height: 56px;
+      font-size: map-get($font-sizes, 3);
+    }
+  }
+  &__add {
+    margin: 1rem 0;
+
+    &-passenger {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      padding: 0 1rem 1rem;
+      &.is-superapp {
+        bottom: 4rem;
+      }
+      &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        &:disabled {
+          opacity: 1;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      border: 2px dashed map-get($colors, grey-7);
+      background-color: transparent;
+      color: map-get($colors, grey-1);
+      border-radius: 8px;
+      padding: 0.75rem 0;
+      cursor: pointer;
+
+      &:focus {
+        color: map-get($colors, primary);
+        border-color: map-get($colors, primary);
+
+        svg {
+          fill: map-get($colors, primary);
+        }
+      }
+    }
+  }
+}
+
+.modal-info {
+  direction: rtl;
+  background-color: map-get($colors, white) !important;
+  width: 75%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.254902);
+  padding: 20px 30px;
+
+  &__cancel-btn {
+    border: 2px solid map-get($colors, grey-1) !important;
+    color: map-get($colors, grey-1) !important;
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .modal-info {
+    &__cancel-btn {
+      border: 0 !important;
+      background-color: map-get($map: $colors, $key: white);
+      box-shadow: none;
+    }
+  }
+}

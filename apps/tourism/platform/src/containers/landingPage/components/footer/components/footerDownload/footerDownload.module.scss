@@ -1,0 +1,44 @@
+.footer-download {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4px 0 16px;
+  &__section {
+    width: 50%;
+    padding: 4px;
+    display: flex;
+    &__button {
+      cursor: pointer;
+      width: 100%;
+      border: 2px solid white;
+      background-color: map-get($colors, 'primary');
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-radius: 8rem;
+      color: white;
+      padding: 10px 12px;
+      text-decoration: none;
+      text-wrap: nowrap;
+      &__text {
+        font-size: 12px;
+        direction: rtl;
+        display: flex;
+        text-align: right;
+        font-weight: 400;
+        padding-right: 12px;
+      }
+      &__icon {
+        path {
+          fill: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .footer-download {
+    padding-bottom: 0;
+  }
+}

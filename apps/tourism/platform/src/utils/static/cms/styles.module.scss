@@ -1,0 +1,47 @@
+.main-container {
+  background-color: #eaf1f8;
+  margin: auto;
+  text-align: right;
+  direction: rtl;
+  &__table {
+    border: 1px solid;
+    max-width: 500px;
+    margin: 16px auto;
+    td {
+      text-align: center;
+      border: 1px solid;
+      div {
+        color: map-get($colors, primary);
+        text-decoration: underline;
+        text-decoration-color: map-get($colors, primary);
+      }
+    }
+  }
+  &__box {
+    border: 2px solid #000;
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+  h1 {
+    text-align: center;
+  }
+  ul,
+  li {
+    direction: rtl;
+    text-align: right;
+  }
+  p {
+    direction: rtl;
+    text-align: justify;
+    margin-bottom: 22px;
+  }
+}

@@ -1,0 +1,22 @@
+.refund {
+  &__ticket-box {
+    border-radius: 10px;
+    background-color: map-get($colors, white);
+  }
+}
+
+.Details {
+  &__item {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    &__header {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+
+  &__active {
+    border-bottom-width: 3px !important;
+    border-bottom-color: map-get($colors, primary) !important;
+  }
+}

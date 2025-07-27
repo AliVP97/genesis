@@ -1,0 +1,476 @@
+.passengerList {
+  direction: rtl;
+  padding-top: 1rem;
+
+  &__container {
+    margin-bottom: 3.75rem;
+    overflow-y: auto;
+    padding-bottom: 5rem;
+  }
+
+  &__search {
+    &--input {
+      border-radius: 18px;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+      background-color: map-get($colors, grey-12);
+      font-size: map-get($font-sizes, 3);
+      padding-right: 1.5rem;
+      height: 36px;
+      border: none;
+      outline: none;
+    }
+    &--icon {
+      fill: map-get($colors, red-1);
+    }
+  }
+
+  &__add {
+    margin: 1rem 0;
+
+    &-passenger {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      padding: 0 1rem 1rem;
+      &.is-superapp {
+        bottom: 4rem;
+      }
+      &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+
+        &:disabled {
+          opacity: 1;
+        }
+      }
+    }
+
+    button {
+      width: 100%;
+      border: 2px dashed map-get($colors, grey-7);
+      background-color: transparent;
+      color: map-get($colors, grey-1);
+      border-radius: 8px;
+      padding: 0.75rem 0;
+      cursor: pointer;
+
+      &:focus {
+        color: map-get($colors, primary);
+        border-color: map-get($colors, primary);
+
+        svg {
+          fill: map-get($colors, primary);
+        }
+      }
+    }
+  }
+
+  &__modal {
+    background-color: $white;
+    left: 2rem;
+    right: 2rem;
+    top: 40%;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+
+    &--header {
+      padding-bottom: 1.5rem;
+      font-size: map-get($font-sizes, 3);
+      color: #000;
+    }
+
+    &--content {
+      span {
+        padding-right: 0.5rem;
+        color: map-get($colors, black);
+      }
+
+      svg {
+        fill: map-get($colors, grey-1);
+      }
+
+      padding-bottom: 2.5rem;
+    }
+
+    &--footer {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        border: none;
+        background-color: transparent;
+        color: map-get($colors, primary);
+        font-weight: bold;
+
+        &:last-of-type {
+          padding-right: 1.5rem;
+        }
+      }
+    }
+  }
+
+  &__warning {
+    background-color: #feefb3;
+    margin: -1rem -1rem 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &--title {
+      margin-bottom: 0.5rem;
+      display: flex;
+      text-align: start;
+      line-height: 1.71;
+      letter-spacing: -0.24px;
+      color: #9f6000;
+      font-size: map-get($font-sizes, 2);
+
+      span {
+        margin-right: 0.5rem;
+      }
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--btn {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: auto;
+
+      span {
+        margin-left: 0.25rem;
+        border: none;
+        background-color: transparent;
+        letter-spacing: -0.56px;
+        font-size: map-get($font-sizes, 3);
+      }
+    }
+  }
+
+  &__item {
+    background-color: #fff;
+    margin: 0.75rem 0;
+    padding: 1rem;
+    height: 64px;
+    border-radius: 1rem;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &--title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+    }
+
+    &--btn {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      outline: none;
+    }
+
+    &--dropdown {
+      position: relative;
+      padding-right: 0.5rem;
+
+      &-content {
+        z-index: 5;
+        background-color: #fff;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        width: 150px;
+        position: absolute;
+        top: 45px;
+        left: -1rem;
+        border-radius: 16px;
+        border: 1px solid #707070;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          width: 100%;
+          padding: 0.6rem;
+          text-align: start;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.passenger {
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  margin-top: 2%;
+
+  &__search {
+    border-radius: 8px;
+    height: 2.25rem;
+    outline: none;
+
+    &:focus {
+      outline: 1px solid map-get($colors, primary);
+    }
+
+    &::placeholder {
+      color: map-get($colors, grey-10);
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 8px;
+    right: 0.25rem;
+
+    &:nth-child(1) {
+      fill: map-get($colors, grey-10);
+    }
+  }
+
+  &__items {
+    border-radius: 8px;
+
+    th,
+    td {
+      padding: 0.5rem 1rem;
+    }
+
+    padding-left: 2px;
+
+    &__radius-right {
+      border-top-right-radius: 8px;
+    }
+
+    &__radius-left {
+      border-top-left-radius: 8px;
+    }
+
+    &__font {
+      font-size: map-get($font-sizes, 3);
+    }
+  }
+
+  &__add-detail-passenger {
+    padding: 1rem;
+
+    &__collapse {
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        height 1.5s ease,
+        opacity 0.5s;
+
+      &__expand {
+        height: 420px;
+        overflow: hidden;
+        visibility: visible;
+        opacity: 1;
+        transition:
+          height 0.5s ease,
+          opacity 1s;
+      }
+    }
+
+    &__add-icon {
+      fill: map-get($colors, grey-1);
+    }
+
+    &__close-icon {
+      fill: map-get($colors, black);
+    }
+  }
+
+  &__add-passenger {
+    border-radius: 8px;
+    border: 1px dashed map-get($colors, primary);
+    padding: 0.75rem 4.5rem;
+
+    &__add-icon {
+      transform: scale(0.85);
+
+      &:nth-child(1) {
+        fill: map-get($colors, primary);
+      }
+    }
+  }
+}
+
+.footer {
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+
+  &__icon {
+    transform: scale(0.85);
+
+    &:nth-child(1) {
+      fill: map-get($colors, grey-1);
+    }
+  }
+
+  &__btn {
+    width: 150px;
+    border-radius: 25px;
+    outline: none;
+    border: 1px solid map-get($colors, black);
+  }
+}
+
+.edit-modal {
+  padding: 25% 20%;
+
+  &__content {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    width: 60%;
+
+    &__input {
+      border-radius: 16px;
+    }
+  }
+}
+
+.container {
+  min-height: 50px;
+}
+
+.loader {
+  position: absolute;
+  right: 45%;
+  top: 45%;
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .passengerList {
+    &__modal {
+      position: absolute;
+      left: 37.5%;
+    }
+  }
+}
+
+@include media-breakpoint-between(xl, xxl) {
+  .passengerList {
+    &__modal {
+      position: absolute;
+      left: 37.5%;
+    }
+  }
+}
+
+@include media-breakpoint-between(lg, xl) {
+  .passengerList {
+    &__modal {
+      position: absolute;
+      left: 37.5%;
+    }
+  }
+}
+
+@include media-breakpoint-between(md, lg) {
+  .passenger {
+    font-size: map-get($font-sizes, 3);
+
+    &__items {
+      border-radius: 8px;
+
+      &__font {
+        font-size: map-get($font-sizes, 2);
+      }
+    }
+  }
+
+  .passengerList {
+    &__modal {
+      position: absolute;
+      left: 37.5%;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .passengerList {
+    &__modal {
+      position: absolute;
+      left: 37.5%;
+    }
+  }
+}
+
+.containerSizeMd {
+  .container {
+    border-bottom: none !important;
+  }
+
+  .passenger {
+    margin-top: 0 !important;
+
+    &__add-detail-passenger {
+      border-top: 1px solid #dee2e6;
+    }
+  }
+
+  &__add-new-passenger {
+    border: none;
+    background: none;
+    display: flex;
+
+    &__icon {
+      margin-left: 5px;
+      fill: #0063b9;
+    }
+
+    span {
+      color: #0063b9;
+    }
+  }
+}
+
+.passengers-list-container {
+  padding-bottom: 8rem;
+}

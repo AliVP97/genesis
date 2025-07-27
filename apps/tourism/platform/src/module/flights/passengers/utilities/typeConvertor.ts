@@ -1,0 +1,28 @@
+export const internationalFlightGenderConvertor = {
+  GENDER_TYPE_UNDEFINED: 'GENDER_UNDEFINED',
+  GENDER_TYPE_FEMALE: 'GENDER_FEMALE',
+  Gender_TYPE_RATHER_NOT_SAY: 'GENDER_UNDISCLOSED',
+  GENDER_TYPE_MALE: 'GENDER_MALE',
+  undefined: undefined,
+};
+
+export enum internationalFlightGenderEnum {
+  'GENDER_UNDEFINED',
+  'GENDER_MALE',
+  'GENDER_FEMALE',
+  'GENDER_UNDISCLOSED ',
+}
+
+export enum internationalFlightPassengerEnum {
+  'PASSENGER_TYPE_UNDEFINED',
+  'PASSENGER_TYPE_ADULT',
+  'PASSENGER_TYPE_CHILD',
+  'PASSENGER_TYPE_INFANT  ',
+}
+
+export const internationalFlightPassengerTypeConvertor = {
+  AGE_TYPE_UNDEFINED: 'PASSENGER_TYPE_UNDEFINED',
+  AGE_TYPE_ADULT: 'PASSENGER_TYPE_ADULT',
+  AGE_TYPE_CHILD: 'PASSENGER_TYPE_CHILD',
+  AGE_TYPE_INFANT: 'PASSENGER_TYPE_INFANT',
+};

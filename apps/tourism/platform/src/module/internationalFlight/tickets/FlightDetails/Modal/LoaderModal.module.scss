@@ -1,0 +1,21 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 60px;
+  padding-left: 60px;
+  border-radius: 25px;
+  max-height: 60px;
+  min-height: 120px;
+  background-color: map-get($map: $colors, $key: white);
+}

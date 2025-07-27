@@ -1,0 +1,18 @@
+.refund {
+  &__container {
+    background-color: map-get($colors, white);
+    border-radius: 8px;
+    height: 86px;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  &__title {
+    color: map-get($colors, tertiary);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  &__content {
+    color: map-get($colors, grey-1);
+  }
+}

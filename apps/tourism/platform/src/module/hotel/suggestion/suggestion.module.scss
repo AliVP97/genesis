@@ -1,0 +1,47 @@
+.suggestion-section {
+  background-color: #d5e3ff !important;
+  border-radius: 12px;
+  padding-bottom: 10px;
+}
+.suggestion-card {
+  border: 1.8px solid #cfd6df;
+  border-radius: 16px;
+  height: 268px;
+  width: 238px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.hotel-suggestion-swiper-next-button {
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.12));
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  padding: 10px 10px;
+  background-color: #ffffff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  left: 6px;
+  z-index: 2;
+}
+
+
+ .hotel-suggestion-swiper-prev-button {
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.12));
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    right: 6px;
+    z-index: 2;
+  }

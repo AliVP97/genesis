@@ -1,0 +1,12 @@
+.add-btn {
+  &__more {
+    border: 2px dashed map-get($map: $colors, $key: primary);
+    border-radius: 8px;
+    color: map-get($map: $colors, $key: primary);
+    padding: 10px 40px;
+  }
+  &__submit {
+    height: 60px;
+    width: 120px;
+  }
+}

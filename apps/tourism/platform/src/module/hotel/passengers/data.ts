@@ -1,0 +1,51 @@
+import { validations } from '../../train/passengers/form/validations';
+import { FromSchema } from 'containers/passengers/utilities/types';
+
+export const leaderFormFields: FromSchema[] = [
+  {
+    name: 'persianName',
+    label: 'نام',
+    type: 'autoComplete',
+    placeholder: '',
+    rules: validations.FirstName,
+    visible: true,
+    defaultValue: undefined,
+    autoCompleteSource: undefined,
+    autoCompleteCondition: (a, b) => a.persianName?.includes(b),
+  },
+  {
+    name: 'persianFamily',
+    label: 'نام خانوادگی',
+    type: 'autoComplete',
+    placeholder: '',
+    rules: validations.LastName,
+    visible: true,
+    defaultValue: undefined,
+    autoCompleteSource: undefined,
+    autoCompleteCondition: (a, b) => a.persianFamily?.includes(b),
+  },
+  {
+    name: 'phoneNumber',
+    label: 'موبایل',
+    type: 'text',
+    inputMode: 'numeric',
+    placeholder: '',
+    rules: validations.PhoneNumber,
+    visible: true,
+    defaultValue: undefined,
+    autoCompleteSource: undefined,
+    autoCompleteCondition: (a, b) => a.phoneNumber?.includes(b),
+  },
+  {
+    name: 'nationalId',
+    label: 'کد ملی',
+    type: 'text',
+    inputMode: 'numeric',
+    placeholder: '',
+    rules: validations.NationalCode,
+    visible: true,
+    defaultValue: undefined,
+    autoCompleteSource: undefined,
+    autoCompleteCondition: (a, b) => a.nationalId?.includes(b),
+  },
+];

@@ -1,0 +1,14 @@
+.bus-passenger {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  hr {
+    background-color: map-get($colors, grey-10);
+  }
+  &__header {
+    border-bottom: 1px solid map-get($colors, grey-7);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+}

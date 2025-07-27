@@ -1,0 +1,17 @@
+.container {
+  height: 56px;
+  border: 1px solid #6c7c93;
+  border-radius: 12px;
+  direction: rtl;
+  &__input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    font-weight: 400px;
+    color: #536279;
+  }
+}

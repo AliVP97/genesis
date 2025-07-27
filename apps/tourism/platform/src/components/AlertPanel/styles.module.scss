@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+  column-gap: 8px;
+  margin-top: 16px;
+  margin-inline: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: map-get($map: $font-sizes, $key: 2);
+  text-align: start;
+
+  &.info {
+    background-color: map-get($map: $colors, $key: orange-alert);
+    color: #c46f19;
+
+    .icon > path {
+      fill: #c46f19;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}

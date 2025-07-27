@@ -1,0 +1,56 @@
+.reviewTicket {
+  &__title {
+    font-weight: map-get($font-weights, '500');
+    padding: 16px 0 24px;
+  }
+
+  &__share-icon {
+    transform: scale(0.85);
+
+    :nth-child(2) {
+      fill: map-get($colors, black);
+    }
+  }
+
+  &__download-icon {
+    flex-flow: row nowrap;
+    padding-left: 8px;
+  }
+
+  &__divider {
+    padding: 1rem 0;
+    opacity: 0.17;
+    border-top: 2px solid map-get($colors, grey-8);
+    margin: 1.2rem 0 0;
+  }
+  &__content {
+    &__share-icon {
+      transform: scale(0.85);
+      margin-left: 1rem;
+    }
+    &__download-icon {
+      :nth-child(2) {
+        fill: map-get($colors, grey-1);
+      }
+    }
+  }
+}
+
+.reviewTicket--desktop {
+  margin-top: 2rem;
+  font-size: map-get($font-sizes, 3);
+  &__content {
+    &__title {
+      font-size: map-get($font-sizes, 4);
+      letter-spacing: -0.96px;
+    }
+  }
+  &__title {
+    font-size: map-get($font-sizes, 5);
+    font-weight: 500;
+    letter-spacing: -1.2px;
+  }
+  &__divider {
+    padding: 0.5rem 0;
+  }
+}

@@ -1,0 +1,36 @@
+.searchTicket {
+  // &__btn {
+  //   position: fixed;
+  //   right: 0;
+  //   bottom: 67px;
+  //   z-index: 3;
+  // }
+}
+@media screen and (min-width: 720px) {
+  .searchTicket {
+    &__btn {
+      position: relative;
+      bottom: 0;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .is-superapp {
+    .searchTicket {
+      &__btn {
+        position: fixed;
+        width: 100%;
+        right: 0;
+        bottom: 75px;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+.main {
+  [data-name='location_group_header'] {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+    padding: 16px;
+    height: 428px;
+    border-radius: 16px;
+    background-color: #F6EDFF;
+    width: 100%;
+    direction: rtl;
+}
+
+@media (min-width: 768px) {
+    .container {
+        height: 280px;
+        width: 280px;
+    }
+    .summarizeText {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-height: 200px;      // You can adjust this value as needed
+        overflow-y: auto;
+      }
+}

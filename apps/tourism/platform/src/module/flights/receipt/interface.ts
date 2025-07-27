@@ -1,0 +1,32 @@
+export interface ReviewTicketData {
+  departureCity: string;
+  arrivalCity?: string;
+  departureCityEnglish?: string;
+  arrivalCityEnglish?: string;
+  flightNumber?: string;
+  airlineName?: string;
+  airlineCode?: string;
+  departureAirport?: string;
+  arrivalAirport?: string;
+  departureTerminal?: string;
+  arrivalTerminal?: string;
+  flightClass?: string;
+  price?: string;
+  tax?: string;
+  totalPrice?: string;
+  pnr?: string;
+  ticketNumber?: string;
+  status?: string;
+  orderNumber?: string;
+  passengerType?: string;
+  nationalCode?: string;
+  passengerEnglishFName?: string;
+  passengerEnglishLName?: string;
+  departureCalender?: string;
+  departureHour: number;
+  departureMinute: number;
+  arrivalCalender?: string;
+  arrivalHour: number;
+  arrivalMinute: number;
+  issueDateCalender?: string;
+}

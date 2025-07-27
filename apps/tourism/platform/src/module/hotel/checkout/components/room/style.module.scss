@@ -1,0 +1,37 @@
+.room {
+  //height: 248px;
+  background-color: map-get($colors, white);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.160784);
+  &__header {
+    background-color: map-get($colors, blue-light-4);
+    color: map-get($colors, grey-19);
+    border-radius: 8px 8px 0 0;
+    padding: 0.5rem;
+    height: 40px;
+    display: flex;
+  }
+  &__content {
+    padding: 1rem;
+    &--tags {
+      border-radius: 8px;
+      background-color: map-get($colors, grey-18);
+      color: map-get($colors, black-2);
+      font-size: 12px;
+      padding: 0.3rem;
+    }
+    &__refundable {
+      background-color: #fdead6;
+      border-radius: 8px;
+      font-size: 12px;
+      padding: 8px;
+      height: 24px;
+      align-items: center;
+      display: flex;
+    }
+  }
+  &__divider {
+    border-top: 1px dashed rgba(102, 102, 102, 0.267);
+  }
+}

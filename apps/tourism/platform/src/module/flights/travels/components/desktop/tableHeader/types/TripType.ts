@@ -1,0 +1,9 @@
+type TripType =
+  | 'TRIPTYPE_UNDEFINED'
+  | 'TRIPTYPE_DOMESTIC_FLIGHT'
+  | 'TRIPTYPE_INTERNATIONAL_FLIGHT'
+  | 'TRIPTYPE_TRAIN'
+  | 'TRIPTYPE_BUS'
+  | 'HOTEL';
+
+export default TripType;

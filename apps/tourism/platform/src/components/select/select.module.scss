@@ -1,0 +1,117 @@
+.select {
+  height: 64px;
+  background-color: map-get($colors, surface-container-low);
+  border-radius: 16px;
+  position: relative;
+  direction: rtl;
+  width: 100%;
+  border: 1px solid transparent;
+  &__selectTag {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 16px;
+    padding: 0 1rem;
+    color: map-get($colors, on-surface) !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    &:focus {
+      outline: none;
+    }
+    option[disabled] {
+      display: none;
+    }
+    &-select_items {
+      padding-top: 10px;
+    }
+    &--hotel {
+      font-size: map-get($map: $font-sizes, $key: 3);
+      font-weight: map-get($map: $font-weights, $key: '400');
+      background: map-get($map: $colors, $key: surface-container-low);
+    }
+  }
+  &--selected {
+    background-color: map-get($colors, surface-container-low);
+    color: map-get($colors, on-surface);
+    border: solid 2px map-get($colors, primary);
+    select {
+      padding-top: 0.7rem;
+    }
+  }
+  &--error {
+    border: 1px solid map-get($colors, error);
+    background-color: map-get($colors, surface-container-low);
+  }
+  &__closeIcon {
+    position: absolute;
+    left: 2.5rem;
+    top: 20px;
+    fill: map-get($colors, primary);
+  }
+  &__label {
+    position: absolute;
+    right: 1rem;
+    top: 20px;
+    transition: all 0.25s ease;
+    &--active {
+      top: 4px;
+      font-size: map-get($font-sizes, 2);
+      color: map-get($colors, on-surface-var);
+    }
+  }
+  &__suffix {
+    position: absolute;
+    left: 1rem;
+    top: 20px;
+  }
+  &__value {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    button {
+      border: none;
+      background-color: transparent;
+      width: 100%;
+      text-align: start;
+      padding: 0.75rem 1rem;
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .select {
+    font-size: map-get($font-sizes, 2);
+  }
+  .select-items {
+    padding-right: 2px;
+    font-size: map-get($font-sizes, 2);
+  }
+}
+@include media-breakpoint-up(md) {
+  .select {
+    font-size: map-get($font-sizes, 2);
+    &__suffix {
+      svg {
+        transform: scale(0.75);
+      }
+    }
+  }
+  .select-items {
+    padding-right: 2px;
+    font-size: map-get($font-sizes, 2);
+  }
+}
+
+.select-items {
+  &:disabled {
+    display: none;
+  }
+}

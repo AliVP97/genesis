@@ -1,0 +1,15 @@
+.highlighted-card-header {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background-color: map-get($map: $colors, $key: white-3);
+
+  &.__expand {
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+.title {
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 3);
+  }
+}

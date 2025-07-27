@@ -1,0 +1,24 @@
+.button {
+  padding: 10px 12px;
+  background-color: unset;
+  border: 1px solid map-get($colors, grey-21);
+  width: 160px;
+
+  @include breakpoint-down(md) {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &.--active {
+    background-color: map-get($colors, primary-5);
+  }
+}
+
+.icon {
+  transform: scale(0.75);
+}
+
+.empty-icon {
+  height: 24px;
+  width: 24px;
+}

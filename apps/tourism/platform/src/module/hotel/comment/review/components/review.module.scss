@@ -1,0 +1,166 @@
+.progress {
+  width: 280px;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    background-color: #e5e5e5; // Unfilled section
+    border-radius: 2px;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #105fae; // Filled section
+    border-radius: 2px;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.card {
+  height: 280px;
+  width: 280px;
+  border: 1px solid #cfd6df;
+  border-radius: 12px;
+  padding: 16px;
+  flex-shrink: 0;
+  overflow: auto;
+}
+
+.room {
+  &__label {
+    border: 1px solid #cfd6df;
+    border-radius: 8px;
+    width: auto;
+    max-width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+  }
+}
+
+.container {
+  background-color: white;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+
+  &__divider {
+    display: none;
+  }
+
+  padding: 16px;
+
+  &__header {
+    height: 48px;
+    position: fixed;
+    background: white;
+    width: 100%;
+    top: 0;
+    z-index: 10000;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  &__title {
+    display: none;
+  }
+}
+
+.score-container {
+  margin-top: 48px;
+}
+
+.review-score-comments {
+  margin-top: 12px;
+  overflow: auto;
+}
+
+.summurize {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    background-color: transparent;
+  }
+
+  .modal {
+    width: 60%;
+    height: 80%;
+    overflow: auto;
+    border-radius: 12px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__header {
+      display: none;
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: flex-end;
+      position: fixed;
+      width: 60%;
+      right: 20%;
+      background-color: white;
+      padding: 0 16px;
+      border-radius: 12px 12px 0 0;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    >div:not(.modal__title) {
+      width: 100%;
+      padding: 0 16px;
+      border-radius: 0 0 12px 12px;
+      overflow: auto;
+    }
+  }
+
+  .summurize {
+    width: 280px;
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  // .rating{
+  //     width : 280px;
+
+  // }
+  .score-container {
+    margin-top: 0px;
+  }
+
+  .score {
+    width: 280px;
+  }
+
+  .review-score {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 16px;
+  }
+
+  .review-score-comments {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,14 @@
+.cards-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 9px;
+  padding: 12px 9px;
+  border: 1px solid map-get($colors, primary);
+  border-radius: 5px;
+  background-color: map-get($map: $colors, $key: blue-light-4);
+  color: map-get($colors, primary);
+  font-size: 12px;
+  font-weight: 500;
+}

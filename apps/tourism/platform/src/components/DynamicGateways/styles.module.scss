@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+
+  .gateway {
+    cursor: pointer;
+    display: flex;
+    column-gap: 8px;
+    padding: 16px;
+    border: 1px solid map-get($map: $colors, $key: grey-18);
+    border-radius: 8px;
+    background: map-get($map: $colors, $key: white);
+
+    &.--active {
+      border: 1px solid map-get($map: $colors, $key: blue-light-6);
+
+      .icon {
+        color: map-get($map: $colors, $key: blue-light-6);
+      }
+    }
+
+    .icon {
+      color: map-get($map: $colors, $key: grey-border);
+    }
+
+    .context {
+      flex-grow: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .label {
+        color: #616475;
+        font-size: 12px;
+        padding-top: 4px;
+      }
+    }
+  }
+
+  input {
+    display: none;
+    @media screen and (min-width: 767px) {
+      display: block;
+    }
+  }
+
+  .gateway-message {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease,
+      margin 0.3s ease;
+    background-color: #ffeedd;
+    border-radius: 8px;
+    padding: 0 16px;
+    span {
+      display: block;
+      padding: 8px 0;
+      white-space: pre-line;
+      font-size: 12px;
+      line-height: 22px;
+      color: #2a1800;
+    }
+    &.open {
+      max-height: 300px;
+    }
+  }
+}
+.snappay-card {
+  display: flex;
+  flex-direction: column;
+  .label {
+    color: #616475;
+    font-size: 12px;
+    padding-top: 4px;
+  }
+}

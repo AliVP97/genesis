@@ -1,0 +1,147 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  min-width: 52px;
+  width: 52px;
+  height: 32px;
+  cursor: pointer;
+  border: 2px solid map-get($map: $colors, $key: outline);
+  border-radius: 100px;
+  background-color: map-get($map: $colors, $key: surface-container-highest);
+  transition: background-color 67ms linear;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &--checked {
+    background-color: map-get($map: $colors, $key: primary);
+    border-color: map-get($map: $colors, $key: primary);
+  }
+
+  &--disabled {
+    cursor: unset;
+    background-color: rgba(map-get($map: $colors, $key: surface-container-highest), 0.12);
+    border-color: rgba(map-get($map: $colors, $key: on-surface), 0.12);
+
+    &.switch--checked {
+      background-color: rgba(map-get($map: $colors, $key: on-surface-var), 0.12);
+      border-color: transparent;
+    }
+  }
+
+  &.small {
+    scale: 0.75;
+  }
+}
+
+.thumb {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  transform-origin: center;
+  transition-property: height, width;
+  transition-duration: 250ms;
+
+  &__handle {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: map-get($map: $colors, $key: outline);
+    transition: all 100ms linear;
+  }
+
+  &__overlay {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    opacity: 0;
+    background: map-get($map: $colors, $key: on-surface);
+    transition: opacity 0.3s;
+    transform-origin: center;
+  }
+
+  &__spinner {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__icon {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--checked {
+    inset-inline-end: 0;
+
+    .thumb__handle {
+      height: 24px;
+      width: 24px;
+      background-color: map-get($map: $colors, $key: on-primary);
+    }
+  }
+
+  &--hover {
+    .thumb__overlay {
+      opacity: 0.08;
+    }
+
+    &.thumb--checked .thumb__overlay {
+      border-radius: 12px;
+    }
+  }
+
+  &--focus {
+    .thumb__overlay {
+      opacity: 0.08;
+      border-radius: 12px;
+    }
+  }
+
+  &--active {
+    .thumb__handle {
+      width: 28px;
+      height: 28px;
+    }
+
+    .thumb__overlay {
+      border-radius: 12px;
+    }
+  }
+
+  &--disabled {
+    .thumb__handle {
+      background-color: rgba(map-get($map: $colors, $key: on-surface), 0.38);
+    }
+
+    &.thumb--checked .thumb__handle {
+      background-color: map-get($map: $colors, $key: surface);
+    }
+  }
+
+  &--loading {
+    .thumb__spinner {
+      display: unset;
+    }
+  }
+}

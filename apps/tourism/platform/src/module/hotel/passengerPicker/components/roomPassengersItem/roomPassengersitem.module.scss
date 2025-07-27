@@ -1,0 +1,16 @@
+.room_passengers_item {
+  font-weight: map-get($map: $font-weights, $key: '500');
+}
+
+.room_passengers_item-desc {
+  font-weight: map-get($map: $font-weights, $key: '400');
+
+  padding: 0 5px;
+  color: map-get($map: $colors, $key: grey-19);
+}
+
+.room_passengers_item-count {
+  font-size: map-get($map: $font-sizes, $key: 5);
+  margin: 0 25px;
+  width: 10px;
+}

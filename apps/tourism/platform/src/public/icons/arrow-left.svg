@@ -1,0 +1,15 @@
+<svg id="ic-back-arrow-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="ic_back_arrow" transform="translate(0)">
+    <g id="Group_283" data-name="Group 283" transform="translate(0)">
+      <rect id="Rectangle_155" data-name="Rectangle 155" class="cls-1" width="24" height="24"/>
+      <path id="Path_77" data-name="Path 77" class="cls-2" d="M16.694,8.828H3.965L9.807,14.32,8.347,15.694,0,7.847,8.347,0,9.807,1.373,3.965,6.866H16.694Z" transform="translate(3.862 4.557)"/>
+    </g>
+  </g>
+</svg>

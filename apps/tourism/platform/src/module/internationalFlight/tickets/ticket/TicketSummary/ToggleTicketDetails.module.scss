@@ -1,0 +1,12 @@
+@import 'styles/custom-variables';
+
+.root {
+  height: 35px;
+  width: 160px;
+  font-size: map-get($font-sizes, 3);
+
+  &:hover {
+    color: map-get($colors, primary);
+    background-color: transparent;
+  }
+}

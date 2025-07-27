@@ -1,0 +1,22 @@
+.card-body {
+  font-size: map-get($map: $font-sizes, $key: 3);
+}
+
+.desktop-card {
+  overflow: hidden;
+  border: 1px solid map-get($map: $colors, $key: blue-light-4);
+  border-radius: 8px;
+}
+
+.desktop-card-title {
+  background-color: map-get($map: $colors, $key: blue-light-4);
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: map-get($map: $font-sizes, $key: 3);
+}
+
+.desktop-card-value {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: map-get($map: $font-sizes, $key: 3);
+}

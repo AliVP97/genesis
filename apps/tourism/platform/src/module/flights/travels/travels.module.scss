@@ -1,0 +1,182 @@
+.travels {
+  margin-bottom: 5rem;
+
+  &__search-input {
+    border-radius: 18px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: map-get($colors, surface-container-low);
+    font-size: map-get($font-sizes, 3);
+    padding-right: 1.5rem;
+    height: 36px;
+    border: 1px solid map-get($colors, primary);
+    width: 100%;
+    padding-left: 40px;
+
+    &::-webkit-input-placeholder {
+      text-align: right;
+      padding-right: 10px;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &--error {
+      border-radius: 16px;
+      border: solid 1px map-get($colors, error-input-border);
+      background-color: map-get($colors, gray-input-background);
+    }
+  }
+
+  &__search-inout-warning {
+    font-size: 0.8em;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.24px;
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    color: map-get($colors, error);
+  }
+
+  &__ticket {
+    border-radius: 8px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+
+    &__icon {
+      transform: scale(0.8);
+      fill: map-get($colors, grey-1);
+    }
+
+    &__vertical {
+      height: 20px;
+      width: 2px;
+      content: '';
+      border-radius: 2px;
+      margin: 0 3rem;
+    }
+  }
+
+  &__close-icon {
+    position: absolute;
+    left: 1.5rem;
+    top: 0.4rem;
+    fill: map-get($colors, grey-1);
+  }
+  &__search-icon {
+    position: absolute;
+    top: 7px;
+    right: 11px;
+  }
+}
+
+.Details {
+  &__item {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+
+    &__header {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+
+  &__active {
+    border-bottom-width: 3px !important;
+    border-bottom-color: map-get($colors, primary) !important;
+  }
+}
+
+.travels-container {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+
+  // margin-top: 5%;
+  &__pointer {
+    cursor: pointer;
+  }
+
+  &__search {
+    border-radius: 8px;
+    height: 2.25rem;
+    outline: none;
+
+    &:focus {
+      outline: 1px solid map-get($colors, primary);
+    }
+
+    &::placeholder {
+      color: map-get($colors, grey-10);
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__luggage-icon {
+    g {
+      path {
+        fill: map-get($colors, on-surface-var);
+      }
+    }
+  }
+
+  &__info-icon {
+    transform: scale(0.85);
+    fill: map-get($colors, grey-1);
+  }
+
+  &__arrow-icon {
+    transform: scale(0.75);
+    fill: map-get($colors, primary);
+  }
+
+  &__content {
+    min-height: 50px;
+
+    &__items {
+      border-radius: 8px;
+
+      th,
+      td {
+        // padding: 0.5rem 1rem;
+        padding: 5px;
+      }
+
+      padding-left: 2px;
+
+      &__radius-right {
+        border-top-right-radius: 8px;
+      }
+
+      &__radius-left {
+        border-top-left-radius: 8px;
+      }
+
+      &__font {
+        font-size: map-get($font-sizes, 3);
+      }
+    }
+  }
+}
+
+.price {
+  box-shadow: 0 0 4px 0 #00000026;
+  border-radius: 12px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.showHotelRefund {
+  z-index: 5;
+}

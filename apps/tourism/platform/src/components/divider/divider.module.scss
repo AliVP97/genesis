@@ -1,0 +1,16 @@
+.divider {
+  &__vertical {
+    border-left: 1px solid rgba(102, 102, 102, 0.267);
+    margin: 0 0.75rem;
+    &--dashed {
+      border-left: 1px dashed rgba(102, 102, 102, 0.267);
+    }
+  }
+  &__horizontal {
+    border-top: 1px solid rgba(102, 102, 102, 0.267);
+    // margin: 0.75rem 0;
+    &--dashed {
+      border-top: 1px dashed rgba(102, 102, 102, 0.267);
+    }
+  }
+}

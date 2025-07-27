@@ -1,0 +1,10 @@
+.passenger-item {
+  background: map-get($map: $colors, $key: white);
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  min-height: 64px;
+  &__header {
+    min-height: 64px;
+  }
+}

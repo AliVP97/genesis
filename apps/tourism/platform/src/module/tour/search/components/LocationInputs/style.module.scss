@@ -1,0 +1,239 @@
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  position: relative;
+
+  .input-box {
+    min-height: 64px;
+    background-color: map-get($colors, white-2);
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    padding: 0 15px;
+    position: relative;
+    &.origin-box {
+      border-radius: 0 16px 16px 0;
+      border-left: 1px solid #ccc;
+    }
+    &__description {
+      color: map-get($colors, grey-19);
+      position: absolute;
+      right: 20%;
+      bottom: 5px;
+    }
+    &.origin-box--origin-only {
+      border-radius: 16px;
+      border-left: none;
+      width: 100%;
+    }
+
+    &.destination-box {
+      border-radius: 16px 0 0 16px;
+      padding-right: 25px;
+    }
+    &__destination-description {
+      color: map-get($colors, grey-19);
+      position: absolute;
+      right: 27%;
+      bottom: 5px;
+    }
+
+    input {
+      display: flex;
+      text-align: right;
+      direction: rtl;
+      width: calc(100% - 24px);
+      border: none;
+      background: none;
+    }
+
+    &__input-with-des {
+      padding-bottom: 20px;
+    }
+
+    .icon {
+      display: flex;
+      width: 24px;
+
+      &.pulse-fx {
+        fill: #194b9b;
+        opacity: 1 !important;
+      }
+    }
+  }
+  .locations-list {
+    direction: rtl;
+    position: absolute;
+    width: 100%;
+    max-height: 350px;
+    overflow-y: auto;
+    top: 80px;
+    right: 0;
+    background-color: map-get($colors, white);
+    border-radius: 0.5rem;
+    z-index: 3;
+    box-shadow: 0 6px 6px 3px rgb(0 0 0 / 15%);
+    scroll-behavior: smooth;
+    scrollbar-width: auto;
+    .list-height-limitation {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: map-get($colors, grey-2);
+
+      border-radius: 0.5rem;
+    }
+
+
+    .location-card {
+      display: flex;
+      padding: 0.9em;
+      border-bottom: 1px solid map-get($colors, grey-3);
+      direction: rtl;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      &.flights {
+        padding: 12px;
+        height: 53px;
+      }
+      &:first-child {
+        border-bottom: none;
+      }
+      .section {
+        display: flex;
+      }
+
+      .icon {
+        margin-left: 15px;
+      }
+
+      &:hover {
+        background: rgb(243, 243, 243);
+      }
+
+      .airport-name {
+        color: map-get($colors, grey-1);
+        font-size: 14px;
+        padding-right: 9px;
+      }
+
+      .delete-button {
+        opacity: 0.5;
+        transform: scale(0.8);
+
+        &:hover {
+          opacity: 1;
+          fill: map-get($colors, primary);
+        }
+      }
+
+      .side-content {
+        color: map-get($colors, grey-1);
+        font-size: map-get($font-sizes, 3);
+      }
+    }
+
+    .header {
+      padding: 10px 18px;
+      text-align: right;
+      direction: rtl;
+      color: map-get($colors, grey-2);
+      font-size: 13px;
+    }
+
+    transition: right 0.2s;
+    &.destination {
+      // right: 50%;
+      right: 0;
+    }
+    .history-header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 3px;
+      .clear-history {
+        border: 1px solid transparent;
+        border: 1px solid map-get($colors, grey-3);
+        color: map-get($colors, grey-1);
+        color: map-get($colors, primary);
+        font-size: 12px;
+        border-radius: 50px;
+        padding: 5px 12px 7px;
+        background: none;
+        cursor: pointer;
+        &:hover {
+          background: map-get($colors, grey1);
+          border: 1px solid map-get($colors, grey-2);
+        }
+      }
+    }
+
+    .locations-group > div {
+      border-right: none;
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.pulse-fx {
+  -webkit-animation-name: pulse-fx;
+  animation-name: pulse-fx;
+  -webkit-animation-duration: 1s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.frequency {
+  &:hover {
+    background: map-get($colors, grey-3);
+    //border: 1px solid map-get($colors, grey-2);
+  }
+}
+
+@-webkit-keyframes pulse-fx {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.3, 1.3, 1.3);
+    transform: scale3d(1.3, 1.3, 1.3);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse-fx {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.3, 1.3, 1.3);
+    transform: scale3d(1.3, 1.3, 1.3);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}

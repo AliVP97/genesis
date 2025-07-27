@@ -1,0 +1,93 @@
+@import 'node_modules/bootstrap/scss/mixins/breakpoints';
+
+.input {
+  height: 56px;
+  background-color: map-get($colors, white-2);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  position: relative;
+  direction: rtl;
+
+  &__label {
+    position: absolute;
+    right: 1rem;
+    top: 20px;
+    transition: all 0.25s ease;
+
+    &--active {
+      top: 4px;
+      font-size: map-get($font-sizes, 2);
+      color: map-get($colors, grey-1);
+    }
+  }
+
+  &__suffix {
+    position: absolute;
+    top: 20px;
+    left: 1rem;
+  }
+
+  &__placeHolder {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+    padding: 0 1rem;
+    border-radius: 16px;
+
+    &:focus {
+      background-color: map-get($colors, grey-5) !important;
+      border-radius: 16px;
+    }
+  }
+
+  &__closeIcon {
+    position: absolute;
+    left: 1rem;
+    top: 16px;
+    fill: map-get($colors, grey-1);
+
+    &--suffix {
+      left: 2.5rem;
+    }
+  }
+
+  &--active {
+    background-color: map-get($colors, grey-5);
+    border: solid 2px rgba(40, 75, 150, 0.65);
+  }
+
+  &--error {
+    border: 1px solid map-get($colors, red);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .input {
+    font-size: map-get($font-sizes, 2);
+
+    &__suffix {
+      // visibility: hidden;
+    }
+  }
+  .input__closeIcon {
+    right: 85%;
+  }
+}
+@include media-breakpoint-between(md, lg) {
+  .input {
+    font-size: map-get($font-sizes, 2);
+
+    &__suffix {
+      visibility: hidden;
+    }
+  }
+  .input__closeIcon {
+    right: 80%;
+    svg {
+      transform: scale(0.75);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.add-room {
+  height: 60px;
+  color: map-get($map: $colors, $key: blue-light-6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 10px;
+  border-bottom: dashed 2px map-get($map: $colors, $key: grey-border);
+  border-top: dashed 2px map-get($map: $colors, $key: grey-border);
+  cursor: pointer;
+
+  span {
+    margin-right: 8px;
+  }
+}

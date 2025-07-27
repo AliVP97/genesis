@@ -1,0 +1,204 @@
+@mixin common-header-styles {
+  font-size: map-get($font-sizes, 3);
+  padding: 0.5rem;
+}
+
+@mixin common-content-styles {
+  box-shadow: 0 0 6px 0 rgba(map-get($colors, black), 0.15);
+  &--rows,
+  &--rows > div {
+    display: flex;
+    flex-direction: column;
+  }
+  padding: 1rem;
+}
+
+.receipt {
+  &__header {
+    @include common-header-styles();
+    border-top-left-radius: map-get($font-sizes, 2);
+    svg {
+      fill: #fff;
+    }
+  }
+
+  &__ticketDetail {
+    @include common-content-styles();
+    border-bottom-left-radius: map-get($font-sizes, 2);
+    padding: 1rem 0;
+    box-shadow: 0px 0px 5px 0 rgb(0 0 0 / 15%);
+
+    &--rows {
+      padding: 0 1rem;
+    }
+
+    &--divider {
+      margin: 0.75rem 0 1rem;
+      border-top: 1px solid rgba(102, 102, 102, 0.16);
+    }
+  }
+
+  &__detail {
+    &--header {
+      display: flex;
+      @include common-header-styles();
+      border-top-right-radius: map-get($font-sizes, 2);
+    }
+    &--divider {
+      margin: 0;
+      border-left: 1px dashed map-get($colors, primary);
+    }
+    &__content {
+      @include common-content-styles();
+      border-bottom-right-radius: map-get($font-sizes, 2);
+      padding: 1rem;
+      height: 100%;
+      &__backup {
+        font-family: IRANSans, sans-serif, Roboto;
+      }
+    }
+  }
+
+  &__content {
+    &:before {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: map-get($colors, white-1);
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: -9px;
+    }
+
+    &:after {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: map-get($colors, white-1);
+      box-shadow: inset 0px 2px 0px 0px rgb(0 0 0 / 15%);
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: -9px;
+    }
+  }
+
+  &__wrapper {
+    @include common-content-styles();
+    box-shadow: -2px 6px 6px -6px rgba(map-get($colors, black), 0.15);
+    padding: 0.5rem 1rem;
+    &__divider {
+      &--left {
+        left: 1rem;
+        right: 65%;
+        position: absolute;
+        border-top: 1px solid rgba(map-get($colors, grey-11), 0.2);
+        margin-top: 0.5rem;
+      }
+      &--right {
+        right: 1rem;
+        left: 65%;
+        position: absolute;
+        border-top: 1px solid rgba(map-get($colors, grey-11), 0.2);
+        margin-top: 0.5rem;
+      }
+    }
+    // &:before {
+    //   width: 25px;
+    //   height: 25px;
+    //   border-radius: 50%;
+    //   background-color: map-get($colors, white-1);
+    //   box-shadow: inset 2px 0px 0px 0px rgb(0 0 0 / 15%);
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 70px;
+    //   right: -13px;
+    // }
+
+    // &:after {
+    //   width: 25px;
+    //   height: 25px;
+    //   border-radius: 50%;
+    //   background-color: map-get($colors, white-1);
+    //   box-shadow: inset -2px 0px 0px 0px rgb(0 0 0 / 15%);
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 70px;
+    //   left: -13px;
+    // }
+
+    &__ticketInfo {
+      border-radius: map-get($font-sizes, 2);
+      background-color: rgba(map-get($colors, grey-10), 0.08);
+      padding: 0 0.75rem 1rem;
+      position: relative;
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.25rem;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+
+          &__title {
+            top: 135px;
+            right: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &__airport {
+      padding: 2.5rem 0.75rem 0;
+
+      &__container {
+        flex-flow: row nowrap;
+        padding: 0.75rem 0;
+
+        &__endpoint {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+        }
+      }
+    }
+
+    &__price {
+      padding: 0 0.75rem;
+
+      &__item {
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0.75rem 0;
+
+        &__content {
+          flex-flow: column wrap;
+          font-size: map-get($font-sizes, 3);
+        }
+      }
+    }
+
+    &__footer {
+      padding: 0 0.75rem;
+
+      &__item {
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0 2rem;
+        display: flex;
+
+        &__content {
+          font-size: map-get($font-sizes, 2);
+          color: map-get($colors, grey-1);
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

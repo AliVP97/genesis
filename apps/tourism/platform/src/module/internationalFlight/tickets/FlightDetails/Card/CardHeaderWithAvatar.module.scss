@@ -1,0 +1,54 @@
+.title {
+  @include breakpoint-down(md) {
+    font-weight: map-get($map: $font-weights, $key: '700');
+    font-size: map-get($map: $font-sizes, $key: 2);
+  }
+}
+
+.subtitle {
+  font-size: map-get($map: $font-sizes, $key: 2);
+  color: map-get($colors, grey-23);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 0);
+  }
+}
+
+.avatar-container {
+  width: 50px;
+
+  @include breakpoint-down(md) {
+    width: 40px;
+  }
+}
+
+.avatar {
+  margin: auto;
+  align-self: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: map-get($map: $colors, $key: grey-27);
+
+  @include breakpoint-down(md) {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.avatar-title {
+  direction: ltr;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: map-get($map: $colors, $key: grey-23);
+  font-size: map-get($map: $font-sizes, $key: 2);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 0);
+  }
+}

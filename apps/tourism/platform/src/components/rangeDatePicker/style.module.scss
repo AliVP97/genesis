@@ -1,0 +1,149 @@
+.picker {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // padding: 10px 20px 15px;
+
+    .section-1 {
+      width: 100%;
+      height: 56px;
+      z-index: 15;
+      background-color: #fafafa;
+      box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      direction: rtl;
+      position: relative;
+
+      .icon {
+        height: 100%;
+        width: 56px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        z-index: 2;
+        justify-content: center;
+        align-items: center;
+        svg {
+          fill: map-get($colors, tertiary);
+        }
+      }
+    }
+
+    .section-2 {
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      padding: 1rem;
+      box-shadow: 0 1px 4px 1px rgba(221, 221, 221, 0.75);
+      width: 100%;
+      background-color: #fafafa;
+      opacity: 1;
+
+      .title {
+        color: map-get($colors, tertiary);
+        text-align: right;
+      }
+
+      .calendar-system-switch {
+        display: flex;
+        flex-direction: row-reverse;
+        label {
+          font-size: map-get($font-sizes, 3);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .dates {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+  .footer {
+    background: map-get($colors, grey-6);
+
+    .dates {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 10px;
+      position: relative;
+      > div {
+        width: 50%;
+        > div {
+          text-align: center;
+        }
+      }
+      .title,
+      .secondary {
+        font-size: map-get($font-sizes, 2);
+        color: map-get($colors, grey-1);
+      }
+      .main {
+        font-weight: map-get($font-weights, bold);
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 60%;
+        top: 20%;
+        right: calc(50% - 1px);
+        background: map-get($colors, grey-1);
+      }
+    }
+
+    .submit-button {
+      padding: 0px 20px 20px;
+      button {
+        background: map-get($colors, primary);
+        color: map-get($colors, white);
+        border: none;
+        display: block;
+        height: 50px;
+        border-radius: 999px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.main-panel {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  .dates {
+    display: flex;
+    flex-direction: row-reverse;
+    color: map-get($colors, primary);
+    font-size: map-get($font-sizes, 3);
+    font-weight: map-get($font-weights, bold);
+  }
+  .calendar-icon {
+    padding: 10px;
+  }
+}
+
+.latin-text {
+  font-family: Roboto;
+}
+
+.bottomsheet {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background: white;
+}

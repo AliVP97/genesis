@@ -1,0 +1,20 @@
+.footer-menu {
+  &__header {
+    border-bottom: 1px solid map-get($colors, 'grey-16');
+    span {
+      font-size: map-get($font-sizes, 2);
+      font-weight: map-get($font-weights, '500');
+    }
+  }
+  span {
+    font-size: map-get($font-sizes, 2);
+    cursor: pointer;
+  }
+
+  a {
+    font-size: map-get($font-sizes, 2);
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+  }
+}

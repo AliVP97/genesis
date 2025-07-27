@@ -1,0 +1,42 @@
+.trip-description {
+  position: relative;
+  border-radius: 0.5rem;
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  &__text {
+    position: relative;
+    display: flex;
+    left: 0;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    width: 45%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    top: 0;
+    margin: 30px;
+    padding: 40px;
+    font-weight: 500;
+    height: 100%;
+  }
+  &--left {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .trip-description {
+    &__text {
+      width: 100%;
+      font-size: map-get($font-sizes, 3);
+      font-weight: map-get($font-weights, 500);
+      padding: 10px;
+      margin: 20px;
+    }
+    &--left {
+      justify-content: flex-end;
+    }
+  }
+}

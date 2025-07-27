@@ -1,0 +1,19 @@
+.license {
+  display: flex;
+  gap: 10px;
+  &__item {
+    width: 32px;
+    height: 38px;
+    cursor: pointer;
+    background: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .license {
+    &__item {
+      width: 32px;
+      height: 38px;
+    }
+  }
+}

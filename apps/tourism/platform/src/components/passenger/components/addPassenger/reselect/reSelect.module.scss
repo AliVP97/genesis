@@ -1,0 +1,48 @@
+.reSelect {
+  height: 64px;
+  background-color: map-get($colors, white-2);
+  border-radius: 16px;
+  position: relative;
+  direction: rtl;
+  border: none;
+  width: 100%;
+  border: 1px solid transparent;
+  &--selected {
+    background-color: map-get($colors, grey-5);
+    border: solid 2px rgba(40, 75, 150, 0.65);
+  }
+  &--error {
+    border: 1px solid map-get($colors, red);
+  }
+  &__closeIcon {
+    position: absolute;
+    left: 2.5rem;
+    top: 20px;
+    fill: map-get($colors, grey-1);
+  }
+  &__label {
+    position: absolute;
+    right: 1rem;
+    top: 20px;
+    transition: all 0.25s ease;
+    &--active {
+      top: 4px;
+      font-size: map-get($font-sizes, 2);
+      color: map-get($colors, grey-1);
+    }
+  }
+  &__search {
+    height: 100%;
+  }
+}
+@include media-breakpoint-up(lg) {
+  .reSelect {
+    font-size: map-get($font-sizes, 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .reSelect {
+    width: 330px;
+  }
+}

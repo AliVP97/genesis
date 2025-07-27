@@ -1,0 +1,79 @@
+.retrieval {
+  width: 100%;
+  height: 100%;
+  background-color: map-get($colors, white-1);
+  direction: rtl;
+
+  &__content {
+    background-color: map-get($colors, white-1);
+    position: relative;
+    padding: 0.5rem 1rem;
+    overflow-y: scroll;
+    height: calc(100% - 110px);
+  }
+
+  &__header {
+    height: 56px;
+    width: 100%;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &--icon {
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  &--option {
+    background-color: map-get($colors, white);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  &__button {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    border-radius: 1.5rem;
+    background: map-get($colors, primary);
+    color: white;
+  }
+
+  &__details {
+    background-color: map-get($colors, white);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 0.5rem;
+
+    &--header {
+      width: 100%;
+      height: 40px;
+      background-color: map-get($colors, blue-grey);
+      padding: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    &--body {
+      width: 100%;
+    }
+  }
+
+  &-modal {
+    width: 280px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: right;
+
+    &__btn {
+      text-align: left;
+      color: map-get($colors, primary);
+      cursor: pointer;
+    }
+  }
+}

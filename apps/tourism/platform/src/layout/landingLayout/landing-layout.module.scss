@@ -1,0 +1,21 @@
+.landing {
+  &__header {
+    background-color: red;
+  }
+  &__service-tab {
+    position: relative;
+    top: -125px;
+    margin-bottom: -125px;
+  }
+}
+
+.landing-mobile {
+  &__header {
+    background-color: map-get($colors, 'blue-grey');
+  }
+  &__service-tab {
+    position: relative;
+    top: 100px;
+    margin-bottom: 100px;
+  }
+}

@@ -1,0 +1,43 @@
+.faq {
+  &__title {
+    span {
+      font-size: map-get($font-sizes, 5);
+      font-weight: map-get($font-weights, '500');
+    }
+  }
+  &__accordion__heading {
+    background-color: map-get($colors, surface-container-low);
+    padding: 20px;
+    span {
+      font-size: map-get($font-sizes, 4);
+      font-weight: map-get($font-weights, '500');
+    }
+  }
+  &__accordion__body {
+    span {
+      font-size: map-get($font-sizes, 3);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .faq {
+    &__title {
+      span {
+        font-size: map-get($font-sizes, 4);
+        font-weight: map-get($font-weights, '500');
+      }
+    }
+    &__accordion__heading {
+      span {
+        font-size: map-get($font-sizes, 3);
+        font-weight: map-get($font-weights, '500');
+      }
+    }
+    &__accordion__body {
+      span {
+        font-size: map-get($font-sizes, 2);
+      }
+    }
+  }
+}

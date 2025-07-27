@@ -1,0 +1,64 @@
+@import 'styles/custom-variables';
+
+.root {
+  border-radius: 16px;
+  padding: 12px;
+}
+
+.left-right-curve,
+.top-bottom-curve {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fafafa;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.left-right-curve {
+  &::before,
+  &::after {
+    bottom: -20px;
+  }
+
+  &::before {
+    left: 0;
+    box-shadow: inset -5px 0 6px -6px rgba(0, 0, 0, 0.25);
+    border-radius: 0 20px 20px 0;
+  }
+
+  &::after {
+    right: -20px;
+    border-radius: 20px 0 0 20px;
+    box-shadow: inset 4px 0 6px -6px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.top-bottom-curve {
+  &::before,
+  &::after {
+    left: 0;
+  }
+
+  &::before {
+    top: 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0px -5px 6px -6px rgba(0, 0, 0, 0.25);
+  }
+
+  &::after {
+    bottom: -20px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: inset 0 4px 6px -6px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.hr {
+  opacity: 1;
+  background-color: map-get($colors, grey-20);
+  margin-right: -12px;
+  margin-left: -12px;
+}

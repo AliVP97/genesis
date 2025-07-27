@@ -1,0 +1,18 @@
+@import '~bootstrap/scss/functions';
+
+// custom variables
+@import './custom-variables';
+//$cdnURL: 'https://cdn.780.team/dl/fintech';
+
+// change bootstrap variables place
+
+// font family place $font-family-base
+$primary: #105fae;
+$font-family-base: IRANSans, Roboto, Tahoma, serif;
+$enable-negative-margins: true;
+
+@import '~bootstrap/scss/variables';
+
+@import '~bootstrap/scss/mixins';
+
+@import './utilities';

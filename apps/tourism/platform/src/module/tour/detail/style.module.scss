@@ -1,0 +1,37 @@
+.fixedBottom {
+  &--super-app {
+    bottom: 4rem;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  z-index: 1;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  background-color: white;
+  padding-bottom: 29px;
+}
+
+.policies {
+  border-bottom: 5px solid map-get($colors, red);
+}
+.fixed-tab {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1;
+  border-bottom: 1px solid map-get($colors, grey-10);
+  background-color: map-get($colors, grey-22);
+  &__item {
+    min-width: 160px;
+  }
+  &__border {
+    border-bottom: 4px solid map-get($colors, primary);
+    padding-bottom: 20px;
+    min-width: 160px;
+  }
+}

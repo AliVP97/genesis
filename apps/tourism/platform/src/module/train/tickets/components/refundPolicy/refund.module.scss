@@ -1,0 +1,19 @@
+.refund {
+  &__container {
+    // padding: 1rem;
+    margin-bottom: 0.6rem;
+  }
+  &__title {
+    color: map-get($colors, tertiary);
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+  }
+  &__content {
+    color: map-get($colors, grey-1);
+  }
+  &__divider {
+    border-top: 1px solid map-get($colors, grey-3);
+    opacity: 0.6;
+    margin: 0.8rem;
+  }
+}

@@ -1,0 +1,219 @@
+.rooms {
+  padding: 10px 0 150px;
+
+  .room {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(204, 204, 204, 1);
+    -moz-box-shadow: 0 2px 2px 0 rgba(204, 204, 204, 1);
+    box-shadow: 0 2px 2px 0 rgba(204, 204, 204, 1);
+    &--super-app {
+      margin-bottom: 4rem;
+    }
+    .header {
+      border-radius: 5px;
+      overflow: hidden;
+      background: #eaf1f8;
+      padding: 5px 15px;
+      text-align: right;
+      direction: rtl;
+      font-size: map-get($font-sizes, 4);
+
+      svg {
+        margin-left: 8px;
+      }
+    }
+
+    .form-description {
+      padding: 5px 15px;
+      text-align: right;
+      direction: rtl;
+      color: map-get($colors, grey-1);
+      font-size: map-get($font-sizes, 3);
+    }
+
+    .form {
+      padding: 10px 20px;
+
+      [data-name='foreingner'],
+      [data-name='earlyEntry'],
+      [data-name='lateExit'],
+      [data-name='extraBed'] {
+        border-top: 1px dashed map-get($colors, grey-2);
+        padding: 15px 20px;
+      }
+
+      [data-name='foreingner'] div,
+      [data-name='earlyEntry'] div,
+      [data-name='lateExit'] div,
+      [data-name='extraBed'] div {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      [data-name='foreingner'] span,
+      [data-name='earlyEntry'] span,
+      [data-name='lateExit'] span,
+      [data-name='extraBed'] span {
+        font-size: map-get($font-sizes, 2);
+      }
+
+      [data-name='foreingner'] {
+        width: 100%;
+      }
+      [data-name='earlyEntry'],
+      [data-name='lateExit'],
+      [data-name='extraBed'] {
+        flex-grow: 1;
+        width: auto !important;
+      }
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  background: #eaf1f8;
+  padding: 0 20px 20px;
+  &__super-app {
+    bottom: 4rem;
+  }
+
+  -webkit-box-shadow: 0px -2px 5px 0px rgba(189, 189, 189, 1);
+  -moz-box-shadow: 0px -2px 5px 0px rgba(189, 189, 189, 1);
+  box-shadow: 0px -2px 5px 0px rgba(189, 189, 189, 1);
+
+  .rooms-summary {
+    width: 100%;
+    overflow: hidden;
+
+    height: 0;
+
+    transition: height 0.3s;
+    .content {
+      padding: 10px 10px 0;
+      border-bottom: 1px solid map-get($colors, grey-2);
+      .room {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .price {
+          display: flex;
+          > span:first-child {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-right: 15px;
+            span {
+              padding-right: 5px;
+            }
+          }
+          > span:last-child {
+            color: map-get($colors, tertiary);
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    .price {
+      width: 50%;
+      text-align: left;
+      direction: rtl;
+      color: map-get($colors, primary);
+      .value {
+        font-size: map-get($font-sizes, 5);
+        font-weight: bold;
+      }
+      .unit {
+        font-size: map-get($font-sizes, 2);
+        padding-right: 5px;
+      }
+    }
+
+    .description {
+      width: 50%;
+      font-size: map-get($font-sizes, 3);
+      text-align: right;
+    }
+  }
+
+  .toggle-btn {
+    &.close {
+      rotate: 180deg;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .main-desc {
+    font-size: map-get($font-sizes, 3);
+    text-align: right;
+    direction: rtl;
+  }
+
+  .rooms {
+    .room {
+      background: white;
+      padding-bottom: 10px;
+
+      .header {
+        background: none;
+        padding: 20px 28px;
+        font-weight: bold;
+
+        svg {
+          display: none;
+        }
+
+        .title {
+          font-size: map-get($font-sizes, 6);
+        }
+      }
+
+      .form {
+        padding: 10px 28px;
+      }
+    }
+  }
+  .total {
+    padding: 17px 22px;
+    border: 1px solid #f3f3f3;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: #27b67c;
+    margin-bottom: 12px;
+
+    .price {
+      font-size: map-get($font-sizes, 5);
+      direction: rtl;
+      font-weight: bold;
+
+      .unit {
+        font-size: map-get($font-sizes, 1);
+        padding-right: 3px;
+      }
+    }
+  }
+}

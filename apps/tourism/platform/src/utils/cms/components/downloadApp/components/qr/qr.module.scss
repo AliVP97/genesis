@@ -1,0 +1,54 @@
+.qr {
+  height: 549px;
+  width: 459px;
+  background-color: white;
+  border-radius: 40px;
+  padding: 50px;
+  animation-name: fade-in;
+  animation-fill-mode: both;
+  animation-duration: 0.5s;
+  &__hedear {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: right;
+      width: 100%;
+      padding-bottom: 30px;
+      svg {
+        width: 25px;
+        fill: map-get($colors, 'primary');
+      }
+      span {
+        color: map-get($colors, 'primary');
+        flex-grow: 1;
+        font-weight: map-get($font-weights, '700');
+        font-size: map-get($font-sizes, 4);
+      }
+    }
+    &__barcode {
+      border: 2px solid map-get($colors, 'grey-3');
+      height: 300px;
+      width: 300px;
+      border-radius: 40px;
+      margin: 25px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+.detail {
+  &__wrapper {
+    background-color: map-get($colors, white);
+    border-radius: 0 0 12px 12px;
+    margin-bottom: 0.5rem;
+    //padding-top: 0.5rem;
+    // box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+    //box-shadow: -1px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  }
+  &__background {
+    border-radius: 8px;
+  }
+  &__content {
+    display: flex;
+    direction: rtl;
+    background-color: white;
+  }
+  &__item {
+    border-bottom: 0.5px solid rgba($color: map-get($colors, grey-2), $alpha: 0.4);
+    border-radius: 2px;
+    color: map-get($colors, black);
+    font-weight: 400;
+    font-size: 16px;
+    width: 96%;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+  }
+  &__item--options {
+    border-radius: 2px;
+    color: map-get($colors, black);
+    font-weight: 400;
+    font-size: 16px;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+    &--active {
+      border-bottom: 3px solid map-get($colors, primary);
+      border-radius: 2px;
+      color: map-get($colors, primary);
+      font-weight: 500;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+  &__item--divider {
+    border-bottom: 0.5px solid rgba($color: map-get($colors, grey-2), $alpha: 0.4);
+    width: 96%;
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    border-bottom: solid 0.5px rgba(158, 158, 158, 0.2);
+    margin: 0.5rem auto;
+  }
+  &__return {
+    padding-top: 2.5rem;
+  }
+}

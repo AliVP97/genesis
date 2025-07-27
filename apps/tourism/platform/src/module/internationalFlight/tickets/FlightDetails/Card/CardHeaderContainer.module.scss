@@ -1,0 +1,20 @@
+.card-header-container {
+  gap: 16px;
+
+  @include breakpoint-down(md) {
+    gap: 12px;
+  }
+}
+
+.extra-info {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  color: map-get($map: $colors, $key: grey-23);
+  font-size: map-get($map: $font-sizes, $key: 2);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 0);
+  }
+}

@@ -1,0 +1,3 @@
+interface ITrainEmptyPassenger {
+  id: number;
+}

@@ -1,0 +1,25 @@
+.main-container {
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 55px;
+    margin-bottom: 55px;
+  }
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  line-height: 25px;
+  background-color: #eaf1f8;
+  margin: 2rem auto 2rem;
+  text-align: right;
+  width: 85%;
+  padding: 4rem 4rem 0.5rem 4rem;
+  &__show-more-btn {
+    color: #065baa;
+    padding: 2rem 0 2rem;
+    cursor: pointer;
+  }
+}

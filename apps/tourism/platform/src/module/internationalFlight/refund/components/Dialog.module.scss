@@ -1,0 +1,29 @@
+.dialog {
+  z-index: 1001;
+}
+
+.modal-content {
+  width: 314px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: map-get($map: $colors, $key: white);
+
+  @include media-breakpoint-up(md) {
+    max-width: 960px;
+    min-width: 600px;
+    padding: 0;
+  }
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.message {
+  font-size: map-get($map: $font-sizes, $key: 3);
+}
+
+.button {
+  padding: 12px;
+  width: unset;
+}

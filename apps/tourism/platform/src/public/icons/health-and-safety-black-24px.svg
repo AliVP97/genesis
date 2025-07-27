@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+    <path data-name="Rectangle 6596" style="fill:none" d="M0 0h48v48H0z"/>
+    <path data-name="Path 41921" d="M18 4.14 6 8.64v9.4c0 8 5.1 15.4 12 17.66 6.9-2.26 12-9.64 12-17.66v-9.4zm8 17.72h-5v5h-6v-5h-5v-6h5v-5h6v5h5z" transform="translate(6 4.14)" style="fill:#1aa55b;opacity:.3"/>
+    <path data-name="Path 41922" d="M17 24h-5v-6h5v-5h6v5h5v6h-5v5h-6zm3-22L4 8v12.18C4 30.28 10.82 39.7 20 42c9.18-2.3 16-11.72 16-21.82V8zm12 18.18c0 8-5.1 15.4-12 17.66-6.9-2.26-12-9.64-12-17.66v-9.4l12-4.5 12 4.5z" transform="translate(4 2)" style="fill:#d8000c"/>
+</svg>

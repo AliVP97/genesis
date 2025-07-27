@@ -1,0 +1,60 @@
+.edit-modal {
+  direction: rtl;
+  background-color: map-get($colors, surface) !important;
+  width: 75%;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+  padding: 20px 30px;
+
+  &__cancel-btn {
+    border: 2px solid map-get($colors, primary) !important;
+    color: map-get($colors, primary) !important;
+  }
+  &__type {
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    align-items: center;
+    width: 223px;
+    height: 36px;
+    background-color: map-get($colors, surface);
+    border-radius: 8px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      letter-spacing: 0.23px;
+      font-size: map-get($font-sizes, 2);
+      height: 80%;
+      padding: 0 0.75rem;
+      border-radius: 8px;
+      margin: 0 0.25rem;
+    }
+
+    &--active {
+      background-color: map-get($colors, primary) !important;
+      color: map-get($colors, on-primary);
+      font-weight: 500;
+    }
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .edit-modal {
+    direction: rtl;
+    background-color: map-get($colors, surface) !important;
+    border-radius: 0;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    padding: 0;
+    position: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    &__cancel-btn {
+      border: 2px solid map-get($colors, primary) !important;
+      color: map-get($colors, primary) !important;
+    }
+  }
+}

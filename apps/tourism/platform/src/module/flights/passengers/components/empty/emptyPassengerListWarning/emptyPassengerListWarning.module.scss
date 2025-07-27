@@ -1,0 +1,13 @@
+.empty-passenger {
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    padding: 11.9px 42.2px 9.1px 41.8px;
+    border-radius: 25px;
+    box-shadow: 0 0 6px 0 rgba($color: map-get($colors, black), $alpha: 0.2);
+    background-color: map-get($colors, primary);
+  }
+}

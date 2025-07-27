@@ -1,0 +1,14 @@
+.remove-filter {
+  padding: 4px 12px 4px 8px;
+  border-radius: 18px;
+  border: 1px solid map-get($colors, grey-2);
+  margin: 4px 0 4px 4px;
+  &__icon {
+    margin-right: 10px;
+    padding: 0;
+    svg {
+      fill: grey;
+      height: 15px;
+    }
+  }
+}

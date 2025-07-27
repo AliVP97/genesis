@@ -1,0 +1,17 @@
+@import 'styles/custom-variables';
+
+.code-share-icon {
+  margin-left: 8px;
+  margin-right: -8px;
+  fill: map-get($colors, grey-24);
+}
+
+.popover {
+  padding: 8px;
+  max-width: 312px;
+}
+
+.popover p {
+  font-size: map-get($font-sizes, 2);
+  direction: rtl;
+}

@@ -1,0 +1,28 @@
+@import 'styles/custom-variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.root {
+  display: flex;
+  height: 24px;
+  font-size: map-get($font-sizes, 2);
+  border-radius: 8px;
+  font-weight: 500;
+
+  @include media-breakpoint-down(md) {
+    font-size: map-get($font-sizes, 1);
+  }
+}
+
+.warning {
+  color: map-get($colors, warning-group-tone50);
+  background-color: map-get($colors, warning-group-tone98);
+}
+
+.highlight {
+  background-color: map-get($colors, grey-20);
+}
+
+.normal {
+  color: map-get($colors, grey-24);
+  border: 1px solid map-get($colors, grey-10);
+}

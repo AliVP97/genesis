@@ -1,0 +1,16 @@
+.explanation {
+  &__room-tab {
+    border-bottom: 1px solid #bcbebe;
+    color: #696a6b;
+    &__selected {
+      border-bottom: 2px solid map-get($colors, primary);
+      color: map-get($colors, primary);
+      font-weight: bold;
+    }
+  }
+  &__modal {
+    height: 400px !important;
+    //overflow-y: auto;
+    border-radius: 8px 8px 0px 0px;
+  }
+}

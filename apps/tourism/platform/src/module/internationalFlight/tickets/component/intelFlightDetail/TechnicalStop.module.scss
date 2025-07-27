@@ -1,0 +1,10 @@
+@import 'styles/_custom-variables.scss';
+
+.root {
+  border-radius: 8px;
+  background-color: map-get($colors, main-warning-container);
+}
+
+.text {
+  font-size: map-get($font-sizes, 2);
+}

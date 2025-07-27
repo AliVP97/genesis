@@ -1,0 +1,34 @@
+.container {
+  width: 80%;
+  background-color: white;
+  direction: rtl;
+  border-radius: 16px;
+  padding: 24px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 190px;
+  &__exitBtn {
+    border-radius: 12px;
+    width: 72px;
+    height: 40px;
+    background-color: white;
+    color: #194b9b;
+    box-shadow: none;
+    margin-left: 8px;
+  }
+  &__deleteBtn {
+    border-radius: 12px;
+    background-color: #bb1614;
+    color: white;
+    width: 78px;
+    height: 40px;
+    box-shadow: none;
+  }
+}
+@include media-breakpoint-up(md) {
+  .container {
+    width: 557px;
+  }
+}

@@ -1,0 +1,13 @@
+.remove-modal {
+  direction: rtl;
+  background-color: map-get($colors, white) !important;
+  width: 75%;
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.254902);
+  padding: 20px 30px;
+
+  &__cancel-btn {
+    border: 2px solid map-get($colors, grey-1) !important;
+    color: map-get($colors, grey-1) !important;
+  }
+}

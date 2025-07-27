@@ -1,0 +1,116 @@
+@mixin card {
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+}
+
+.tour-order-content {
+  @include card;
+  position: relative;
+  margin: 3rem auto 1rem;
+  background-color: map-get($colors, white);
+  &__return-button {
+    background-color: transparent;
+    z-index: 1;
+    border-radius: 30px;
+    padding: 12px 4rem;
+    //border: 1px solid map-get($colors, primary);
+    //color: #121516;
+    //border: 2px solid #121516;
+    font-size: map-get($font-sizes, 3);
+  }
+  &__form {
+    @include card;
+    margin-bottom: 1rem;
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 1rem;
+    }
+    &__textarea {
+      height: 25vh;
+    }
+    &__footer {
+      @include card;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 1.5rem 2rem;
+      &__return-button {
+        background-color: transparent;
+        border-radius: 30px;
+        padding: 12px 4rem;
+        border: 2px solid map-get($colors, black-1);
+        color: map-get($colors, black);
+        font-size: map-get($font-sizes, 3);
+      }
+      &__submit-button {
+        background-color: map-get($colors, primary);
+        border-radius: 30px;
+        padding: 12px 3rem;
+        border: 1px solid map-get($colors, primary);
+        color: map-get($colors, white);
+        font-size: map-get($font-sizes, 3);
+      }
+    }
+  }
+  &__confirm-section {
+    @include card;
+    margin-bottom: 1rem;
+    &__return-button {
+      background-color: transparent;
+      border-radius: 30px;
+      padding: 12px 4rem;
+      border: 1px solid map-get($colors, primary);
+      color: map-get($colors, primary);
+      font-size: map-get($font-sizes, 3);
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .tour-order-content {
+    margin: 5rem;
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__flag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span {
+          font-size: map-get($font-sizes, 4) !important;
+          padding: 1rem 0;
+        }
+      }
+      &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+      }
+      &__return-button {
+        margin: 1rem 0;
+      }
+    }
+    &__form {
+      &__footer {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: none;
+        &__return-button {
+          width: 100%;
+        }
+        &__submit-button {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

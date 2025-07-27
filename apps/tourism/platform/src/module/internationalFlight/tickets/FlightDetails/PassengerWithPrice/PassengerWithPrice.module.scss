@@ -1,0 +1,12 @@
+.passenger-with-price {
+  font-size: map-get($map: $font-sizes, $key: 2);
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid map-get($colors, grey-21);
+}
+
+.total-price {
+  color: map-get($map: $colors, $key: primary-7);
+}

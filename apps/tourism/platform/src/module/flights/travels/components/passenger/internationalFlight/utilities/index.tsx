@@ -1,0 +1,7 @@
+export const internationalTicketStatusConvertor = {
+  INTFLIGHT_TICKET_STATUS_UNDEFINED: 'نامشخص',
+  INTFLIGHT_TICKET_STATUS_ISSUED: 'موفق',
+  INTFLIGHT_TICKET_STATUS_REFUNDED: 'استرداد شده',
+  INTFLIGHT_TICKET_STATUS_REFUNDED_REQUEST_RECEIVED: 'درخواست استرداد',
+  INTFLIGHT_TICKET_STATUS_REFUNDED_REJECTED: 'استرداد رد شده',
+};

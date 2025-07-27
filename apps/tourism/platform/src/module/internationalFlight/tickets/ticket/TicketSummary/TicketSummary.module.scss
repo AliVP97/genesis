@@ -1,0 +1,34 @@
+@import '~bootstrap/scss/mixins/breakpoints';
+@import 'styles/custom-variables';
+
+.root {
+  border-radius: 12px;
+  background-color: #f3f3f3;
+}
+
+.title {
+  font-size: map-get($font-sizes, 3);
+
+  @include media-breakpoint-down(md) {
+    font-size: map-get($font-sizes, 2);
+  }
+}
+
+.total-price {
+  font-weight: 700;
+  font-size: map-get($font-sizes, 6);
+}
+
+.currency {
+  font-weight: 400;
+  font-size: map-get($font-sizes, 3);
+
+  @include media-breakpoint-down(md) {
+    font-size: map-get($font-sizes, 2);
+  }
+}
+
+.show-details-btn {
+  font-size: map-get($font-sizes, 3);
+  width: 230px;
+}

@@ -1,0 +1,47 @@
+.circle-back {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #536279;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.parent-modal {
+  width: 1000px !important;
+  border-radius: 8px;
+  padding: 12px;
+}
+.modal-header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: map-get($colors, grey-10);
+}
+.parent-big-image {
+  border-radius: 6px !important;
+}
+
+.scroll {
+  overflow: auto;
+  //overflow-y: hidden;
+  white-space: nowrap;
+  //width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    height: 2px;
+    width: 1px;
+  }
+}
+
+.image-selected {
+  border-radius: 8px;
+  border-color: map-get($colors, primary);
+  border-width: 3px;
+  border-style: solid;
+  height: 151px;
+}

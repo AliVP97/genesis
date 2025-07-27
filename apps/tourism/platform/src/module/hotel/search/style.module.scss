@@ -1,0 +1,175 @@
+.hotels {
+  &__topSection {
+    position: fixed;
+    background-color: map-get($colors, white-1);
+    z-index: 3;
+    width: 100%;
+    top: 56px;
+    right: 0;
+  }
+  &__bottomSection {
+    margin-top: 145px;
+    margin-bottom: 6rem;
+  }
+  &__changeSearch {
+    display: flex;
+    margin-top: 0.4rem;
+    margin-inline: 1rem;
+    height: 48px;
+    text-align: right;
+    font-size: 14px;
+
+    &__icon {
+      text-align: left;
+    }
+    &__divider {
+      border-bottom: 2px solid map-get($colors, grey-18);
+      margin-top: 0.2rem;
+      margin-bottom: 0.3rem;
+    }
+    &__date {
+      color: map-get($colors, primary);
+      margin-bottom: 0.2rem;
+    }
+    &__passengers {
+      font-size: 12px;
+      color: map-get($colors, grey-19);
+      direction: rtl;
+    }
+  }
+}
+.mobile-sticky-utilities {
+  width: 100%;
+  background: white;
+  //border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 15px;
+
+  .filter-button {
+    padding: 0 0 0 13px;
+
+    .main {
+      width: 37px;
+      height: 37px;
+      border-radius: 999px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.active {
+      .main {
+        background: map-get($colors, primary);
+
+        .filters-number {
+          position: absolute;
+          z-index: 2;
+          border-radius: 999px;
+          top: -10px;
+          right: -10px;
+          background: map-get($colors, red-2);
+          color: white;
+          border: 2px solid white;
+          width: 25px;
+          height: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        svg {
+          path:last-child {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-sticky-chips {
+    overflow-x: scroll;
+    display: flex;
+    width: calc(100% - 45px);
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+.mobile-tickets-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 5px 16px;
+
+    .title {
+      width: 33.33%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .remove-filters {
+      margin: 0;
+      border: none;
+      background: none;
+      width: 33.33%;
+      text-align: left;
+      padding: 0;
+      font-size: 13px;
+      font-weight: bold;
+      color: map-get($colors, tertiary);
+    }
+  }
+
+  .submit-button {
+    border-radius: 999px;
+    width: 90%;
+    height: 48px;
+    display: flex;
+    color: map-get($colors, on-primary);
+    background: map-get($colors, primary);
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    bottom: 10px;
+  }
+}
+
+.desktop-filters-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 20px 0;
+  .title {
+    font-size: 14px;
+  }
+  .remove-filters {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: map-get($colors, tertiary);
+  }
+}
+.desktop-filters-border {
+  border-bottom: 1px solid map-get($colors, grey-7);
+  padding-bottom: 20px;
+}
+
+.filters-icon {
+  cursor: pointer;
+}

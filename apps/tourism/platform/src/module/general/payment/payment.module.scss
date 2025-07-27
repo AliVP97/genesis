@@ -1,0 +1,93 @@
+.payment-container {
+  max-width: 964px;
+  margin: auto;
+  width: 100%;
+  overflow: auto;
+  @media screen and (max-width: 767px) {
+    padding: 24px;
+  }
+}
+
+.payment-header {
+  text-align: center;
+  background-color: white;
+  padding: 24px 0;
+  margin-bottom: 73px;
+  position: sticky;
+  top: 0;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 24px;
+  }
+}
+
+.payment-item {
+  border: 1px solid #cfd6df;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  flex: 1;
+  height: fit-content;
+  min-width: 368px;
+  @media screen and (max-width: 767px) {
+    flex: none;
+  }
+}
+
+.data-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+  }
+}
+
+.gateway-wrapper {
+  max-width: 328px;
+}
+
+.invoice-item {
+  border: 1px solid #cfd6df;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px 20px;
+  min-width: 376px;
+  height: fit-content;
+}
+.payment-title {
+  cursor: pointer;
+  margin-bottom: 24px;
+  span {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    padding-right: 16px;
+    cursor: default;
+  }
+}
+.invoice-title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 12px;
+}
+
+.countdown-wrapper {
+  direction: rtl;
+  width: 50px !important;
+  position: absolute !important;
+  top: 9px;
+  left: 10px;
+  svg {
+    > circle {
+      stroke: white !important;
+    }
+  }
+}
+.countdown-number {
+  color: white !important;
+}

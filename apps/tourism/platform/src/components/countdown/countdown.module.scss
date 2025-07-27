@@ -1,0 +1,62 @@
+.countdown {
+  position: relative;
+  //margin: 100px auto auto;
+  height: 31px;
+  width: 31px;
+  text-align: center;
+
+  &__number {
+    color: map-get($colors, success);
+    display: inline-block;
+    line-height: 31px;
+    font-size: map-get($font-sizes, 3);
+
+    > span {
+      display: inline-block;
+    }
+  }
+
+  > svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 31px;
+    height: 31px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+
+    > circle {
+      stroke-dasharray: 113px;
+      stroke-dashoffset: 0;
+      stroke-linecap: round;
+      stroke-width: 2px;
+      stroke: map-get($colors, success);
+      fill: none;
+      animation: countdown linear infinite forwards;
+    }
+  }
+
+  &--error {
+    .countdown__number {
+      color: map-get($colors, error);
+    }
+
+    > svg > circle {
+      stroke: map-get($colors, error);
+    }
+  }
+
+  &--pending {
+    > svg > circle {
+      stroke: map-get($colors, success);
+    }
+  }
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 113px;
+  }
+}

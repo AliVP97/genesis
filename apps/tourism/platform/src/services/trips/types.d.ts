@@ -1,0 +1,16 @@
+import { definitions } from 'types/trips';
+type TTrip = definitions['tripsGetTripDetailsResponse'];
+type TFlightTripDetails = definitions['tripsFlightDetails'];
+type TFlightTripTickets = definitions['tripsFlightTicket'][];
+type TFlightTripPassengers = definitions['apitripsPassenger'][];
+type TTrainTickets = definitions['apitripsTrainTicket'][];
+type TTrainTicket = definitions['apitripsTrainTicket'];
+type TBusPassengers = definitions['apitripsPassengers'];
+type TBusRefund = definitions['apitripsRefund'];
+type TBusRefundStatus = definitions['apitripsRefundStatus'];
+type TInternationalPassenger = definitions['tripsIntFlightPassenger'];
+type TTripsIntFlightTicket = definitions['tripsIntFlightTicket'];
+type TTripsHotelPassenger = definitions['tripsHotelPassengers'];
+type TTripsHotelRoom = definitions['apitripsRoom'];
+type TTripsRoomStatus = definitions['apitripsRoomStatus'];
+type TTripsHotelPriceDetail = definitions['apitripsRoomPrice'];

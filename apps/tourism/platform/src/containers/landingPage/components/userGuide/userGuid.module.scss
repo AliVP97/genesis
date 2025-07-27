@@ -1,0 +1,51 @@
+.user-guid {
+  h5 {
+    font-size: map-get($font-sizes, 5);
+    font-weight: map-get($font-sizes, '500');
+    position: relative;
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border-radius: 7.5px;
+      background-color: map-get($colors, tertiary);
+      position: absolute;
+      right: -24px;
+      top: 5px;
+    }
+  }
+  &__img {
+    position: relative;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .user-guid {
+    h5 {
+      font-size: map-get($font-sizes, 4);
+      font-weight: map-get($font-sizes, '500');
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border-radius: 7.5px;
+        background-color: map-get($colors, tertiary);
+        position: absolute;
+        right: -20px;
+        top: 5px;
+      }
+    }
+    p {
+      font-size: map-get($font-sizes, 3);
+    }
+    &__img {
+      position: relative;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

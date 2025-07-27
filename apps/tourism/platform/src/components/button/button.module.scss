@@ -1,0 +1,19 @@
+.button {
+  border: none;
+  color: map-get($colors, on-primary);
+  font-weight: 500;
+  font-size: map-get($font-sizes, 3);
+  padding: 12px;
+  min-height: 48px;
+
+  &--radius {
+    border-radius: 25px;
+  }
+
+  &:disabled,
+  &[disabled] {
+    background-color: map-get($colors, surface-container-high);
+    color: rgba(map-get($colors, on-surface), 0.38);
+    box-shadow: none;
+  }
+}

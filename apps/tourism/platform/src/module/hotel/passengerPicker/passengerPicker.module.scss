@@ -1,0 +1,32 @@
+.passenger-picker {
+  background-color: map-get($colors, surface);
+}
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  .passenger-picker {
+    width: 386px;
+    background-color: map-get($colors, surface);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
+  .passenger-picker {
+    background-color: transparent;
+    padding-bottom: 70px;
+
+    .submit-button-wrap {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      padding: 4px 16px 10px;
+      background: map-get($colors, surface);
+    }
+  }
+}
+
+.submit-button-wrap {
+  margin: 0 24px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,22 @@
+.header {
+  border: 1px solid map-get($colors, grey-20);
+  height: 165px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  direction: rtl;
+  position: relative;
+  &__image {
+    border-radius: 8px;
+  }
+  &__footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: map-get($colors, green-2);
+    height: 47px;
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,17 @@
+.card div:not(:last-child) {
+  border-bottom: 1px solid map-get($map: $colors, $key: grey-13);
+}
+
+.desktop-card-header {
+  padding: 16px 24px;
+}
+
+.desktop-card-content {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: map-get($map: $colors, $key: grey-22);
+
+  div:not(:last-child) {
+    border-bottom: 1px solid map-get($map: $colors, $key: grey-13);
+  }
+}

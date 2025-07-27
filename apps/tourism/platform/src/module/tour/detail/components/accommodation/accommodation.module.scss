@@ -1,0 +1,15 @@
+.border-left {
+  position: relative;
+  padding-left: 20px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 40%;
+    background-color: map-get($colors, outline-var);
+  }
+}

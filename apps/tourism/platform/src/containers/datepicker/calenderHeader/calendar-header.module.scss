@@ -1,0 +1,55 @@
+.main {
+  flex-direction: row-reverse;
+  padding: 0 3px;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .date {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .sub-date {
+      font-size: 14px;
+      color: map-get($colors, on-surface-var);
+    }
+  }
+
+  .section {
+    background: map-get($colors, surface-container);
+    margin: 0 3px;
+    position: relative;
+    width: 50%;
+    padding: 3px 0;
+  }
+
+  &.ltr {
+    flex-direction: row;
+  }
+
+  .navigation-icon {
+    fill: map-get($colors, on-surface-var) !important;
+    cursor: pointer;
+
+    &:hover {
+      fill: map-get($colors, primary) !important;
+    }
+  }
+}
+.calendar-header {
+  &__navigation {
+    &-previous {
+      position: absolute;
+      left: 10px;
+      top: calc(50% - 12px);
+    }
+    &-next {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 12px);
+    }
+  }
+}

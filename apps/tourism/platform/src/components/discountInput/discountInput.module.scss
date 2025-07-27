@@ -1,0 +1,131 @@
+.field {
+  width: 100%;
+
+  &__discount-input {
+    direction: rtl;
+    position: relative;
+    height: 56px;
+    min-width: 329px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    padding-inline-end: 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: map-get($map: $colors, $key: grey-5);
+
+    &.--focused {
+      border-color: map-get($map: $colors, $key: blue-light-6);
+    }
+    &.--error {
+      border-color: map-get($map: $colors, $key: red);
+      background-color: #fcf4fa;
+    }
+    &.--success {
+      border-color: map-get($map: $colors, $key: green-3);
+
+      input {
+        color: map-get($map: $colors, $key: grey-24);
+      }
+    }
+    &.--disabled {
+      border-color: map-get($colors, outline-var);
+      background-color: white;
+    }
+
+    input {
+      height: 22px;
+      color: map-get($map: $colors, $key: black-2);
+      background-color: transparent;
+      font-size: 14px;
+      font-weight: 400;
+      border: none;
+
+      &:read-only {
+        cursor: default;
+      }
+    }
+
+    > button {
+      background-color: transparent;
+      border: none;
+      color: map-get($map: $colors, $key: blue-light-6);
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 24px;
+
+      &:disabled {
+        color: map-get($map: $colors, $key: grey-24);
+      }
+    }
+
+    &__label {
+      z-index: 1;
+      position: absolute;
+      inset-block-start: 20px;
+      inset-inline-start: 16px;
+      height: 16px;
+      color: map-get($map: $colors, $key: grey-24);
+
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+
+      &.--focused {
+        inset-block-start: 8px;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      
+      &.--disabled {
+        color: map-get($colors, outline-var);
+      }
+    }
+
+    &__input-container {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      column-gap: 4px;
+      padding: 26px 16px 8px 0;
+
+      &__icon {
+        margin-block: 2px;
+        color: map-get($map: $colors, $key: green-3);
+
+        &.--success {
+          border: none;
+        }
+      }
+    }
+
+    &__x-icon {
+      cursor: pointer;
+      > path:last-child {
+        fill: map-get($map: $colors, $key: grey-border);
+      }
+
+      &.--error {
+        > path:last-child {
+          fill: map-get($map: $colors, $key: red);
+        }
+      }
+    }
+  }
+
+  &__message {
+    margin-top: 8px;
+    color: map-get($map: $colors, $key: grey-24);
+    text-align: start;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+
+    &.--error {
+      color: map-get($map: $colors, $key: red);
+    }
+    &.--success {
+      color: map-get($map: $colors, $key: green-4);
+    }
+  }
+}

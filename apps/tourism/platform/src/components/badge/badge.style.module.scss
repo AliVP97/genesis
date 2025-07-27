@@ -1,0 +1,182 @@
+.badge {
+  display: flex;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 16px;
+
+  &--tonal {
+    &--error {
+      color: map-get($map: $colors, $key: 'on-error-container');
+      background-color: map-get($map: $colors, $key: 'error-container');
+    }
+
+    &--success {
+      color: map-get($map: $colors, $key: 'on-success-container');
+      background-color: map-get($map: $colors, $key: 'success-container');
+    }
+
+    &--warning {
+      color: map-get($map: $colors, $key: 'on-warning-container');
+      background-color: map-get($map: $colors, $key: 'warning-container');
+    }
+
+    &--info {
+      color: map-get($map: $colors, $key: 'on-info-container');
+      background-color: map-get($map: $colors, $key: 'info-container');
+    }
+
+    &--primary {
+      color: map-get($map: $colors, $key: 'on-primary-container');
+      background-color: map-get($map: $colors, $key: 'primary-container');
+    }
+
+    &--secondary {
+      color: map-get($map: $colors, $key: 'on-secondary-container');
+      background-color: map-get($map: $colors, $key: 'secondary-container');
+    }
+
+    &--tertiary {
+      color: map-get($map: $colors, $key: 'on-tertiary-container');
+      background-color: map-get($map: $colors, $key: 'tertiary-container');
+    }
+
+    &--neutral {
+      color: map-get($map: $colors, $key: 'on-surface-var');
+      background-color: map-get($map: $colors, $key: 'surface-container');
+    }
+
+    &--disabled {
+      $surface-variant: map-get($colors, 'on-surface');
+      color: rgba(red($surface-variant), green($surface-variant), blue($surface-variant), 0.38);
+      background-color: rgba(
+        red($surface-variant),
+        green($surface-variant),
+        blue($surface-variant),
+        0.08
+      );
+    }
+
+    &--loading {
+      color: map-get($map: $colors, $key: 'surface-container-high');
+      background-color: map-get($map: $colors, $key: 'surface-container-high');
+    }
+  }
+
+  &--filled {
+    &--error {
+      color: map-get($map: $colors, $key: 'on-error');
+      background-color: map-get($map: $colors, $key: 'error');
+    }
+
+    &--success {
+      color: map-get($map: $colors, $key: 'on-success');
+      background-color: map-get($map: $colors, $key: 'success');
+    }
+
+    &--warning {
+      color: map-get($map: $colors, $key: 'on-warning');
+      background-color: map-get($map: $colors, $key: 'warning');
+    }
+
+    &--info {
+      color: map-get($map: $colors, $key: 'on-info');
+      background-color: map-get($map: $colors, $key: 'info');
+    }
+
+    &--primary {
+      color: map-get($map: $colors, $key: 'on-primary');
+      background-color: map-get($map: $colors, $key: 'primary');
+    }
+
+    &--secondary {
+      color: map-get($map: $colors, $key: 'on-secondary');
+      background-color: map-get($map: $colors, $key: 'secondary');
+    }
+
+    &--tertiary {
+      color: map-get($map: $colors, $key: 'on-tertiary');
+      background-color: map-get($map: $colors, $key: 'tertiary');
+    }
+
+    &--neutral {
+      color: map-get($map: $colors, $key: 'on-surface-var');
+      background-color: map-get($map: $colors, $key: 'surface-var');
+    }
+
+    &--disabled {
+      $surface-variant: map-get($colors, 'on-surface');
+      color: rgba(red($surface-variant), green($surface-variant), blue($surface-variant), 0.38);
+      background-color: rgba(
+        red($surface-variant),
+        green($surface-variant),
+        blue($surface-variant),
+        0.12
+      );
+    }
+
+    &--loading {
+      color: map-get($map: $colors, $key: 'surface-container-high');
+      background-color: map-get($map: $colors, $key: 'surface-container-high');
+    }
+  }
+
+  &--outline {
+    &--error {
+      color: map-get($map: $colors, $key: 'error');
+      border: 1px solid map-get($map: $colors, $key: 'error');
+    }
+
+    &--success {
+      color: map-get($map: $colors, $key: 'success');
+      border: 1px solid map-get($map: $colors, $key: 'success');
+    }
+
+    &--warning {
+      color: map-get($map: $colors, $key: 'warning');
+      border: 1px solid map-get($map: $colors, $key: 'warning');
+    }
+
+    &--info {
+      color: map-get($map: $colors, $key: 'info');
+      border: 1px solid map-get($map: $colors, $key: 'info');
+    }
+
+    &--primary {
+      color: map-get($map: $colors, $key: 'primary');
+      border: 1px solid map-get($map: $colors, $key: 'primary');
+    }
+
+    &--secondary {
+      color: map-get($map: $colors, $key: 'secondary');
+      border: 1px solid map-get($map: $colors, $key: 'secondary');
+    }
+
+    &--tertiary {
+      color: map-get($map: $colors, $key: 'tertiary');
+      border: 1px solid map-get($map: $colors, $key: 'tertiary');
+    }
+
+    &--neutral {
+      color: map-get($map: $colors, $key: 'on-surface-var');
+      border: 1px solid map-get($map: $colors, $key: 'on-surface-var');
+    }
+
+    &--disabled {
+      $surface-variant: map-get($colors, 'on-surface');
+      color: rgba(red($surface-variant), green($surface-variant), blue($surface-variant), 0.38);
+      border: 1px solid
+        rgba(red($surface-variant), green($surface-variant), blue($surface-variant), 0.12);
+    }
+
+    &--loading {
+      color: map-get($map: $colors, $key: 'surface-container-high');
+      background-color: map-get($map: $colors, $key: 'surface-container-high');
+    }
+  }
+}

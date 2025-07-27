@@ -1,0 +1,47 @@
+.footer {
+  &__download-buttons-wrapper {
+    align-content: flex-start;
+    &__btn {
+      min-width: 8.74rem;
+      height: 3rem;
+      border: 1px solid map-get($colors, primary);
+      border-radius: 0.5rem;
+
+      p {
+        max-width: 4.4rem;
+        margin: 0;
+      }
+    }
+  }
+  &__contract-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+    margin-inline-end: 37px;
+    &__image {
+      width: 44px;
+      height: 44px;
+      background-color: map-get($colors, on-primary);
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px;
+    }
+  }
+
+  h4 {
+    border-bottom: 1px solid map-get($colors, on-primary);
+  }
+  .social-network-icon {
+    transform: scale(0.75);
+  }
+  &__version {
+    color: rgba(map-get($colors, 'on-primary'), 0.3);
+  }
+  &__text {
+    text-align: justify;
+  }
+}

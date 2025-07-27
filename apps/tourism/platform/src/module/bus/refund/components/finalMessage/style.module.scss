@@ -1,0 +1,11 @@
+.btn {
+  background-color: map-get($colors, primary);
+  color: map-get($colors, on-primary);
+  width: 117px;
+  height: 48px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}

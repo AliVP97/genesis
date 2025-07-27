@@ -1,0 +1,423 @@
+.ticket {
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0.5rem 0;
+  padding: 0.75rem 1rem 1rem 1rem;
+  background-color: map-get($colors, white);
+  border-radius: 12px;
+  color: map-get($colors, black-2);
+
+  &--open-detail {
+    margin: 0;
+    background-color: map-get($colors, grey-5);
+  }
+
+  &--disable {
+    pointer-events: none;
+    background-color: map-get($colors, grey-20);
+  }
+
+  &__discount-on-next-sale {
+    direction: rtl;
+    background-color: map-get($colors, green-2);
+    border-radius: 6px;
+    font-size: map-get($font-sizes, 2);
+    color: map-get($colors, green-1);
+  }
+
+  &__container {
+    direction: rtl;
+    display: grid;
+    grid-template-columns: auto min-content 184px;
+
+    &__specification {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+      flex-grow: 1;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+
+        &__discount {
+          padding: 4px 8px;
+          font-size: 12px;
+          line-height: 18px;
+          color: #27b67c;
+          border-radius: 8px;
+          background-color: #d7f2e7;
+        }
+      }
+
+      &__footer {
+        display: inline-flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &__no-refund {
+      padding: 4px 8px;
+      font-size: 12px;
+      line-height: 18px;
+      color: #d8000c;
+      border-radius: 8px;
+      background-color: #fed8d8;
+    }
+
+    &__content {
+      display: grid;
+      column-gap: 16px;
+      grid-template-columns:
+        minmax(min-content, 104px) minmax(min-content, 328px)
+        minmax(min-content, 336px);
+      width: -webkit-fill-available;
+      &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 8px;
+        flex: 0 0 auto;
+        text-align: center;
+
+        &__logo {
+          overflow: hidden;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: var(--neutral-50, #fff);
+          border: 1px solid var(--neutral-300, #e8e9e8);
+          border-radius: 50%;
+        }
+
+        &__name {
+          display: inline-block;
+          font-size: map-get($font-sizes, 2);
+          text-align: center;
+          text-overflow: ellipsis;
+        }
+      }
+
+      &__stations {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 16px;
+        margin-top: 8px;
+        > span {
+          width: 70px;
+          font-size: 26px;
+          font-weight: 500;
+        }
+
+        &__departure-locations {
+          display: flex;
+          column-gap: 8px;
+
+          &__station {
+            min-width: min-content;
+            max-width: 100px;
+            display: flex;
+            flex-direction: column;
+
+            .city {
+              font-size: 16px;
+              font-weight: 500;
+            }
+
+            .station {
+              font-size: 14px;
+              color: map-get($colors, grey-24);
+            }
+
+            &.origin {
+              display: flex;
+              flex-direction: column;
+              min-width: fit-content;
+              max-width: 100px;
+              width: 80px;
+            }
+          }
+
+          > span {
+            display: flex;
+            width: 24px;
+            color: map-get($colors, grey-24);
+          }
+
+          .final-destination-city {
+            grid-area: finalDestination;
+            width: fit-content;
+            padding: 2px 4px;
+            margin-block: 12px 4px;
+            border-radius: 4px;
+            background-color: map-get($colors, blue-light-4);
+            color: var(--primary-500, #065baa);
+            font-size: 12px;
+          }
+        }
+      }
+
+      &__description {
+        display: flex;
+        flex-direction: column;
+        font-size: map-get($font-sizes, 3);
+        margin-top: 8px;
+
+        &__show--detail {
+          display: flex;
+          align-items: center;
+          padding: 0;
+          background-color: transparent;
+          border: 0;
+          > span {
+            font-size: map-get($font-sizes, 3);
+          }
+        }
+      }
+    }
+
+    &__divider {
+      padding-inline-start: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &__dashed-divider {
+        height: 100%;
+        border-left: 1px dashed #bcbebe;
+      }
+    }
+
+    &__state {
+      padding-inline-start: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &--full {
+        justify-content: unset;
+      }
+
+      &--price-only {
+        justify-content: center;
+      }
+
+      &__availableCounts {
+        direction: rtl;
+        padding-block: 4px 12px;
+        font-size: map-get($font-sizes, 2);
+        color: map-get($colors, black-2);
+        &--warning {
+          color: map-get($colors, red);
+        }
+
+        &--full {
+          display: flex;
+          justify-content: center;
+          height: 50px;
+          font-size: map-get($font-sizes, 3);
+          font-weight: 700;
+        }
+      }
+
+      &__footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        &__price {
+          direction: rtl;
+          padding-bottom: 8px;
+          font-size: map-get($font-sizes, 5);
+          font-weight: 500;
+          text-align: left;
+          &__unit {
+            margin-inline-start: 4px;
+            font-size: map-get($font-sizes, 2);
+            font-weight: 400;
+          }
+
+          &__discount {
+            width: 38px;
+            background-color: map-get($colors, red-1);
+            border-radius: 8px;
+            font-size: map-get($font-sizes, 3);
+            color: map-get($colors, white);
+            text-align: center;
+          }
+
+          &__withDiscount {
+            padding-right: 4px;
+            font-size: map-get($font-sizes, 3);
+            font-weight: normal;
+            color: map-get($colors, grey-1);
+            text-decoration: line-through;
+          }
+        }
+
+        &__btn {
+          width: -webkit-fill-available;
+          width: -moz-available; /* WebKit-based browsers will ignore this. */
+          height: 48px;
+          background-color: map-get($colors, primary);
+          border: none !important;
+          border-radius: 25px;
+          font-size: map-get($font-sizes, 3);
+          font-weight: 500;
+          color: map-get($colors, white);
+          &--loading {
+            background-color: map-get($colors, white-1);
+          }
+        }
+      }
+    }
+  }
+
+  &.mobile {
+    padding: 8px 16px;
+    .ticket__container {
+      grid-template-columns: none;
+      grid-template-rows: auto 17px minmax(36px, min-content);
+
+      &__no-refund {
+        padding-block: 2px;
+        margin-bottom: 8px;
+      }
+
+      &__specification {
+        &__header {
+          display: block;
+        }
+        &__footer {
+          display: none;
+        }
+      }
+
+      &__content {
+        grid-template-areas: 'title station' 'title description' 'title finalDestination';
+        grid-template-columns: 64px minmax(min-content, max-content);
+
+        &__title {
+          grid-area: title;
+          width: 100%;
+          row-gap: 4px;
+
+          &__logo {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        &__stations {
+          grid-area: station;
+          margin-top: 0;
+          flex-direction: column;
+          row-gap: 4px;
+
+          > span {
+            font-size: map-get($font-sizes, 5);
+            font-weight: 500;
+          }
+
+          &__departure-locations {
+            &__station {
+              min-width: min-content;
+              max-width: 80px;
+
+              .city {
+                font-size: 14px;
+                font-weight: 500;
+              }
+
+              .station {
+                font-size: 12px;
+                color: map-get($colors, grey-24);
+              }
+
+              &.origin {
+                width: 80px;
+              }
+            }
+          }
+        }
+
+        &__description {
+          grid-area: description;
+          font-size: map-get($font-sizes, 2);
+          margin-top: 16px;
+
+          > div {
+            font-size: map-get($font-sizes, 2);
+          }
+        }
+
+        .final-destination-city {
+          grid-area: finalDestination;
+          width: fit-content;
+          padding: 2px 4px;
+          margin-block: 16px 8px;
+          border-radius: 4px;
+          background-color: map-get($colors, blue-light-4);
+          color: var(--primary-500, #065baa);
+          font-size: 12px;
+        }
+      }
+
+      &__divider {
+        flex-direction: row;
+        padding: 0;
+
+        &__dashed-divider {
+          height: 1px;
+          width: 100%;
+          border-left: none;
+          border-bottom: 1px solid #bcbebe;
+        }
+      }
+
+      &__state {
+        flex-direction: row;
+        padding-inline-start: 0;
+
+        &--full {
+          justify-content: space-between;
+        }
+
+        &__availableCounts {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          row-gap: 4px;
+          padding: 0;
+
+          > span:first-child {
+            margin: 4px 8px;
+          }
+
+          &--full {
+            height: fit-content;
+            font-size: map-get($font-sizes, 4);
+            font-weight: 500;
+          }
+        }
+
+        &__footer {
+          width: fit-content;
+
+          &__price {
+            padding-bottom: 0;
+            line-height: 30px;
+          }
+
+          &__btn {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

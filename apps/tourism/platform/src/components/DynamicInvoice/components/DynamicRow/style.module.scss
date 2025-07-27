@@ -1,0 +1,59 @@
+.row {
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0.5rem 0;
+  color: map-get($map: $colors, $key: black-2);
+  font-size: 14px;
+  font-weight: 500;
+
+  .chevron {
+    scale: 0.6667;
+    fill: map-get($map: $colors, $key: grey-24);
+
+    &.--expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+  .label {
+    color: map-get($colors, 'gray-2');
+    font-weight: 500;
+    font-size: map-get($font-sizes, 3);
+  }
+  .right_item {
+    flex: 1;
+  }
+}
+
+.label-description {
+  line-break: anywhere;
+  padding: 12px 8px;
+  color: map-get($colors, 'gray-2');
+  font-size: 12px;
+}
+
+.isBold {
+  font-weight: 700;
+}
+
+.value__container {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  .value {
+    unicode-bidi: plaintext;
+    font-size: 14px;
+  }
+
+  &.isBold {
+    font-weight: 500;
+  }
+
+  .copyValue {
+    font-size: 24px;
+    color: #065baa;
+  }
+}

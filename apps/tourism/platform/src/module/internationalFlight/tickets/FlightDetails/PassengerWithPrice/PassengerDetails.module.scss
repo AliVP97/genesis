@@ -1,0 +1,13 @@
+.passenger-details {
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 1);
+  }
+}
+
+.count {
+  color: map-get($map: $colors, $key: grey-23);
+
+  @include breakpoint-down(md) {
+    color: unset;
+  }
+}

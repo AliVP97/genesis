@@ -1,0 +1,86 @@
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  column-gap: 16px;
+  margin-bottom: 16px;
+
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+
+  &__header {
+    display: flex;
+    column-gap: 8px;
+    padding: 10px 28px;
+    color: map-get($map: $colors, $key: grey-1);
+    font-weight: 500;
+    border-bottom: 1px solid map-get($colors, blue-grey);
+  }
+
+  &__title {
+    margin-inline: 24px;
+    margin-top: 16px;
+
+    @include media-breakpoint-down(lg) {
+      margin-top: 24px;
+      margin-inline: 16px;
+      font-size: 12px;
+    }
+  }
+
+  &__fieldset {
+    display: flex;
+
+    column-gap: 16px;
+    margin: 16px 24px;
+    text-align: center;
+
+    &__refresh {
+      cursor: pointer;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4px;
+      background-color: map-get($map: $colors, $key: grey-5);
+      border-radius: 8px;
+      color: map-get($map: $colors, $key: blue-light-6);
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    height: 60px;
+    width: 120px;
+
+    &__spinner-backdrop {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+    }
+
+    &__spinner {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+    }
+
+    &__fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      color: map-get($map: $colors, $key: red);
+      font-size: 12px;
+      border-radius: 8px;
+      background-color: map-get($map: $colors, $key: grey-5);
+    }
+  }
+}

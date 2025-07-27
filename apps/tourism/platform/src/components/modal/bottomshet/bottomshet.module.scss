@@ -1,0 +1,30 @@
+.modal {
+  &__container {
+    position: fixed;
+    // top: 0;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 60%);
+  }
+  &__content {
+    position: absolute;
+    overflow-y: auto;
+    height: 100%;
+    // top: 4%;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 99999;
+    outline: none;
+    box-shadow: 0 0.5rem 1.5rem rgb(170, 170, 170);
+    transition: all 0.3s ease-out;
+    // border-radius: 1rem 1rem 0 0;
+    // margin-bottom: 5rem;
+  }
+}

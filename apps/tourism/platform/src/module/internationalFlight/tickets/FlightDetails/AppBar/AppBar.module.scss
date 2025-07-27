@@ -1,0 +1,20 @@
+.app-bar {
+  background-color: map-get($map: $colors, $key: primary-7);
+  padding: 8px;
+}
+
+.title {
+  margin-right: 8px;
+  color: map-get($map: $colors, $key: white);
+}
+
+.icon {
+  margin: 4px 8px;
+  fill: map-get($map: $colors, $key: white);
+}
+
+.button {
+  background-color: unset;
+  border: unset;
+  cursor: pointer;
+}

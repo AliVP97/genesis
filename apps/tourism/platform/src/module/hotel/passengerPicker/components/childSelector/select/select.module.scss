@@ -1,0 +1,62 @@
+.floating-label-select {
+  position: relative;
+  height: 64px;
+  width: 100%;
+  border-radius: 15px;
+  background: map-get($map: $colors, $key: blue-light-4);
+  margin-bottom: 30px;
+  small {
+    font-size: 0.7em;
+    color: map-get($map: $colors, $key: red);
+  }
+}
+
+.floating-label-select {
+  &__select {
+    width: 100%;
+    height: 64px;
+    position: relative;
+    background-color: transparent;
+    outline: none;
+    vertical-align: middle;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid map-get($map: $colors, $key: gray-3);
+    border-radius: 15px;
+    padding: 20px 10px 0px 10px;
+    color: map-get($map: $colors, $key: black-2);
+
+    &--invalid {
+      border: 1px solid map-get($map: $colors, $key: red);
+    }
+    &--valid {
+      border: 1px solid map-get($map: $colors, $key: primary);
+    }
+  }
+}
+.floating-label-select {
+  &__label {
+    position: absolute;
+    top: 20px;
+    font-size: 14px;
+    right: 10px;
+    transition: all 0.2s;
+    z-index: 0;
+    pointer-events: none;
+    &--invalid {
+      color: map-get($map: $colors, $key: red);
+    }
+    &--valid {
+      color: map-get($map: $colors, $key: grey-19);
+    }
+  }
+}
+.floating-label-select select:focus ~ label,
+.floating-label-select select:not([data-value='']) ~ label {
+  top: 10px;
+  font-size: 10px;
+  color: map-get($map: $colors, $key: gray-3);
+  background: map-get($map: $colors, $key: blue-light-4);
+  padding: 0 5px;
+  z-index: 10;
+}

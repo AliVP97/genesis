@@ -1,0 +1,212 @@
+.mobile-scrolled-top-bar {
+  .mobile-sticky-utilities {
+    padding-right: 30px;
+  }
+}
+
+.mobile-sticky-utilities {
+  margin-left: -20px;
+  width: calc(100% + 40px);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  padding: 15px;
+
+  .filter-icon {
+    padding-left: 4px;
+
+    @media screen and (min-width: 375px) {
+      padding-left: 8px;
+    }
+
+    position: relative;
+    div {
+      background-color: map-get($map: $colors, $key: red-2);
+      width: 20px;
+      height: 20px;
+      border-radius: 100px;
+      color: map-get($map: $colors, $key: white);
+      text-align: center;
+      position: absolute;
+      top: -9px;
+      right: -14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .mobile-sticky-chips {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.mobile-tickets-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 5px 16px;
+
+    .title {
+      width: 33.33%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .remove-filters {
+      margin: 0;
+      border: none;
+      background: none;
+      width: 33.33%;
+      text-align: left;
+      padding: 0;
+      font-size: 13px;
+      font-weight: bold;
+      color: map-get($colors, tertiary);
+    }
+  }
+
+  .submit-button {
+    border-radius: 999px;
+    width: 90%;
+    height: 48px;
+    display: flex;
+    color: map-get($colors, on-primary);
+    background: map-get($colors, primary);
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.desktop-filters-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 20px 0px;
+  border-bottom: 1px solid map-get($colors, grey-7);
+  .title {
+    font-size: 14px;
+  }
+  .remove-filters {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: map-get($colors, tertiary);
+  }
+}
+
+.filters-icon {
+  cursor: pointer;
+  position: relative;
+}
+
+.filters-drawer {
+  background: map-get($colors, white);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+  position: relative;
+  padding: 0 0 50px 0;
+
+  .main-content {
+    position: relative;
+    padding: 83px 54px 24px 24px;
+
+    overflow-y: scroll;
+
+    height: 100%;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgb(188, 188, 188);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .close {
+    border: none;
+    background: none;
+    direction: rtl;
+    padding: 0;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    .icon {
+      margin-left: 8px;
+    }
+  }
+  .bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 64px 10px 24px;
+    .submit-button {
+      border-radius: 999px;
+      width: 100%;
+      height: 48px;
+      display: flex;
+      color: map-get($colors, on-primary);
+      background: map-get($colors, primary);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+.fullcapacity {
+  background-color: map-get($colors, orange-alert);
+  color: map-get($colors, brown);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  height: 49px;
+  direction: rtl;
+  align-items: center;
+}
+
+.filter-number-badge {
+  position: absolute;
+  z-index: 2;
+  top: -3px;
+  right: -3px;
+  width: 17px;
+  height: 17px;
+  border-radius: 99px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

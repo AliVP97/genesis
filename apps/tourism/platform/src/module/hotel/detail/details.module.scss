@@ -1,0 +1,247 @@
+.details-content {
+  background-color: map-get($map: $colors, $key: white);
+
+  border-radius: 16px 16px 0px 0px;
+  position: relative;
+  top: -20px;
+}
+.desktop-parent-image {
+  //position: relative;
+  padding: 0;
+  margin: -4rem 0 auto;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.parent-big-image {
+  border-radius: 4px !important;
+}
+
+.item {
+  position: relative;
+}
+
+.slideNext {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  height: 95%;
+  width: 100%;
+  align-items: center;
+  border-radius: 8px;
+
+  background-color: rgba(2, 2, 2, 0.7);
+}
+.counter-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.parent-modal {
+  width: 1000px !important;
+  border-radius: 8px;
+  padding: 12px;
+}
+.modal-header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: map-get($colors, grey-10);
+}
+.scroll {
+  overflow: auto;
+  //overflow-y: hidden;
+  white-space: nowrap;
+  //width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    height: 2px;
+    width: 1px;
+  }
+}
+
+.image-selected {
+  border-radius: 8px;
+  border-color: map-get($colors, primary);
+  border-width: 4px;
+  border-style: solid;
+  //border-radius: 8px !important;
+}
+.rooms {
+  min-height: 216px;
+  &__border {
+    border-right: 1px dashed map-get($colors, grey-border);
+    height: 100%;
+  }
+  &__budget {
+    border-radius: 8px;
+  }
+  &__titleSelectRooms {
+    width: 100%;
+    border-bottom: 1px solid map-get($colors, grey-17);
+  }
+  &__selectRooms {
+    border-bottom: 1px dashed map-get($colors, grey-24);
+    &__activeRoom {
+      background-color: map-get($colors, blue-light-4);
+    }
+    &__lastItem {
+      border-bottom: none;
+    }
+    &__activeBorder {
+      border-right: 4px solid map-get($colors, primary);
+      border-radius: 2px;
+      color: map-get($colors, primary);
+    }
+  }
+  &__sumOfRooms {
+    position: sticky;
+    top: 65px;
+    z-index: 2;
+  }
+  &__refundable {
+    background-color: #fdead6;
+    border-radius: 8px;
+    font-size: 12px;
+    padding: 8px;
+    height: 24px;
+    width: 93px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  &__price {
+    text-align: left;
+    &__container {
+      float: left;
+    }
+    &__discount {
+      background-color: map-get($colors, red-2);
+      color: map-get($colors, white);
+      border-radius: 8px;
+      font-size: map-get($font-sizes, 2);
+      width: 87px;
+      text-align: center;
+    }
+    &__withDiscount {
+      display: flex;
+      text-decoration: line-through;
+      font-weight: normal;
+      color: map-get($colors, grey-1);
+      font-size: map-get($font-sizes, 3);
+      padding-right: 4px;
+    }
+
+    &__finalPrice {
+      border-bottom: 1px solid map-get($colors, grey-17);
+    }
+  }
+  &__btn {
+    width: 190px;
+    background-color: map-get($colors, primary);
+    &--remove {
+      background-color: transparent;
+      color: map-get($colors, primary);
+      border: 2px solid map-get($colors, primary);
+    }
+  }
+  &__detail {
+    &--border {
+      border: 1px solid map-get($colors, grey-border);
+      margin-top: 16px;
+    }
+    &--iconOpen {
+      transform: rotate(90deg);
+    }
+    &--iconClose {
+      transform: rotate(270deg);
+    }
+  }
+  &__tagList {
+    width: 81px;
+    height: 24px;
+
+    background: #f3f3f3;
+    border-radius: 8px;
+  }
+}
+
+.fixed-tab {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1;
+  border-bottom: 1px solid map-get($colors, grey-10);
+  background-color: map-get($colors, grey-22);
+  &__item {
+    min-width: 160px;
+  }
+  &__border {
+    border-bottom: 4px solid map-get($colors, primary);
+    padding-bottom: 20px;
+    min-width: 160px;
+  }
+}
+
+.rules {
+  border-right: 2px solid map-get($colors, grey-7);
+  &__cancellationRules {
+    border-bottom: 2px dashed map-get($colors, grey-7);
+    &__lastItem {
+      border-bottom: none;
+    }
+  }
+}
+.fullCapacity {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  direction: rtl;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    &--btn {
+      width: 180px;
+    }
+  }
+}
+.blur-effect {
+  filter: blur(5px);
+}
+.report-button {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0;
+  color: white;
+  margin: 10px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: none;
+  border: none;
+  box-shadow: none;
+}

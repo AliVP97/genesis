@@ -1,0 +1,224 @@
+.filter-icon {
+  padding: 0 0 0 15px;
+}
+
+.mobile-sticky-chips {
+  overflow-x: scroll;
+  display: flex;
+  width: calc(100% - 45px);
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.mobile-tickets-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 5px 16px;
+
+    .title {
+      width: 33.33%;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .remove-filters {
+      margin: 0;
+      border: none;
+      background: none;
+      width: 33.33%;
+      text-align: left;
+      padding: 0;
+      font-size: 13px;
+      font-weight: bold;
+      color: map-get($colors, tertiary);
+    }
+  }
+
+  .submit-button {
+    border-radius: 999px;
+    width: 90%;
+    height: 48px;
+    display: flex;
+    color: map-get($colors, on-primary);
+    background: map-get($colors, primary);
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+.desktop-filters-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+
+  .title {
+    font-size: 14px;
+  }
+
+  .remove-filters {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: map-get($colors, tertiary);
+  }
+}
+
+.filters-icon {
+  cursor: pointer;
+}
+
+.filters-drawer {
+  background: map-get($colors, white);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+  position: relative;
+  padding: 0 0 50px 0;
+
+  .main-content {
+    position: relative;
+    padding: 83px 54px 24px 24px;
+
+    overflow-y: scroll;
+
+    height: 100%;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: none;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgb(188, 188, 188);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+
+  .close {
+    border: none;
+    background: none;
+    direction: rtl;
+    padding: 0;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    .icon {
+      margin-left: 8px;
+    }
+  }
+  .bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 64px 10px 24px;
+    .submit-button {
+      border-radius: 999px;
+      width: 100%;
+      height: 48px;
+      display: flex;
+      color: map-get($colors, on-primary);
+      background: map-get($colors, primary);
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.fullcapacity {
+  background-color: map-get($colors, orange-alert);
+  color: map-get($colors, brown);
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  height: 49px;
+  direction: rtl;
+  align-items: center;
+}
+
+.container {
+  --gap: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'available-dates'
+    'filter-sort'
+    'main';
+  row-gap: var(--gap);
+
+  &.with-selected-ticket {
+    grid-template-areas:
+      'selected-ticket'
+      'available-dates'
+      'filter-sort'
+      'main';
+
+    @include media-breakpoint-up(md) {
+      grid-template-areas:
+        'available-dates filter'
+        'selected-ticket filter'
+        'sort filter'
+        'main filter'
+        '. filter';
+    }
+  }
+
+  &.full-capacity {
+    // grid-template-areas: ;
+  }
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: minmax(0, 1fr) fit-content(324px);
+    grid-template-areas:
+      'available-dates filter'
+      'selected-ticket filter'
+      'sort filter'
+      'main filter'
+      '. filter';
+    gap: var(--gap);
+    padding: 12px;
+  }
+
+  .selected-ticket-section {
+    grid-area: selected-ticket;
+    padding-bottom: calc(var(--gap) * -1);
+  }
+
+  .available-dates-section {
+    grid-area: available-dates;
+    width: 100%;
+  }
+
+  .sort-section {
+    grid-area: sort;
+  }
+
+  .filter-section {
+    grid-area: filter;
+  }
+
+  .main-section {
+    grid-area: main;
+    padding-inline: 16px;
+  }
+}

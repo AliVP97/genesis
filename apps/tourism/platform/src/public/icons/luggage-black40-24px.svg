@@ -1,0 +1,17 @@
+<svg id="luggage-black40-24px" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #9e9e9e;
+      }
+    </style>
+  </defs>
+  <rect id="Rectangle_6617" data-name="Rectangle 6617" class="cls-1" width="16" height="16"/>
+  <g id="Group_69838" data-name="Group 69838" transform="translate(3.333 1.333)">
+    <path id="Path_41935" data-name="Path 41935" class="cls-2" d="M8,12.667H7v-6H8Zm2.167,0h-1v-6h1Zm2.167,0h-1v-6h1Zm.667-8H11.667v-2A.669.669,0,0,0,11,2H8.333a.669.669,0,0,0-.667.667v2H6.333A1.337,1.337,0,0,0,5,6v7.333a1.337,1.337,0,0,0,1.333,1.333.667.667,0,1,0,1.333,0h4a.667.667,0,0,0,1.333,0,1.337,1.337,0,0,0,1.333-1.333V6A1.337,1.337,0,0,0,13,4.667ZM8.667,3h2V4.667h-2ZM13,13.333H6.333V6H13Z" transform="translate(-5 -2)"/>
+  </g>
+</svg>

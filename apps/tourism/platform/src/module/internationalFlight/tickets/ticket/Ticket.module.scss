@@ -1,0 +1,9 @@
+.root {
+  border-radius: 12px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ticket--disable {
+  opacity: 0.5;
+  pointer-events: none;
+}

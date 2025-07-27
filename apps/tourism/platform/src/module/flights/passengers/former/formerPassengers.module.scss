@@ -1,0 +1,43 @@
+.former-passengers {
+  text-align: center;
+  &__input {
+    &--wrapper {
+      svg {
+        position: absolute;
+        right: 1.5rem;
+        top: 27px;
+      }
+      input {
+        width: 100%;
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 0 2px #000;
+        height: 36px;
+        padding: 0 2rem;
+        direction: rtl;
+        font-size: map-get($font-sizes, 3);
+        background-color: #f8f8f8;
+        outline: none !important;
+        &::placeholder {
+          color: map-get($colors, grey-2);
+        }
+      }
+    }
+  }
+  &__submit {
+    position: fixed;
+    bottom: 0.5rem;
+    left: 1rem;
+    right: 1rem;
+    button {
+      width: 100%;
+      background-color: map-get($colors, primary);
+    }
+  }
+  &__wrapper {
+    direction: rtl;
+    padding: 0 1rem;
+    overflow-y: auto;
+    margin-bottom: 3.5rem;
+  }
+}

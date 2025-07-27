@@ -1,0 +1,56 @@
+.searchTicket {
+  &__btn {
+    right: 0;
+    bottom: 67px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .searchTicket {
+    &__btn {
+      position: relative;
+      bottom: 0;
+    }
+  }
+}
+
+.ticket-type {
+  width: 210px;
+  border-radius: 0.5rem;
+  background-color: map-get($colors, grey-3);
+  margin: 1rem auto;
+  display: flex;
+  font-size: 12px;
+
+  &__button {
+    width: 50%;
+    text-align: center;
+    padding: 0.25rem 0;
+
+    &--active {
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .ticket-type {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .is-superapp {
+    .searchTicket {
+      &__btn {
+        position: fixed;
+        width: 100%;
+        right: 0;
+        bottom: 75px;
+        padding: 0 20px;
+      }
+    }
+  }
+}

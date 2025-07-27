@@ -1,0 +1,30 @@
+.busy-route {
+  text-align: center;
+
+  &__item {
+    min-width: 180px;
+    border-radius: 8px;
+    margin-top: 20px;
+    img {
+      border-radius: 8px 8px 0 0;
+    }
+    h6 {
+      background-color: map-get($colors, surface);
+      margin: 0;
+      padding: 15px 0px;
+      width: 100%;
+    }
+    span {
+      font-size: map-get($font-sizes, 2);
+      font-weight: 500;
+      a {
+        text-decoration: none;
+      }
+    }
+    h6 {
+      border-radius: 8px;
+    }
+    border: 1px solid map-get($colors, outline-var) !important;
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,27 @@
+.app-download-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 0.5rem !important;
+  background-color: white;
+  width: 255px;
+  border: 1px solid map-get($colors, 'primary-3');
+  border-radius: 8rem;
+  cursor: pointer;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    width: 175px;
+  }
+  p {
+    text-wrap: nowrap;
+    flex-grow: 1;
+    margin: 0;
+    font-weight: map-get($font-weights, '500');
+    font-size: map-get($font-sizes, 2);
+  }
+}

@@ -1,0 +1,24 @@
+# Run app
+FROM docker-proxy.780.ir/node:20.15.0
+
+ARG BUILD_FILE=build.tar
+
+WORKDIR /
+COPY ${BUILD_FILE} /build.tar
+
+WORKDIR /app
+
+RUN tar xf /build.tar && rm -rf /build.tar
+COPY ./robots.travel.txt /app/public/robots.txt
+
+EXPOSE 3000
+
+# Required for healthcheck defined in docker-compose.yml
+# If you don't have a healthcheck that uses curl, don't install it
+# RUN apk --no-cache add curl
+
+# By adding --production npm's devDependencies are not installed
+RUN npm ci --production --ignore-scripts
+RUN ./node_modules/.bin/next telemetry disable
+
+CMD ["npm", "start"]

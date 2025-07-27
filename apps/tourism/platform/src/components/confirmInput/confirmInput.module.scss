@@ -1,0 +1,34 @@
+.confirm-input {
+  > input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: map-get($colors, white-3);
+
+    &:placeholder-shown {
+      border: 1px solid map-get($colors, gray-3);
+      background-color: map-get($colors, white-2);
+      outline: none;
+    }
+
+    &:focus {
+      border: 1px solid $primary;
+      outline: none;
+      box-shadow: none;
+      background-color: map-get($colors, white-3);
+    }
+  }
+
+  &--error {
+    > input {
+      border: 1px solid map-get($colors, error);
+      color: map-get($colors, error);
+      font-weight: map-get($font-weights, 500);
+      background-color: map-get($colors, error-1);
+    }
+  }
+}

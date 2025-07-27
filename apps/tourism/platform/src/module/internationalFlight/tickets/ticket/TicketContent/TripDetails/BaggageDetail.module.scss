@@ -1,0 +1,26 @@
+@import 'styles/custom-variables';
+@import '~bootstrap/scss/mixins/breakpoints';
+
+.root {
+  width: 67px;
+
+  @include media-breakpoint-down(md) {
+    width: unset;
+  }
+}
+
+.text {
+  font-size: map-get($font-sizes, 2);
+  color: map-get($colors, grey-24);
+  font-family: 'Roboto', Tahoma, serif;
+  margin-right: 4px;
+}
+
+.no-luggage-text {
+  font-size: map-get($font-sizes, 1);
+}
+
+.luggage-icon {
+  height: 18px;
+  width: 18px;
+}

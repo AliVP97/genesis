@@ -1,0 +1,27 @@
+.button {
+  border: unset;
+  min-width: 98px;
+  background-color: transparent;
+
+  @include media-breakpoint-up(md) {
+    min-width: 152px;
+    font-size: map-get($map: $font-sizes, $key: 3);
+  }
+
+  padding: 12px 16px;
+  border-radius: 32px;
+
+  &.primary {
+    background-color: map-get($map: $colors, $key: primary);
+    color: map-get($map: $colors, $key: white);
+  }
+
+  &.outlined {
+    border: 2px solid map-get($map: $colors, $key: black-2);
+  }
+
+  &:disabled {
+    color: map-get($map: $colors, $key: grey-21);
+    background-color: map-get($map: $colors, $key: grey-18);
+  }
+}

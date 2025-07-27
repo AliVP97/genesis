@@ -1,0 +1,57 @@
+.modal {
+  background-color: map-get($colors, white-1);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
+  height: 245px;
+  width: 314px;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__text {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    font-size: 14px;
+  }
+  &__btn {
+    height: 48px;
+    border-radius: 25px;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
+    border: none !important;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 1rem 0;
+  }
+}
+
+.desktop-modal {
+  width: 1040px;
+  height: 230px;
+  background-color: map-get($colors, white-1);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  &__btn {
+    width: 248px;
+    border-radius: 25px;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, white);
+    border: none !important;
+    height: 48px;
+  }
+  &__return-btn {
+    border: 2px solid map-get($colors, grey-2);
+    border-radius: 25px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-left: 1rem;
+  }
+}

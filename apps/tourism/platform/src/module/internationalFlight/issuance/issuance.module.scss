@@ -1,0 +1,79 @@
+.issuing {
+  display: flex;
+  justify-content: center;
+  margin-top: 9rem;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+  &__description {
+    text-align: center;
+    padding-top: 3rem;
+    &--done {
+      color: map-get($colors, green-1);
+      text-align: center;
+      padding-top: 3rem;
+    }
+    &--failed {
+      color: map-get($colors, red-1);
+      text-align: center;
+      padding-top: 3rem;
+    }
+  }
+  &__footer {
+    display: flex;
+    position: absolute;
+    bottom: 5rem;
+    &__btn {
+      height: 48px;
+      border-radius: 25px;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, white);
+      border: none !important;
+      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 154px;
+      &__return {
+        height: 48px;
+        border-radius: 25px;
+        background-color: transparent;
+        padding: 0 1.5rem;
+        color: map-get($colors, grey-1);
+        border: solid 2px map-get($colors, grey-1) !important;
+        font-weight: 500;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-right: 1rem;
+      }
+      &__see {
+        height: 48px;
+        border-radius: 25px;
+        background-color: transparent;
+        color: map-get($colors, grey-1);
+        border: solid 2px map-get($colors, grey-1) !important;
+        font-weight: 500;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 154px;
+        margin-right: 1rem;
+      }
+    }
+  }
+  .status-message {
+    padding: 50px 0;
+    direction: rtl;
+  }
+}
+
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  .issuing {
+    &__footer {
+      display: flex;
+      position: relative;
+      margin-top: 7rem;
+    }
+  }
+}

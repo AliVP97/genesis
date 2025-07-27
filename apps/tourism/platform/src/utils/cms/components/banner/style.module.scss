@@ -1,0 +1,47 @@
+button.container {
+  text-decoration: none;
+  position: relative;
+  height: 45px;
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  padding: 2px 50px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: map-get($colors, tertiary);
+  color: map-get($colors, on-tertiary);
+
+  > .action-button {
+    position: absolute;
+    left: 10%;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+    border-bottom: 1px solid;
+  }
+
+  > .title {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: max-content;
+    padding: 10px 5px;
+    padding-bottom: 35px;
+
+    &.action-disabled {
+      padding-bottom: 10px;
+    }
+
+    > .action-button {
+      left: 0;
+      right: 0;
+      bottom: 12px;
+      width: fit-content;
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.modal {
+  height: 100%;
+
+  @include media-breakpoint-up(md) {
+    z-index: 100;
+  }
+}
+
+.modal-super-app {
+  height: 60px;
+  box-shadow: unset;
+  min-height: calc(100% - 60px);
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    border-radius: 8px 8px 0 0;
+    background-color: map-get($map: $colors, $key: surface);
+    box-shadow: 0px -4px 4px map-get($map: $colors, $key: grey-8);
+  }
+}
+
+.modal-desktop {
+  @include media-breakpoint-up(md) {
+    top: 15%;
+    left: 50%;
+    height: fit-content;
+    max-height: 60%;
+    overflow: hidden;
+    border-radius: 8px;
+    transform: translate(-50%);
+  }
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: map-get($map: $colors, $key: white);
+
+  @include media-breakpoint-up(md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

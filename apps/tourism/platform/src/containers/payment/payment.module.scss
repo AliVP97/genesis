@@ -1,0 +1,95 @@
+.payment {
+  padding: 4rem 1rem 0;
+  overflow-y: auto;
+  margin-bottom: 4rem;
+  &__result {
+    flex: 1;
+    position: relative;
+    margin-bottom: 2rem;
+    direction: rtl;
+    box-shadow: 0 6px 8px 3px #dbdbdb;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 1rem 1rem 0.5rem;
+    background-color: #fff;
+    &__status {
+      &--icon {
+        position: absolute;
+        top: -30px;
+        right: 44%;
+        left: 44%;
+        height: 42px;
+        text-align: center;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &--title {
+        font-weight: 500;
+        letter-spacing: -0.64px;
+      }
+      &--footer {
+        height: 20px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -20px;
+        background:
+          linear-gradient(-135deg, #fff 10px, rgba(0, 0, 0, 0) 0%) 0 10px,
+          linear-gradient(135deg, #fff 10px, transparent 0%) 0 10px;
+        background-position: left bottom !important;
+        background-repeat: repeat-x !important;
+        background-size: 16px 20px;
+      }
+    }
+    &--row {
+      padding: 0.5rem 0;
+      > :first-child {
+        color: map-get($colors, grey-1);
+        font-weight: 500;
+      }
+      &-price {
+        span:nth-child(2) {
+          letter-spacing: -1.2px;
+          font-weight: 500;
+          span {
+            font-weight: normal;
+            font-size: map-get($font-sizes, 3);
+          }
+        }
+      }
+    }
+  }
+  &__btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .payment {
+    max-width: 600px;
+    padding-top: 7rem;
+    &__result {
+      &--row {
+        padding: 0.5rem 1.5rem;
+      }
+      &__status {
+        &--icon {
+          right: 45%;
+          left: 45%;
+          height: 50px;
+        }
+      }
+    }
+    &__btn {
+      position: absolute;
+      bottom: 0;
+      right: 9rem;
+      left: 9rem;
+    }
+  }
+}

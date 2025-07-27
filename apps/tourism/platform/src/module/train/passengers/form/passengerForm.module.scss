@@ -1,0 +1,223 @@
+.passengerForm {
+  padding: 1rem;
+  form {
+    padding-bottom: 4rem;
+  }
+  &__submit {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    button {
+      width: 100%;
+      border-radius: 25px;
+      height: 48px;
+      font-weight: 500;
+    }
+    &__confirm {
+      background-color: map-get($colors, primary);
+      color: #fff;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+  }
+  &__add-submit {
+    border-radius: 8px;
+    border: 1px dashed map-get($colors, primary);
+    padding: 0.75rem 4.5rem;
+  }
+  &__type {
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    align-items: center;
+    width: 223px;
+    height: 36px;
+    background-color: map-get($colors, grey-3);
+    border-radius: 8px;
+    button {
+      border: none;
+      background-color: transparent;
+      letter-spacing: 0.23px;
+      font-size: map-get($font-sizes, 2);
+      height: 80%;
+      padding: 0 0.75rem;
+      border-radius: 8px;
+      margin: 0 0.25rem;
+    }
+    &--active {
+      background-color: map-get($colors, primary) !important;
+      color: #fff;
+      font-weight: 500;
+    }
+  }
+  &__grey {
+    &--icon {
+      fill: map-get($colors, grey-1);
+    }
+  }
+  &__modal {
+    inset: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    &--header {
+      background-color: #fff;
+      box-shadow: 0 4px 9px 0 rgb(0 0 0 / 16%);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    &--icon {
+      position: absolute;
+      right: 1rem;
+      svg {
+        fill: map-get($colors, red-1);
+      }
+    }
+  }
+  &__selectDate {
+    direction: rtl;
+    select {
+      color: map-get($colors, black-1) !important;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-image:
+        linear-gradient(45deg, transparent 50%, black 50%),
+        linear-gradient(135deg, black 50%, transparent 50%),
+        linear-gradient(to right, transparent, transparent);
+      background-position:
+        calc(15px) calc(1em + 4px),
+        calc(20px) calc(1em + 4px),
+        100% 0;
+      background-size:
+        5px 5px,
+        5px 5px,
+        2.5em 2.5em;
+      background-repeat: no-repeat;
+
+      &:focus {
+        outline: none;
+      }
+      option[disabled] {
+        display: none;
+      }
+    }
+    &--icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 11px;
+    }
+    &--label {
+      padding: 0 0.75rem 0.25rem;
+      font-size: map-get($font-sizes, 3);
+      font-weight: 500;
+      color: map-get($colors, grey-1);
+    }
+    &--wrapper {
+      border: solid 2px rgba(40, 75, 150, 0.65);
+      flex-wrap: wrap;
+      display: flex;
+      height: 64px;
+      background-color: map-get($colors, white-2);
+      border-radius: 16px;
+      border: 2px solid transparent;
+      &--error {
+        border: 2px solid map-get($colors, red);
+      }
+      &--fill {
+        border: solid 2px rgba(40, 75, 150, 0.65);
+      }
+    }
+    &--day {
+      flex: 0 0 25%;
+      max-width: 25%;
+      position: relative;
+      border-left: 1px solid map-get($colors, grey-1);
+      padding-right: 1rem;
+      margin: 0.5rem 0;
+      select {
+        border-radius: 0 16px 16px 0;
+      }
+    }
+    &--month {
+      flex: 0 0 50%;
+      max-width: 50%;
+      position: relative;
+      border-left: 1px solid map-get($colors, grey-1);
+      padding-right: 1rem;
+      margin: 0.5rem 0;
+    }
+    &--year {
+      flex: 0 0 25%;
+      max-width: 25%;
+      position: relative;
+      padding-right: 1rem;
+      margin: 0.5rem 0;
+      select {
+        border-radius: 16px 0 0 16px;
+      }
+    }
+  }
+}
+@include media-breakpoint-up(lg) {
+  .passengerForm {
+    &__submit {
+      position: static;
+      button {
+        width: 25%;
+        font-size: map-get($font-sizes, 3);
+      }
+      &__refuse {
+        background-color: map-get($colors, white);
+      }
+    }
+    &__selectDate {
+      font-size: map-get($font-sizes, 2);
+      &--icon {
+        position: absolute;
+        right: 10%;
+        top: 15px;
+        svg {
+          transform: scale(0.75);
+        }
+      }
+      &--day {
+        flex: 0 0 33%;
+        max-width: 300px;
+        padding-right: 0.5rem;
+        margin: 0.3rem 0;
+      }
+      &--month {
+        flex: 0 0 33%;
+        max-width: 300px;
+        padding-right: 0.5rem;
+        margin: 0.3rem 0;
+      }
+      &--year {
+        flex: 0 0 33%;
+        max-width: 300px;
+        padding-right: 0.5rem;
+        margin: 0.3rem 0;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .passengerForm {
+    &__selectDate {
+      select {
+        text-align: center;
+      }
+    }
+  }
+}

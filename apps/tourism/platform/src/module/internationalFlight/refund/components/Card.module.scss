@@ -1,0 +1,17 @@
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 8px map-get($map: $colors, $key: grey-7);
+}
+
+.card-header {
+  padding: 8px;
+  background-color: map-get($map: $colors, $key: blue-light-4);
+}
+
+.card-extra-info {
+  font-size: map-get($map: $font-sizes, $key: 3);
+}
+
+.card-body {
+  padding: 8px;
+}

@@ -1,0 +1,67 @@
+.modal {
+  background-color: map-get($colors, surface);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+  width: 310px;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+  &__text {
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    white-space: pre-line;
+    line-height: 40px;
+  }
+  &__btn {
+    height: 48px;
+    border-radius: 25px;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, on-primary);
+    border: none !important;
+    width: 100%;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 1rem 0;
+    padding: 1rem 2rem;
+  }
+}
+
+.desktop-modal {
+  padding: 2rem;
+  width: 600px;
+  background-color: map-get($colors, surface);
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+  &__btn {
+    width: 248px;
+    border-radius: 25px;
+    background-color: map-get($colors, primary);
+    color: map-get($colors, on-primary);
+    border: none !important;
+    height: 48px;
+  }
+  &__return-btn {
+    border: 2px solid map-get($colors, primary);
+    border-radius: 25px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+}

@@ -1,0 +1,23 @@
+.tickets {
+  &__bottomSheet {
+    [data-rsbs-header='true'] {
+      padding: 0 !important;
+    }
+    [data-rsbs-footer='true'] {
+      padding: 0 !important;
+      box-shadow: 0 -3px 6px 0 rgba(0, 0, 0, 0.16);
+    }
+    [data-rsbs-scroll] {
+      background-color: #fafafa;
+    }
+  }
+  &__accordion {
+    [role='button'] {
+      cursor: default;
+      padding-top: 8px;
+    }
+  }
+  &.is-superapp {
+    padding-bottom: 6rem;
+  }
+}

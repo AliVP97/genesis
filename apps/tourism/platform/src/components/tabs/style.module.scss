@@ -1,0 +1,76 @@
+.main {
+  .tabs {
+    display: flex;
+    padding: 0;
+    border-bottom: 1px solid map-get($colors, grey-10);
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .tab {
+      list-style: none;
+      margin-left: 20px;
+
+      button {
+        background: none;
+        border: none;
+        padding: 0 10px 8px 10px;
+        position: relative;
+        font-weight: map-get($font-weights, '500');
+        h2 {
+          margin: 0;
+          strong {
+            font-size: map-get($font-sizes, 4);
+            font-weight: map-get($font-weights, bold);
+          }
+        }
+        &.active {
+          color: map-get($colors, primary);
+          font-weight: 700;
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 3px;
+            background-color: map-get($colors, primary);
+          }
+        }
+      }
+    }
+  }
+  .contents {
+    div {
+      display: none;
+      padding-top: 0.5rem;
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-size: map-get($font-sizes, 4);
+        font-weight: map-get($font-weights, bold);
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .main {
+    .tabs {
+      .tab {
+        border-bottom: 1px solid map-get($colors, grey-10);
+        margin-bottom: -1px;
+        button {
+          width: 100%;
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+$hoverColor: rgb(0, 84, 174);
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  margin-top: 45px;
+}
+
+.sidebar {
+  padding: 24px 24px 0;
+  background: white;
+  box-shadow: 0 0 6px 0 rgb(0 0 0 / 15%);
+  border-radius: 8px;
+  width: 320px;
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 0 0 24px 0;
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .outerCircle {
+          position: absolute;
+          left: -7px;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background-color: map-get($colors, green-1);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .innerCircle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+          }
+        }
+      }
+    }
+
+    .name {
+      margin-bottom: 5px;
+    }
+  }
+
+  .wallet {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    min-height: 60px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+
+    .menuItem {
+      margin-bottom: 0;
+    }
+
+    .cash {
+      font-size: 12px;
+      color: #a1a1a1;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+    padding: 16px 0 17px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .menuItem {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-decoration: none;
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      margin-left: 10px;
+      fill: #7c7c7c;
+    }
+
+    span {
+      font-size: 14px;
+      color: rgb(38, 38, 38);
+    }
+
+    &:hover {
+      .icon {
+        fill: $hoverColor;
+      }
+      span {
+        color: $hoverColor;
+      }
+    }
+  }
+}
+
+.mainContent {
+  flex-grow: 1;
+}

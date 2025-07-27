@@ -1,0 +1,40 @@
+.skeleton {
+  &__tickets {
+    height: 98px;
+    background-color: white;
+    padding: 1rem;
+    direction: rtl;
+    margin-bottom: 1rem;
+  }
+  &__tour {
+    height: 176px;
+    background-color: white;
+    padding: 1rem;
+    direction: rtl;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    svg {
+      width: 100%;
+    }
+  }
+  &__trainTickets {
+    height: 176px;
+    background-color: white;
+    padding: 1rem;
+    direction: rtl;
+    margin-bottom: 1rem;
+  }
+  &__hotel {
+    height: 280px;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: white;
+    svg {
+      height: 300px;
+    }
+  }
+  &__title {
+    height: 50px;
+  }
+}

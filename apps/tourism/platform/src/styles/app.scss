@@ -1,0 +1,121 @@
+@import './vars';
+@import './bootstrap';
+@import 'fonts';
+@import './utilities';
+@import '../pages/_app.scss';
+@import '../styles/_accordion.scss';
+@import './notification.scss';
+@import 'react-spring-bottom-sheet/dist/style.css';
+
+html,
+body {
+  font-size: 16px;
+  font-family: $font-family-base;
+  background-color: map-get($colors, surface);
+}
+
+body {
+  overflow-y: scroll;
+}
+
+* {
+  outline: none;
+}
+
+.main {
+  margin: 0 auto;
+}
+
+.bottom-sheet > div[data-rsbs-overlay='true'] {
+  background-color: map-get($colors, surface);
+}
+
+.rc-select__control,
+.rc-select--active__control {
+  padding: 0 0.5rem;
+  height: 100%;
+  border: none;
+  background-color: transparent !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+.rc-select--active__single-value,
+.rc-select--active__input-container {
+  padding-top: 1rem !important;
+}
+.rc-select__indicator-separator,
+.rc-select--active__indicator-separator {
+  display: none;
+}
+.Toastify {
+  &__toast {
+    text-align: right;
+    background-color: map-get($colors, inverse-surface) !important;
+    color: map-get($colors, inverse-on-surface) !important;
+    border-radius: 8px !important;
+  }
+  &__close-button > svg {
+    fill: map-get($colors, inverse-on-surface) !important;
+  }
+}
+.rtl {
+  direction: rtl !important;
+}
+.ltr {
+  direction: ltr !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.rounded-4 {
+  border-radius: 0.5rem;
+}
+
+.rounded-5 {
+  border-radius: 1rem;
+}
+
+.rounded-6 {
+  border-radius: 2rem;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+[data-rsbs-overlay],
+[data-rsbs-backdrop],
+[data-rsbs-root]:after {
+  z-index: 5 !important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.fade-in {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

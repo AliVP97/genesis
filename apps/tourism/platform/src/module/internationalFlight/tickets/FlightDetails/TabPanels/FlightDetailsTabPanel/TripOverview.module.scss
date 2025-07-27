@@ -1,0 +1,90 @@
+.time {
+  font-weight: map-get($map: $font-weights, $key: '500');
+  font-size: map-get($map: $font-sizes, $key: 5);
+
+  @include breakpoint-down(md) {
+    font-weight: map-get($map: $font-weights, $key: '700');
+    font-size: map-get($map: $font-sizes, $key: 4);
+  }
+}
+
+.next-day {
+  color: map-get($map: $colors, $key: grey-23);
+  font-size: map-get($map: $font-sizes, $key: 3);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 1);
+  }
+}
+
+.flight-number {
+  font-size: map-get($map: $font-sizes, $key: 2);
+
+  @include breakpoint-down(md) {
+    font-size: map-get($map: $font-sizes, $key: 1);
+    font-weight: map-get($map: $font-weights, $key: '300');
+  }
+}
+
+.flight-headline {
+  font-size: map-get($map: $font-sizes, $key: 2);
+}
+
+.luggage-icon {
+  transform: scale(0.8);
+
+  & path:last-child {
+    fill: map-get($map: $colors, $key: black-4);
+  }
+}
+
+.no-luggage-icon {
+  transform: scale(0.8);
+
+  & path:last-child {
+    fill: map-get($map: $colors, $key: red-3);
+  }
+}
+
+.baggage-description {
+  font-size: map-get($map: $font-sizes, $key: 1);
+
+  &.__value {
+    font-family: 'Roboto', Tahoma, serif;
+  }
+}
+
+.no-value {
+  margin-left: 2px;
+  color: map-get($map: $colors, $key: red-3);
+}
+
+.point-container {
+  min-width: 92px;
+
+  @include breakpoint-down(md) {
+    min-width: 78px;
+  }
+}
+
+.iata {
+  font-size: map-get($map: $font-sizes, $key: 2);
+  color: map-get($map: $colors, $key: grey-23);
+
+  @include breakpoint-down(md) {
+    font-weight: map-get($map: $font-weights, $key: '300');
+    font-size: map-get($map: $font-sizes, $key: 1);
+  }
+}
+
+.origin-iata-code {
+  margin-left: 4px;
+}
+
+.destination-iata-code {
+  margin-right: 4px;
+}
+
+.iata-name {
+  min-width: calc(100% - 50px);
+}

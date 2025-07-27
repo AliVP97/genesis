@@ -1,0 +1,22 @@
+.checkbox-container {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  input:disabled ~ span {
+    border-color: map-get($map: $colors, $key: grey-2);
+    background-color: map-get($map: $colors, $key: grey-2);
+  }
+}
+
+.label {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  margin-left: 4px;
+}
+
+.status {
+  flex-shrink: 0;
+  font-size: map-get($map: $font-sizes, $key: 2);
+}

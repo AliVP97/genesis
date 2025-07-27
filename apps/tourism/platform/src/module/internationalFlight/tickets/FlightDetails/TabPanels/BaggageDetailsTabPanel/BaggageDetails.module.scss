@@ -1,0 +1,36 @@
+.title {
+  font-size: map-get($map: $font-sizes, $key: 2);
+}
+
+.description {
+  font-size: map-get($map: $font-sizes, $key: 2);
+}
+
+.luggage-icon {
+  transform: scale(0.8);
+
+  & path:last-child {
+    fill: map-get($map: $colors, $key: black-4);
+  }
+}
+
+.no-luggage-icon {
+  transform: scale(0.8);
+
+  & path:last-child {
+    fill: map-get($map: $colors, $key: red-3);
+  }
+}
+
+.baggage-description {
+  font-size: map-get($map: $font-sizes, $key: 1);
+
+  &.__value {
+    font-family: 'Roboto', Tahoma, serif;
+  }
+}
+
+.no-value {
+  margin-left: 2px;
+  color: map-get($map: $colors, $key: red-3);
+}

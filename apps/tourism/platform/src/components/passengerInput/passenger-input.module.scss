@@ -1,0 +1,43 @@
+.passenger-input {
+  position: relative;
+  &__desktop {
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    direction: ltr;
+    &--input {
+      width: 100%;
+      & > div {
+        padding-right: 50px;
+      }
+    }
+  }
+  &__desktop-custom {
+    position: absolute;
+    left: -3rem;
+    z-index: 1;
+    direction: ltr;
+    &--input {
+      width: 100%;
+      & > div {
+        padding-right: 50px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-between(md, xl) {
+  .passenger-input {
+    &__desktop {
+      position: absolute;
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.bottom-sheet {
+  [data-rsbs-header='true'] {
+    box-shadow: none;
+  }
+}

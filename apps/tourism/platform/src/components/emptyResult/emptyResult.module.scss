@@ -1,0 +1,52 @@
+@mixin common-btn-style {
+  &--btn {
+    text-align: center;
+    button {
+      width: 168px;
+      height: 48px;
+      background-color: map-get($colors, primary);
+      color: map-get($colors, on-primary);
+      border-radius: 25px;
+      border: none;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.12);
+    }
+  }
+  &--title {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    margin: 1.5rem auto;
+    color: map-get($colors, primary);
+    text-align: center;
+    span {
+      line-height: 1.71;
+      letter-spacing: -0.42px;
+    }
+  }
+}
+
+.emptyResult {
+  &__passenger {
+    @include common-btn-style();
+  }
+  &__filter {
+    @include common-btn-style();
+    &--btn {
+      padding-top: 0.75rem;
+    }
+    &--logo {
+      text-align: center;
+    }
+  }
+  &__search {
+    @include common-btn-style();
+    &--btn {
+      padding-top: 0.75rem;
+    }
+    &--title {
+      padding-top: 1.5rem;
+    }
+  }
+}

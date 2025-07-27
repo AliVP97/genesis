@@ -1,0 +1,7 @@
+.card-content {
+  padding: 8px 16px;
+
+  @include breakpoint-down(md) {
+    padding: 8px;
+  }
+}

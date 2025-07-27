@@ -1,0 +1,11 @@
+.cards {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  &__item {
+    display: inline-block;
+    margin-left: 8px;
+    width: 98%;
+  }
+}

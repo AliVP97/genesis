@@ -1,0 +1,19 @@
+.tab-buttons {
+  width: 100%;
+  z-index: 3;
+  overflow-x: auto;
+  min-height: 52px;
+  border-bottom: 1px solid map-get($colors, grey-21);
+  background-color: map-get($map: $colors, $key: grey-25);
+
+  @include breakpoint-down(md) {
+    padding: 0 16px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

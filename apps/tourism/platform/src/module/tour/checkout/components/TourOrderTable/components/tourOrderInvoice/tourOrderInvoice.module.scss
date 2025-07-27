@@ -1,0 +1,62 @@
+@mixin card {
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+}
+
+.tour-order-container {
+  &__form {
+    @include card;
+    margin-bottom: 1rem;
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .tour-order-container {
+    &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__flag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span {
+          font-size: map-get($font-sizes, 4) !important;
+          padding: 1rem 0;
+        }
+      }
+      &__info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        gap: 0.5rem;
+      }
+      &__return-button {
+        margin: 1rem 0;
+      }
+    }
+    &__form {
+      &__footer {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: none;
+        &__return-button {
+          width: 100%;
+        }
+        &__submit-button {
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
