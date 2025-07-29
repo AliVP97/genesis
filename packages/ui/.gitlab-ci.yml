@@ -1,0 +1,48 @@
+stages:
+  - validate # Lint, Test, Build
+  - publish # Publish library to Nexus
+  - deploy # Deploy Storybook to chromatic
+
+variables:
+  NEXUS_REGISTRY: nexus.780.ir/repository/hosted-npm
+  STORYBOOK_IMAGE: $CI_REGISTRY_IMAGE/storybook:$CI_COMMIT_SHORT_SHA
+
+validate:
+  stage: validate
+  image: node:20-alpine
+  script:
+    - npm ci
+    - npm run lint
+    - npm run test
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+publish-to-nexus:
+  stage: publish
+  image: node:20-alpine
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+  before_script:
+    - echo "@780:registry=https://$NEXUS_REGISTRY/" > ~/.npmrc
+    - echo "//$NEXUS_REGISTRY/:_authToken=$NEXUS_TOKEN" >> ~/.npmrc
+    - sed -i '/"prepare":/d' package.json
+  script:
+    - npm publish --registry=https://$NEXUS_REGISTRY/ --ignore-scripts
+
+deploy-to-chromatic:
+  stage: deploy
+  image: node:18-alpine
+  before_script:
+    - apk add --no-cache git 
+    - sed -i '/"prepare":/d' package.json
+    - npm ci
+  script:
+    - npx chromatic --project-token $CHROMATIC_PROJECT_TOKEN
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  environment:
+    name: chromatic
+    url: https://www.chromatic.com

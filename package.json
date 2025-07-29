@@ -58,6 +58,8 @@
   "workspaces": [
     "libs/*",
     "apps/tourism/*",
-    "packages/*"
+    "packages/*",
+    "ui",
+    "packages"
   ]
 }

@@ -1,0 +1,36 @@
+# Node
+node_modules/
+
+# Build output
+dist/
+build/
+coverage
+.next/
+build-storybook/
+storybook-static/
+
+# Demo app and test folders
+demo/
+__tests__/
+tests/
+src/**/*.test.ts
+src/**/*.test.tsx
+
+# Config and environment files
+*.log
+*.env
+*.env.local
+*.config.js
+*.config.mjs
+*.test.*
+jest.*
+tsconfig.*.json
+rollup.config.*.js
+.storybook/
+.vscode/
+commitlin.config.js
+types.d.ts
+
+# System files
+.DS_Store
+junit.xml

@@ -16,10 +16,10 @@
       "path": "./apps/tourism/bus"
     },
     {
-      "path": "./packages/shared-ui"
+      "path": "./packages/utils"
     },
     {
-      "path": "./packages/utils"
+      "path": "./packages/ui"
     }
   ]
 }

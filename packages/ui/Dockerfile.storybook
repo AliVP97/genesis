@@ -1,0 +1,21 @@
+FROM docker-proxy.780.ir/node:20.15.0 AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run storybook:build
+
+FROM docker-proxy.780.ir/node:20.15.0
+
+WORKDIR /app
+
+RUN npm install -g serve
+
+COPY --from=builder /app/storybook-static ./storybook-static
+
+EXPOSE 6006
+
+CMD ["serve", "-s", "storybook-static", "-l", "6006"]
