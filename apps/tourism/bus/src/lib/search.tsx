@@ -1,10 +1,15 @@
-import { Button } from '@780/shared-ui';
+import { Search as SearchModule } from '@780/tourism-shared';
 
-export function Search() {
+export const Search = () => {
+  const onSubmit = (data: any) => {
+    console.log('Search data submitted:', data);
+    // Handle the search data submission logic here
+  };
+
   return (
-    <div>
-      <h1>Welcome to Train Search!</h1>
-      <Button onClick={() => console.log('CLICKED!!')}>Click me</Button>
-    </div>
+    <>
+      <h1>جستجوی بلیط اتوبوس</h1>
+      <SearchModule onSubmit={onSubmit} />
+    </>
   );
-}
+};
