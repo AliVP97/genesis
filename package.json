@@ -5,12 +5,17 @@
   "scripts": {},
   "private": true,
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "@mui/material-nextjs": "^7.2.0",
+    "@mui/stylis-plugin-rtl": "^7.2.0",
     "next": "~15.2.4",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "stylis": "^4.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -35,6 +40,7 @@
     "@types/node": "^20.0.0",
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
+    "@types/stylis": "^4.2.7",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/ui": "^3.0.0",
     "ajv": "^8.0.0",
