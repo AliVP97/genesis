@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import perfectionist from 'eslint-plugin-perfectionist';
 
 export default [
   ...nx.configs['flat/base'],
@@ -43,4 +44,5 @@ export default [
     // Override or add rules here
     rules: {},
   },
+  perfectionist.configs['recommended-natural'],
 ];

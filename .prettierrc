@@ -1,3 +1,6 @@
 {
-  "singleQuote": true
+  "singleQuote": true,
+  "tailwindStylesheet": "./packages/ui/src/global.css",
+  "tailwindAttributes": ["slotProps", "classes"],
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
