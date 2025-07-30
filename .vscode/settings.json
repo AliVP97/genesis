@@ -3,6 +3,7 @@
     ["className\\s*:\\s*['\"]([^'\"]*)['\"]"]
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  }
+    "source.fixAll": "explicit"
+  },
+  "nxConsole.generateAiAgentRules": true
 }

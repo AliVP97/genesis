@@ -1,6 +1,9 @@
-import { Button, TextField } from '@780/ui';
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { FC } from 'react';
+
+import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+
+import { Button, TextField } from '@780/ui';
+
 import { PassengerCount } from '../passenger-count';
 
 type SearchProps = {
