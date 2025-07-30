@@ -1,7 +1,6 @@
 import { Button, TextField } from '@780/ui';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { FC } from 'react';
-
 import { PassengerCount } from '../passenger-count';
 
 type SearchProps = {
@@ -20,23 +19,38 @@ export const Search: FC<SearchProps> = ({ onSubmit }) => {
 
   return (
     <form className="flex justify-center gap-4 p-20" onSubmit={submitHandler}>
+      <div className="relative flex">
+        <TextField
+          label="مبدا"
+          name="origin"
+          slotProps={{ input: { className: '!rounded-s-xl !rounded-e-none' } }}
+        />
+        <Button
+          className="!absolute start-1/2 top-2 h-10 !w-10 !min-w-10 origin-center translate-x-5 !rounded-full !p-0"
+          variant="contained"
+        >
+          <SwapHorizIcon />
+        </Button>
+        <TextField
+          label="مقصد"
+          name="destination"
+          slotProps={{ input: { className: '!rounded-s-none !rounded-e-xl' } }}
+        />
+      </div>
       <TextField
-        label="مبدا"
-        name="origin"
-        slotProps={{ input: { className: '!rounded-s-xl !rounded-e-none' } }}
+        label="تاریخ رفت"
+        name="departureDate"
+        slotProps={{ input: { className: '!rounded-xl' } }}
       />
-      <Button className="absolute start-0 top-1/2 !hidden">
-        <SwapHorizIcon />
-      </Button>
       <TextField
-        label="مقصد"
-        name="destination"
-        slotProps={{ input: { className: '!rounded-e-xl' } }}
+        label="تاریخ برگشت"
+        name="returnDate"
+        slotProps={{ input: { className: '!rounded-xl' } }}
       />
-      <TextField label="تاریخ رفت" name="departureDate" />
-      <TextField label="تاریخ برگشت" name="returnDate" />
       <PassengerCount />
-      <Button type="submit">جستجو سفر</Button>
+      <Button className="w-32 !rounded-xl" type="submit" variant={'contained'}>
+        جستجو
+      </Button>
     </form>
   );
 };
