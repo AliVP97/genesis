@@ -7,13 +7,13 @@ import { Button, TextField } from '@780/ui';
 import { PassengerCount } from '../passenger-count';
 
 type SearchProps = {
-  onSubmit?: (data: any) => void;
+  onSubmit?: (data: unknown) => void;
 };
 
 export const Search: FC<SearchProps> = ({ onSubmit }) => {
   const submitHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     const data = Object.fromEntries(formData.entries());
     if (onSubmit) {
       onSubmit(data);
