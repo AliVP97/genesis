@@ -1,0 +1,28 @@
+image: node:20
+variables:
+  CI: 'true'
+
+# Main job
+CI:
+  interruptible: true
+  only:
+    - main
+    - merge_requests
+  script:
+    # This enables task distribution via Nx Cloud
+    # Run this command as early as possible, before dependencies are installed
+    # Learn more at https://nx.dev/ci/reference/nx-cloud-cli#npx-nxcloud-startcirun
+    # Connect your workspace by running "nx connect" and uncomment this line to enable task distribution
+    # - yarn nx start-ci-run --distribute-on="3 linux-medium-js" --stop-agents-after="build"
+
+    - yarn install --frozen-lockfile
+    - NX_HEAD=$CI_COMMIT_SHA
+    - NX_BASE=${CI_MERGE_REQUEST_DIFF_BASE_SHA:-$CI_COMMIT_BEFORE_SHA}
+
+    # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
+    # - yarn nx-cloud record -- echo Hello World
+    - yarn nx affected -t lint test build
+    # Nx Cloud recommends fixes for failures to help you get CI green faster. Learn more: https://nx.dev/ci/features/self-healing-ci
+
+  after_script:
+    - yarn nx fix-ci
