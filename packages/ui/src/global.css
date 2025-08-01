@@ -1,4 +1,7 @@
-@layer theme, base, mui, components, utilities;
+@layer theme, base, components, utilities;
+
+@tailwind utilities;
+
 @import 'tailwindcss';
 
 @source "../../../apps";

@@ -28,9 +28,11 @@ export const typographyVariants = {
 
 const theme = createTheme({
   direction: 'rtl',
+  shape: {
+    borderRadius: 12,
+  },
   typography: {
     fontFamily: 'IRANSansX',
-    // title: typographyVariants,
     ...typographyVariants,
   },
 });

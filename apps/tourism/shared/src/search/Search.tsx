@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 
-import { Button, TextField, Typography } from '@780/ui';
+import { Button, Fab, TextField, Typography } from '@780/ui';
 
 import { PassengerCount } from '../passenger-count';
 
@@ -22,39 +22,31 @@ export const Search: FC<SearchProps> = ({ onSubmit }) => {
 
   return (
     <form className="flex justify-center gap-4 p-20" onSubmit={submitHandler}>
-      <Typography variant="title-medium" className="mb-4">
-        جستجوی بلیط اتوبوس
-      </Typography>
       <div className="relative flex">
         <TextField
           label="مبدا"
           name="origin"
-          slotProps={{ input: { className: '!rounded-s-xl !rounded-e-none' } }}
+          slotProps={{ input: { className: 'rounded-e-none' } }}
         />
-        <Button
-          className="!absolute start-1/2 top-2 h-10 !w-10 !min-w-10 origin-center translate-x-5 !rounded-full !p-0"
-          variant="contained"
-        >
-          <SwapHorizIcon />
-        </Button>
+        <div className="absolute start-1/2 top-2 origin-center translate-x-5 rounded-full">
+          <Fab color="primary" size="small">
+            <SwapHorizIcon />
+          </Fab>
+        </div>
         <TextField
           label="مقصد"
           name="destination"
-          slotProps={{ input: { className: '!rounded-s-none !rounded-e-xl' } }}
+          slotProps={{ input: { className: 'rounded-s-none' } }}
         />
       </div>
-      <TextField
-        label="تاریخ رفت"
-        name="departureDate"
-        slotProps={{ input: { className: '!rounded-xl' } }}
-      />
+      <TextField label="تاریخ رفت" name="departureDate" />
       <TextField
         label="تاریخ برگشت"
         name="returnDate"
-        slotProps={{ input: { className: '!rounded-xl' } }}
+        slotProps={{ input: { className: 'rounded-xl' } }}
       />
       <PassengerCount />
-      <Button className="w-32 !rounded-xl" type="submit" variant={'contained'}>
+      <Button className="w-32" type="submit" variant={'contained'}>
         جستجو
       </Button>
     </form>
