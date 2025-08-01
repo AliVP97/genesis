@@ -1,4 +1,5 @@
 import { SimplePaletteColorOptions } from '@mui/material/styles';
+import { typographyVariants } from '../resources/theme';
 
 declare module '@mui/material/styles' {
   interface Palette {
@@ -17,5 +18,21 @@ declare module '@mui/material/styles' {
     onBackgroundContainer?: SimplePaletteColorOptions;
     onSurface?: SimplePaletteColorOptions;
     onPrimary?: SimplePaletteColorOptions;
+  }
+}
+
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    title: typeof typographyVariants;
+  }
+
+  interface TypographyVariantsOptions {
+    title?: typeof typographyVariants;
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    title: true;
   }
 }

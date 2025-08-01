@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 
-import { Button, TextField } from '@780/ui';
+import { Button, TextField, Typography } from '@780/ui';
 
 import { PassengerCount } from '../passenger-count';
 
@@ -22,6 +22,9 @@ export const Search: FC<SearchProps> = ({ onSubmit }) => {
 
   return (
     <form className="flex justify-center gap-4 p-20" onSubmit={submitHandler}>
+      <Typography variant="too-small-bold" className="mb-4">
+        جستجوی بلیط اتوبوس
+      </Typography>
       <div className="relative flex">
         <TextField
           label="مبدا"

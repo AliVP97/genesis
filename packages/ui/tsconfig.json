@@ -1,6 +1,6 @@
 {
   "files": [],
-  "include": [],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "mui.d.ts"],
   "references": [
     {
       "path": "./tsconfig.lib.json"
