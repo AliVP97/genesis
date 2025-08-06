@@ -1,33 +1,35 @@
-import '../global.css';
 import { JSX, ReactNode } from 'react';
 
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
 import {
   ThemeProvider,
   CssBaseline,
   StyledEngineProvider,
 } from '@mui/material';
-import { CacheProvider } from '@emotion/react';
-import { prefixer } from 'stylis';
 import rtlPlugin from '@mui/stylis-plugin-rtl';
+import { prefixer } from 'stylis';
 
-import createCache from '@emotion/cache';
 import theme from './theme';
+
+import '../global.css';
 
 // Create rtl cache
 const rtlCache = createCache({
   key: 'muirtl',
   stylisPlugins: [prefixer, rtlPlugin],
+  prepend: true,
 });
 
 const UIProvider = ({ children }: { children: ReactNode }): JSX.Element => (
-  <CacheProvider value={rtlCache}>
-    <StyledEngineProvider injectFirst>
+  <StyledEngineProvider injectFirst>
+    <CacheProvider value={rtlCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
       </ThemeProvider>
-    </StyledEngineProvider>
-  </CacheProvider>
+    </CacheProvider>
+  </StyledEngineProvider>
 );
 
 export default UIProvider;
