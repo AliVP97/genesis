@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
-import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
+import { SwapVert } from '@mui/icons-material';
 
-import { Button, Fab, TextField, Typography } from '@780/ui';
+import { Button, TextField, ToggleButton, ToggleButtonGroup } from '@780/ui';
 
 import { PassengerCount } from '../passenger-count';
 
@@ -11,6 +11,8 @@ type SearchProps = {
 };
 
 export const Search: FC<SearchProps> = ({ onSubmit }) => {
+  const [tripType, setTripType] = useState<'one-way' | 'two-way'>('one-way');
+
   const submitHandler: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
@@ -21,32 +23,59 @@ export const Search: FC<SearchProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form className="flex justify-center gap-4 p-20" onSubmit={submitHandler}>
-      <div className="relative flex">
-        <TextField
-          label="مبدا"
-          name="origin"
-          slotProps={{ input: { className: 'rounded-e-none' } }}
-        />
-        <div className="absolute start-1/2 top-2 origin-center translate-x-5 rounded-full">
-          <Fab color="primary" size="small">
-            <SwapHorizIcon />
-          </Fab>
+    <form
+      className="flex flex-col justify-center gap-y-6 p-4 md:flex-row md:gap-4 md:p-20"
+      onSubmit={submitHandler}
+    >
+      <ToggleButtonGroup
+        size="small"
+        exclusive
+        className="mx-auto"
+        value={tripType}
+        color="primary"
+        onChange={(event, newValue) => {
+          if (newValue !== null) {
+            setTripType(newValue);
+          }
+        }}
+      >
+        <ToggleButton className="w-32" value="one-way">
+          یک‌طرفه
+        </ToggleButton>
+        <ToggleButton className="w-32" value="two-way">
+          رفت و برگشت
+        </ToggleButton>
+      </ToggleButtonGroup>
+      <div className="relative flex flex-col md:flex-row">
+        <div className="absolute end-0 top-9 z-10 origin-center translate-x-5 rounded-full bg-blue-300 p-2 md:start-1/2 md:top-2">
+          <SwapVert className="md:rotate-90" />
         </div>
         <TextField
-          label="مقصد"
+          placeholder="مبدا"
+          name="origin"
+          slotProps={{
+            input: { className: 'rounded-b-none md:rounded-e-none' },
+          }}
+        />
+        <TextField
+          placeholder="مقصد"
           name="destination"
-          slotProps={{ input: { className: 'rounded-s-none' } }}
+          slotProps={{
+            input: { className: '-mt-[1px] rounded-t-none md:rounded-s-none' },
+          }}
         />
       </div>
       <TextField label="تاریخ رفت" name="departureDate" />
-      <TextField
-        label="تاریخ برگشت"
-        name="returnDate"
-        slotProps={{ input: { className: 'rounded-xl' } }}
-      />
+      {tripType === 'two-way' && (
+        <TextField label="تاریخ برگشت" name="returnDate" />
+      )}
       <PassengerCount />
-      <Button className="w-32" type="submit" variant={'contained'}>
+      <Button
+        className="w-full md:w-32"
+        size={'large'}
+        type="submit"
+        variant={'contained'}
+      >
         جستجو
       </Button>
     </form>
