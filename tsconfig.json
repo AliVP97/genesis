@@ -4,22 +4,25 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/tourism/platform"
+      "path": "./packages/shared/hooks"
     },
     {
-      "path": "./apps/tourism/shared"
+      "path": "./packages/shared/utils"
     },
     {
-      "path": "./apps/tourism/train"
+      "path": "./packages/shared/ui"
     },
     {
-      "path": "./apps/tourism/bus"
+      "path": "./packages/domain-tourism"
     },
     {
-      "path": "./packages/utils"
+      "path": "./packages/services/tourism/bus"
     },
     {
-      "path": "./packages/ui"
+      "path": "./packages/services/tourism/train"
+    },
+    {
+      "path": "./apps/platform"
     }
   ]
 }

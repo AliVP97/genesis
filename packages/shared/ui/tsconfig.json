@@ -1,0 +1,16 @@
+{
+  "files": [],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "mui.d.ts",
+    "src",
+    "src/mui.d.ts"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    }
+  ],
+  "extends": "../../../tsconfig.base.json"
+}
