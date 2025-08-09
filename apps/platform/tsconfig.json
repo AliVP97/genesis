@@ -52,6 +52,9 @@
       "path": "../../packages/services/tourism/train"
     },
     {
+      "path": "../../packages/shared/ui"
+    },
+    {
       "path": "../../packages/services/tourism/bus"
     }
   ]
