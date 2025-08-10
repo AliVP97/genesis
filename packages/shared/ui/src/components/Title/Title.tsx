@@ -1,5 +1,7 @@
-import { Typography, TypographyProps } from '@mui/material';
 import { FC } from 'react';
+
+import { Typography, TypographyProps } from '@mui/material';
+
 import { TypographyColor, TypographySize } from '../../types/typography';
 
 const sizeMap: Record<

@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+
 import baseTheme from './baseTheme';
 import COLORS from './colors';
 

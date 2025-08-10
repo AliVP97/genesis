@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Title from './Title';
+
 import { TypographyColor } from '../../types/typography';
+import Title from './Title';
 
 const meta: Meta<typeof Title> = {
   title: 'Components/Title',
