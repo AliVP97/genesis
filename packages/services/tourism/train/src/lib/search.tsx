@@ -1,4 +1,4 @@
-import { Button } from '../../../../../shared/ui/src';
+import { Button } from '@780/ui';
 
 export function Search() {
   return (
