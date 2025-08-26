@@ -32,7 +32,7 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
-      "path": "../../../domain-tourism/tsconfig.lib.json"
+      "path": "../../../shared/utils/tsconfig.lib.json"
     }
   ]
 }

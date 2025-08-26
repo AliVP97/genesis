@@ -3,7 +3,7 @@
   "include": [],
   "references": [
     {
-      "path": "../../../domain-tourism"
+      "path": "../../../shared/utils"
     },
     {
       "path": "./tsconfig.lib.json"
