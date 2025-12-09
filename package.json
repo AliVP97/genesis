@@ -2,7 +2,6 @@
   "name": "@780/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
   "dependencies": {
     "@emotion/cache": "^11.14.0",

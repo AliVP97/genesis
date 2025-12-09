@@ -6,8 +6,12 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
   },
   "exports": {
     "./package.json": "./package.json",
